@@ -12,12 +12,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :del_firstname,      default: ""
       t.string :del_lastname,       default: ""
       t.string :del_address,        default: ""
-      t.string :del_zipcode,        default: ""
+      t.string :del_zipcode,        default: "00000"
       t.string :fac_firstname,      default: ""
       t.string :fac_lastname,       default: ""
       t.string :fac_address,        default: ""
-      t.string :fac_zipcode,        default: ""
-      t.string :phonenumber,        default: ""
+      t.string :fac_zipcode,        default: "00000"
+      t.string :phonenumber,        default: "0000000000"
       t.date :birthday,             default: ""
       t.boolean :is_admin,          default: false
 
@@ -44,7 +44,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string   :confirmation_token
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
-      # t.string   :unconfirmed_email # Only if using reconfirmable
+      t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts

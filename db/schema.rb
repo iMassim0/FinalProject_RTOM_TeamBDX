@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 2018_06_04_142420) do
     t.string "del_firstname", default: ""
     t.string "del_lastname", default: ""
     t.string "del_address", default: ""
-    t.string "del_zipcode", default: ""
+    t.string "del_zipcode", default: "00000"
     t.string "fac_firstname", default: ""
     t.string "fac_lastname", default: ""
     t.string "fac_address", default: ""
-    t.string "fac_zipcode", default: ""
-    t.string "phonenumber", default: ""
+    t.string "fac_zipcode", default: "00000"
+    t.string "phonenumber", default: "0000000000"
     t.date "birthday"
     t.boolean "is_admin", default: false
     t.string "email", default: "", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_06_04_142420) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'cloudinary'
 
 # Auth
-# gem 'devise'
+gem 'devise'
 
 # e-commerce
 # gem 'stripe'

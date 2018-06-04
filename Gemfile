@@ -17,13 +17,13 @@ gem 'turbolinks', '~> 5'
 
 gem 'jbuilder', '~> 2.5'
 
-# gem 'jquery-rails'
+gem 'jquery-rails'
 
-# gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '~> 4.1.1'
 
-# gem 'popper_js', '~> 1.12.9'
+gem 'popper_js', '~> 1.12.9'
 
-# gem "font-awesome-rails"
+gem "font-awesome-rails"
 
 # gem 'carrierwave', '~> 1.0'
 

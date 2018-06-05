@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/shop', to: "pages#shop", as: :shop
   get '/payment', to: "carts#payment", as: :payment
   root 'pages#home'
+  get "/profile", to: "user#profile", as: :profile
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

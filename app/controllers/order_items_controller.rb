@@ -27,15 +27,6 @@ class OrderItemsController < ApplicationController
     redirect_to carts_path
   end
 
-
-  def calcul_total
-    @total = 0
-    @order_items.added_items.each do |item|
-      @total += ((item.price).round * @cart.cart_items.find_by(added_item: item).quantity.to_i)
-    end
-    return @total
-  end
-
   private
 
     def order_item_params

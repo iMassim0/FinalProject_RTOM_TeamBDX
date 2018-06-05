@@ -3,9 +3,10 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
     @order_item = @order.order_items.new(order_item_params)
+    @order.user = current_user
+    @order.status = "en cours"
     @order.save
     session[:order_id] = @order.id
-
     redirect_to shop_path
   end
 

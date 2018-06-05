@@ -1,34 +1,93 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Mon profil</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="form-group">
+    <%= f.label "Avatar" %>
+    <%= f.file_field(:avatar, folder: "avatars") %>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <div class="form-group">
+      <div class="field">
+        <%= f.label "Pseudo" %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: :username %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Rentrez votre mot de passe" %> <i>(ou laissez ce champ vide si vous ne souhaitez pas le changer)</i><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> caractères minimum</em>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Confirmez votre mot de passe" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Mot de passe actuel" %> <i>(nécessaire pour valider le changement)</i><br />
+        <%= f.password_field :current_password, autocomplete: "off" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="form-group">
+    <h3>Informations personnelles</h3>
+    <div class="field">
+      <%= f.label "Prénom" %>
+      <%= f.text_field :firstname, autocomplete: :firstname %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Nom" %>
+      <%= f.text_field :lastname, autocomplete: :lastname %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Pays d'origine" %>
+      <%= f.country_select :country, priority_countries = ["France"], default: :France %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Anniversaire" %>
+      <%= f.date_select :birthday, {use_month_numbers: true, order: [:day, :month, :year], start_year: 1918, end_year: 2008, default: {year: 1998}} %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Numéro de téléphone" %>
+      <%= f.text_field :phonenumber, autocomplete: :phonenumber, placeholder: "0---------" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+  <div class="form-group">
+    <h3>Adresse de livraison</h3>
+    <div class="field">
+      <%= f.label "Adresse" %>
+      <%= f.text_field :del_address, autocomplete: :del_address, placeholder: "8 Rue des Oliviers" %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Code Postal" %>
+      <%= f.text_field :del_zipcode, autocomplete: :del_zipcode, placeholder: "33000" %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Ville" %>
+      <%= f.text_field :del_town, autocomplete: :del_town, placeholder: "Bordeaux" %>
+    </div>
+
   </div>
 
   <div class="actions">
@@ -36,8 +95,8 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Supprimer mon compte</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to "Supprimer", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>

@@ -8,16 +8,18 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :firstname,          default: ""
       t.string :lastname,           default: ""
       t.string :country,            default: ""
-      t.string :avatar,             default: ""
+      t.string :avatar,             default: nil
       t.string :del_firstname,      default: ""
       t.string :del_lastname,       default: ""
       t.string :del_address,        default: ""
-      t.string :del_zipcode,        default: "00000"
+      t.string :del_zipcode,        default: nil
+      t.string :del_town,           default: ""
       t.string :fac_firstname,      default: ""
       t.string :fac_lastname,       default: ""
       t.string :fac_address,        default: ""
-      t.string :fac_zipcode,        default: "00000"
-      t.string :phonenumber,        default: "0000000000"
+      t.string :fac_zipcode,        default: nil
+      t.string :fac_town,           default: ""
+      t.string :phonenumber,        default: nil
       t.date :birthday,             default: ""
       t.boolean :is_admin,          default: false
 

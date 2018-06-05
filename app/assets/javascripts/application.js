@@ -16,3 +16,14 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+function SetBilling(checked) {
+    if (checked) {
+        document.getElementById('deliveryaddres').style.display="none";
+        document.getElementById('deliver_firstname').value = '';
+    }
+    else {
+        document.getElementById('deliveryaddres').style.display="block";
+        document.getElementById('deliver_firstname').value = document.getElementById('firstname').value;
+    }
+}

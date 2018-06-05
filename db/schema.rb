@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_124236) do
     t.float "subtotal"
     t.float "total"
     t.float "tax"
-    t.float "shipping"
+    t.float "shipping", default: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"

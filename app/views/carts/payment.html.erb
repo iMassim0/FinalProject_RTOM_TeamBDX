@@ -1,3 +1,50 @@
-<h2>Rentrez vos informations pour passer au paiement :</h2>
+<h2>Récapitulatif</h2>
 
-<h3>Informations personnelles :</h3>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</td>
+        <th>Article</td>
+        <th>Prix</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_order.order_items.each_with_index do |order_item, i| %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= order_item.product.title %></td>
+          <td><%= number_to_currency(order_item.product.price, unit: "€") %></td>
+        </tr>
+      <% end %>
+        <tr>
+          <td colspan="2">Dont TVA (20%)</td>
+          <td><%= number_to_currency(current_order.tax, unit: '€') %></td>
+        </tr>
+        <tr>
+          <td colspan="2">Livraison</td>
+          <td><%= number_to_currency(current_order.shipping, unit: '€') %></td>
+        </tr>
+        <tr>
+          <td colspan="2">Total</td>
+          <td><%= number_to_currency(current_order.total, unit: '€') %></td>
+        </tr>
+        <td> <%= form_for @order, url: {action: :pay, order: @order}, method: :post do |f| %>
+                <script
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_Opg2gROUTgRgICX8bwtIslCn"
+                  data-amount="<%= @order.total * 100 %>"
+                  data-email="<%= @user.email %>"
+                  data-name="Paiement de <%= @user.firstname %>"
+                  data-description="Pour la commande n°<%= @order.id %>"
+                  data-image="https://www.thehackingproject.org/assets/thp-logo-5f2f06c9444205a88123ca1de74646970e5a1dfb03698d02db33e5e62a60d6cd.png"
+                  data-locale="auto"
+                  data-currency="eur"
+                  data-zip-code="false">
+                </script>
+              <% end %>
+        </td>
+</td>
+    </tbody>
+  </table>
+</div>

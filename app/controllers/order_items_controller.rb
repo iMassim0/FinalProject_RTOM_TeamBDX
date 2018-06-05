@@ -5,6 +5,7 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.new(order_item_params)
     @order.save
     session[:order_id] = @order.id
+
     redirect_to shop_path
   end
 
@@ -25,10 +26,23 @@ class OrderItemsController < ApplicationController
     redirect_to carts_path
   end
 
+
+  def calcul_total
+    @total = 0
+    @order_items.added_items.each do |item|
+      @total += ((item.price).round * @cart.cart_items.find_by(added_item: item).quantity.to_i)
+    end
+    return @total
+  end
+
   private
 
     def order_item_params
       params.require(:order_item).permit(:product_id, :quantity)
+    end
+
+    def order_params
+      params.require(:order_item).permit(:status)
     end
 
 end

@@ -10,9 +10,7 @@
               <%= form_for(@order_item) do |f| %>
                 <%= f.hidden_field :product_id, value: product.id %>
                 <h5><%= product.price %></h5>
-                <div class="form-group">
                   <%= f.hidden_field :quantity, value: 1, min: 1 %>
-                </div>
                   <% if !(current_order.products.include? product) %>
                     <%= f.submit "Add to cart", class:"btn btn-success" %>
                 <% end %>

@@ -1,0 +1,34 @@
+<div class="form-group">
+    <div class="field">
+      <%= f.label "Prénom" %>
+      <%= f.text_field :firstname, autocomplete: :firstname %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Nom" %>
+      <%= f.text_field :lastname, autocomplete: :lastname %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Pays d'origine" %>
+      <%= f.country_select :country, priority_countries = ["France"], default: :France %>
+    </div>
+</div>
+
+<div class="form-group">
+    <h3>Adresse de livraison</h3>
+    <div class="field">
+      <%= f.label "Adresse" %>
+      <%= f.text_field :del_address, autocomplete: :del_address, placeholder: "8 Rue des Oliviers" %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Code Postal" %>
+      <%= f.text_field :del_zipcode, autocomplete: :del_zipcode, placeholder: "33000" %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Ville" %>
+      <%= f.text_field :del_town, autocomplete: :del_town, placeholder: "Bordeaux" %>
+    </div>
+</div>

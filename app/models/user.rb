@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  has_many :orders
+
   attr_accessor :login
 
   def self.find_first_by_auth_conditions(warden_conditions)

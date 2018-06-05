@@ -21,9 +21,9 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass', '~> 3.3.7'
 
-# gem 'popper_js', '~> 1.12.9'
+gem 'popper_js', '~> 1.12.9'
 
-# gem "font-awesome-rails"
+gem "font-awesome-rails"
 
 gem 'carrierwave', '~> 1.0'
 

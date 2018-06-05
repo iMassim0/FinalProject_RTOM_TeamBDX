@@ -30,7 +30,7 @@ gem "font-awesome-rails"
 # gem 'cloudinary'
 
 # Auth
-# gem 'devise'
+gem 'devise'
 
 # e-commerce
 # gem 'stripe'

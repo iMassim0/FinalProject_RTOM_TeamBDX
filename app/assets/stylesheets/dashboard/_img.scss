@@ -1,32 +1,32 @@
 
 .img {
-  height: 27vh;
-  width: 22vw;
+  height: 29%;
+  width: 24%;
   background-size: 100% 100%;
   background-image: url('img.png');
   background-repeat: no-repeat;
   position: absolute;
-  top: 23%;
-  right: 45%;
+  top: 22%;
+  right: 43%;
   z-index: 1;
   transform: rotate(-6deg);
   -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);  filter: brightness(80%);
-  -webkit-filter: brightness(80%);
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  filter: grayscale(100%);
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+  opacity: 0.85;
 }
 
 .img:hover {
   -webkit-filter: grayscale(0);
-  filter: grayscale(0);  filter: brightness(100%);
-  -webkit-filter: brightness(100%);
+  filter: grayscale(0);
+  opacity: 1;
 }
 
 
 .img:hover .btn-ct-img {
-  height: 9vh;
-  width: 15vw;
+
+  width: 90%;
   z-index: 3;
   top: -1%;
   left: -1%;
@@ -35,8 +35,8 @@
 .btn-ct-img {
   position: absolute;
   overflow: hidden;
-  height: 9vh;
-  width:  0vw;
+  height: 53%;
+  width:  0px;
   transition: .5s ease;
   top: -1%;
   left: -1%;
@@ -44,8 +44,9 @@
 
 .btn-img {
   position: absolute;
-  height: 9vh;
+  height: 53%;
   width: 15vw;
+  max-width: 30vh;
   background-size: 100% 100%;
   transform: rotate(6deg);
   background-image: url('btn-img.png');

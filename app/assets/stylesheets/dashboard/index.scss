@@ -4,16 +4,49 @@
 @import "img";
 @import "pass";
 @import "shop";
-
+@import "links";
+@import "fonts";
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
 
 h1 {
   margin: 0;
 }
 
+body {
+  background-image: url('https://media.gettyimages.com/photos/abstract-felt-background-picture-id497614916?b=1&k=6&m=497614916&s=612x612&w=0&h=-cZ9CHmoFVIpd6A0WPiIPTM5hzqcgQGVK_jP5y_1N_A=');
+  background-attachment:fixed;
+  background-size: contain;
+}
+
 .nav {
-  width: 100vw;
-  height: 100vh;
-  background: #D0E4F5 url("dashboard.png");
-  background-size: cover;
-  margin: 0;
+  height: auto; /* height:width ratio = 9/16 = .5625  */
+  width: auto;
+  max-width: 177.78vh;
+  max-height: 56.25vw;
+  margin: auto;
+  position: absolute;
+  top:0;bottom:0; /* vertical center */
+  left:0;right:0; /* horizontal center */
+  box-sizing: border-box;
+  background: #757575 url("dashboard.png") 50% 50%;
+  background-size: contain ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  z-index: 10;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: grey;
+}
+
+.links {
+  font-family: $my_pimpernel_font;
+  margin-left: 10px;
 }

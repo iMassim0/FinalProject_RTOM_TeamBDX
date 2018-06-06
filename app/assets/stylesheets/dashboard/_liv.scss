@@ -1,7 +1,7 @@
 
 .liv {
-  height: 54vh;
-  width: 21vw;
+  height: 55%;
+  width: 25%;
   background-size: 100% 100%;
   background-image: url('liv.png');
   -webkit-filter: blur(0.6px);
@@ -10,7 +10,7 @@
   -ms-filter: blur(0.6px);
   filter: blur(0.6px);
   background-repeat: no-repeat;
-  position: relative;
+  position: absolute;
   top: 40%;
   left: 2%;
   z-index: 1;
@@ -28,8 +28,8 @@
 
 
 .liv:hover .btn-ct-liv {
-  height: 9vh;
-  width: 15vw;
+
+  width: 90%;
   z-index: 3;
   top: 45%;
   left: 15%;
@@ -38,8 +38,8 @@
 .btn-ct-liv {
   position: absolute;
   overflow: hidden;
-  height: 9vh;
-  width:  0vw;
+  height: 41%;
+  width:  0px;
   transition: .5s ease;
   top: 45%;
   left: 15%;
@@ -47,8 +47,9 @@
 
 .btn-liv {
   position: absolute;
-  height: 9vh;
+  height: 41%;
   width: 15vw;
+  max-width: 30vh;
   background-size: 100% 100%;
   background-image: url('btn-liv.png');
   background-repeat: no-repeat;

@@ -16,22 +16,26 @@ class CartsController < ApplicationController
   end
 
   def pay
-    if !(@infos == nil)
-      new_charge
-      if @charge.save
-        flash[:success] = "Paiement réussi"
-        redirect_to new_order_path
-      else
-        flash[:error] = "Problème de paiement"
-        redirect_to mon_panier_path
-      end
+    @order = current_order
+    new_charge
+    if @charge.save
+      @products = current_order.products
+      @products.each {|o| o.availability = 0}
+      @products.each {|o| o.save}
+      session[:order_id] = Order.new
+      flash[:success] = "Paiement réussi"
+      redirect_to shop_path
+    else
+      flash[:error] = "Problème de paiement"
+      redirect_to payment_path
+    end
   end
 
   def new_charge
     Stripe.api_key = "sk_test_qSh4KOVL09XngvBDrKBHQRRk"
     token = params.require(:stripeToken)
     @charge = Stripe::Charge.create({
-      :amount => @order.total,
+      :amount => @order.total.to_i * 100,
       :currency => "eur",
       :source => token,
       :description => "Charge for sophia.thompson@example.com"

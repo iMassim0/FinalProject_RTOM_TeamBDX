@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_124236) do
+ActiveRecord::Schema.define(version: 2018_06_06_075954) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "product_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_124236) do
     t.float "subtotal"
     t.float "total"
     t.float "tax"
-    t.float "shipping", default: 10
+    t.float "shipping"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_124236) do
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "availability", default: 1
   end
 
   create_table "users", force: :cascade do |t|

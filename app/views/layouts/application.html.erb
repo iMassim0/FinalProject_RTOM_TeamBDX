@@ -12,13 +12,13 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
-      <% if flash[:notice] %>
-        <%= flash[:notice] %></p>
+      <% if flash[:success] %>
+        <%= flash[:success] %></p>
       <% end %>
       <% if flash[:error] %>
         <%= flash[:error] %></p>
       <% end %>
-      <% flash[:error] = flash[:notice] = nil %>
+      <% flash[:error] = flash[:success] = nil %>
     </div>
     <div class="container">
       <%= yield %>

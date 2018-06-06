@@ -1,5 +1,26 @@
 <h1>Product for sale</h1>
   <% @products.each do |product| %>
+    <% if product.availability == 1 %>
+      <div class="well">
+        <div class="row">
+          <div class="col-sm-8">
+            <h3><%= product.title %></h3>
+          </div>
+          <div class="col-sm-4">
+              <div class="pull-right">
+                <%= form_for(@order_item) do |f| %>
+                  <%= f.hidden_field :product_id, value: product.id %>
+                  <h5><%= number_to_currency(product.price, unit: '€') %></h5>
+                    <%= f.hidden_field :quantity, value: 1, min: 1 %>
+                    <% if !(current_order.products.include? product) %>
+                      <%= f.submit "Add to cart", class:"btn btn-success" %>
+                    <% end %>
+                <% end %>
+              </div>
+          </div>
+        </div>
+      </div>
+    <% elsif product.availability == 0 %>
     <div class="well">
       <div class="row">
         <div class="col-sm-8">
@@ -7,16 +28,10 @@
         </div>
         <div class="col-sm-4">
             <div class="pull-right">
-              <%= form_for(@order_item) do |f| %>
-                <%= f.hidden_field :product_id, value: product.id %>
-                <h5><%= number_to_currency(product.price, unit: '€') %></h5>
-                  <%= f.hidden_field :quantity, value: 1, min: 1 %>
-                  <% if !(current_order.products.include? product) %>
-                    <%= f.submit "Add to cart", class:"btn btn-success" %>
-                <% end %>
-            <% end %>
+              <p>Produit déjà acheté...</p>
             </div>
         </div>
       </div>
     </div>
-<% end %>
+    <% end %>
+  <% end %>

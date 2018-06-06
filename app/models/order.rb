@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   has_many :products, through: :order_items
   belongs_to :user
 
-  before_save :set_subtotal, :set_tax, :set_total
+  before_save :set_subtotal, :set_tax, :set_shipping, :set_total
 
   def subtotal
     order_items.collect {|order_item| order_item.valid? ? (order_item.unit_price*order_item.quantity) : 0}.sum

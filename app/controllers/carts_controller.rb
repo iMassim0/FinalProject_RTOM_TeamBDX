@@ -22,7 +22,7 @@ class CartsController < ApplicationController
       @products = current_order.products
       @products.each {|o| o.availability = 0}
       @products.each {|o| o.save}
-      session[:order_id] = Order.new
+      session[:order_id] = nil
       flash[:success] = "Paiement réussi"
       redirect_to shop_path
     else
@@ -38,7 +38,7 @@ class CartsController < ApplicationController
       :amount => @order.total.to_i * 100,
       :currency => "eur",
       :source => token,
-      :description => "Charge for sophia.thompson@example.com"
+      :description => "Charge #{current_user.firstname} #{current_user.lastname} - Order #{@order.id}"
     })
   end
 

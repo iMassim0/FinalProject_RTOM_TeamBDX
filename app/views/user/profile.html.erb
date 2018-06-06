@@ -19,9 +19,9 @@
         </tr>
       </thead>
       <tbody>
-  <% @user.orders.each_with_index do |order, i| %>
+  <% @user.orders.each do |order| %>
         <tr>
-          <th  class="table-active" rowspan="<%= order.order_items.length %>"><%= i %></th>
+          <th class="table-active" rowspan="<%= order.order_items.length %>"><%= order.id %></th>
       <% order.order_items.each do |item| %>
           <td><%= item.product.title %></td>
           <td><%= item.product.price %> €</td>

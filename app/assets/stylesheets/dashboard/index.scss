@@ -4,6 +4,7 @@
 @import "img";
 @import "pass";
 @import "shop";
+@import "dashboard";
 
 
 h1 {
@@ -11,6 +12,8 @@ h1 {
 }
 
 .nav {
+  z-index: 1;
+  position: fixed;  
   width: 100vw;
   height: 100vh;
   background: #D0E4F5 url("dashboard.png");

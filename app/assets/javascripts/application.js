@@ -19,14 +19,4 @@
 
 function toggleBlur() {
   $(document.getElementById("dash-bg")).toggleClass("blurred", 2000, "swing");
-
-function SetBilling(checked) {
-    if (checked) {
-        document.getElementById('deliveryaddres').style.display="none";
-        document.getElementById('deliver_firstname').value = '';
-    }
-    else {
-        document.getElementById('deliveryaddres').style.display="block";
-        document.getElementById('deliver_firstname').value = document.getElementById('firstname').value;
-    }
 }

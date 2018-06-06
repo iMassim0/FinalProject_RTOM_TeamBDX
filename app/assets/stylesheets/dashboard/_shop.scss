@@ -1,0 +1,51 @@
+
+.shop {
+  height: 37vh;
+  width: 18vw;
+  background-size: 100% 100%;
+  background-image: url('shop.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -8%;
+  right: -3%;
+  z-index: 1;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.shop:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+
+.shop:hover .btn-ct-shop {
+  height: 9vh;
+  width: 15vw;
+  z-index: 3;
+  top: 25%;
+  left: -40%;
+}
+
+.btn-ct-shop {
+  position: absolute;
+  overflow: hidden;
+  height: 9vh;
+  width:  0vw;
+  transition: .5s ease;
+  top: 25%;
+  left: -40%;
+}
+
+.btn-shop {
+  position: absolute;
+  height: 9vh;
+  width: 15vw;
+  background-size: 100% 100%;
+  background-image: url('btn-shop.png');
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+}

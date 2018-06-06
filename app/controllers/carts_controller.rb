@@ -1,6 +1,4 @@
 class CartsController < ApplicationController
-
-
   def show
     @order_items = current_order.order_items
   end
@@ -22,7 +20,8 @@ class CartsController < ApplicationController
       @products = current_order.products
       @products.each {|o| o.availability = 0}
       @products.each {|o| o.save}
-      session[:order_id] = Order.new
+      @order.status = "Payé"
+      session[:order_id] = nil
       flash[:success] = "Paiement réussi"
       redirect_to shop_path
     else
@@ -41,6 +40,4 @@ class CartsController < ApplicationController
       :description => "Charge for sophia.thompson@example.com"
     })
   end
-
-
 end

@@ -1,0 +1,19 @@
+@import "liv";
+@import "conn";
+@import "iti";
+@import "img";
+@import "pass";
+@import "shop";
+
+
+h1 {
+  margin: 0;
+}
+
+.nav {
+  width: 100vw;
+  height: 100vh;
+  background: #D0E4F5 url("dashboard.png");
+  background-size: cover;
+  margin: 0;
+}

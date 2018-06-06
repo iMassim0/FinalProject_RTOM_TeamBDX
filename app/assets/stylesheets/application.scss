@@ -14,5 +14,13 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "dashboard";
+@import "dashboard/index";
 @import "profile";
+@import "fonts";
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
+
+/*
+font-family: $my_..._font;
+*/

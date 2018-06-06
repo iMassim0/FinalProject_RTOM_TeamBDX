@@ -19,7 +19,7 @@
 
 function toggleBlur() {
   $(document.getElementById("dash-bg")).toggleClass("blurred", 2000, "swing");
-  
+
 function SetBilling(checked) {
     if (checked) {
         document.getElementById('deliveryaddres').style.display="none";

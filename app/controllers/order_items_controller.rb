@@ -4,7 +4,6 @@ class OrderItemsController < ApplicationController
     @order = current_order
     @order_item = @order.order_items.new(order_item_params)
     @order.user = current_user
-    @order.status = "en cours"
     @order.save
     session[:order_id] = @order.id
     redirect_to shop_path
@@ -31,6 +30,10 @@ class OrderItemsController < ApplicationController
 
     def order_item_params
       params.require(:order_item).permit(:product_id, :quantity)
+    end
+
+    def product_item_params
+      params.require(:order_item).permit(:product_id)
     end
 
     def order_params

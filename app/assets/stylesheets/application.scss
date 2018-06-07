@@ -12,13 +12,6 @@
  *
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "profile";
-@import "fonts";
-$my_beautydemo_font: 'beautydemo';
-$my_lemourserif_font: 'lemourserif';
-$my_pimpernel_font: 'pimpernel';
 
 /*
 font-family: $my_..._font;
@@ -33,8 +26,8 @@ position: absolute;
 top:0;bottom:0; /* vertical center */
 left:0;right:0; /* horizontal center */
 box-sizing: border-box;
-background: #757575 url("dashboard.png") 50% 50%;
-background-size: contain ;
+background: #757575 url("background_dashboard.png") 50% 50%;
+background-size: cover ;
 background-repeat: no-repeat;
 background-attachment: fixed;
 overflow: hidden;

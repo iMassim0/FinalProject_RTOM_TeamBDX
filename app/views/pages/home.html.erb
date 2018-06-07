@@ -7,9 +7,8 @@
       </div>
     </div>
     <% end %>
-<%= link_to root_path do %>
+<%= link_to profile_path, remote: true do %>
   <div class="conn">
-    <%= link_to image_tag("conn.png"), profile_path, remote: true %>
     <div class="btn-ct-conn">
       <div class="btn-conn">
       </div>
@@ -47,8 +46,8 @@
       </div>
     </div>
   </div>
-
 <% end %>
+
 <div class="links">
   <a href="#" class="home-link">Mentions Légales</a>
   <a href="#" class="home-link">CGV</a>

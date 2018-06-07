@@ -1,0 +1,77 @@
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
+
+.img-passport {
+  height: 80%;
+  width: 50%;
+  background-size: 100% 100%;
+  background-image: asset-url('connect-passport');
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 18%;
+  right: 23%;
+  z-index: 1;
+  transform: rotate(1deg);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+  opacity: 0.85;
+}
+
+.passport-form-content {
+  border: 2px solid rgba(0,0,0,0);
+  position: relative;
+  overflow: scroll;
+  height: 38%;
+  width:  63%;
+  transition: .5s ease;
+  top: 56%;
+  left: 20%;
+}
+
+.passport-form {
+  border: 2px solid rgba(0,0,0,0);
+  position: relative;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  z-index: 2;
+}
+
+.signin, .signin-mdp, .signin-pseudo, .signin_last1, .signin_last2 {
+  text-align: center;
+  font-weight: bold;
+
+  border: 2px solid rgba(0,0,0,0);
+  font-family: $my_pimpernel_font;
+  font-size: 1.2rem;
+}
+
+.signin-mdp input, .signin-pseudo input {
+  width: 95%;
+  font-size: 1.5rem;
+}
+
+input {
+  font-family: $my_pimpernel_font;
+
+}
+
+.signin-photo {
+  border: 2px solid rgba(0,0,0,0);
+  width: 35%;
+  height: 100%;
+}
+
+.signin_bottom {
+  border: 2px solid rgba(0,0,0,0);
+  height: 110%;
+}
+
+.signin_last {
+  display: flex;
+  flex-direction: row;
+
+}

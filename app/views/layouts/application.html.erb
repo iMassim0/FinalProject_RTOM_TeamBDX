@@ -4,11 +4,9 @@
     <title>FinalProjectThpTeambdxRtom</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <% if current_page?(root_path) %>
-      <%= stylesheet_link_tag    'dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <% else %>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <% end %>
+    <%= favicon_link_tag 'favicon.ico' %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 

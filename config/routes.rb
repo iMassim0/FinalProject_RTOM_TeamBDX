@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/blog", to: "posts#index", as: :blog
   resources :posts
   post "/posts/:id/comments", to: 'comments#create'
-
+  get '/temoignages', to: "posts#index", as: :article
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

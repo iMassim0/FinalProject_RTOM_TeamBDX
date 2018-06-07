@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
 
-
   def show
     @order_items = current_order.order_items
   end
@@ -41,6 +40,5 @@ class CartsController < ApplicationController
       :description => "Charge #{current_user.firstname} #{current_user.lastname} - Order #{@order.id}"
     })
   end
-
 
 end

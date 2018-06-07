@@ -15,8 +15,8 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Show', post, remote: true %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), remote: true %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -30,6 +30,6 @@
 <div class="row">
   <h2>Truc</h2>
   <div class="col-lg-6">
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, remote: true %>
 </div>
   </div>

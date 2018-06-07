@@ -7,12 +7,12 @@ class CommentsController < ApplicationController
     @comment.post = Post.find(params[:id])
 
       if @comment.save
-        redirect_to @comment.post, notice: 'Commentaire enregistré.'
+        redirect_to @comment.post, remote: true, notice: 'Commentaire enregistré.'
       else
         redirect_to Post.find(params[:id]), error: "Le commentaire n'a pas été enregistré."
 
       end
-  
+
   end
 
 

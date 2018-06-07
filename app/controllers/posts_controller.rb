@@ -5,21 +5,36 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+
+    respond_to do |f|
+      f.js { render :layout => false }
+      f.html { redirect_to root_path }
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
     @comment = Comment.new
+
+    respond_to do |f|
+      f.js { render :layout => false }
+    end
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    respond_to do |f|
+      f.js { render :layout => false }
+    end     
   end
 
   # GET /posts/1/edit
   def edit
+    respond_to do |f|
+      f.js { render :layout => false }
+    end
   end
 
   # POST /posts

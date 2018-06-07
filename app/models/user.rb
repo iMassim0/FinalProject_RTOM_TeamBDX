@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :orders
+  has_many :posts
+  has_many :comments
 
   attr_accessor :login
 

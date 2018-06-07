@@ -33,7 +33,7 @@ gem 'cloudinary'
 gem 'devise'
 
 # e-commerce
-# gem 'stripe'
+gem 'stripe'
 
 # # APIs
 # gem 'twitter'

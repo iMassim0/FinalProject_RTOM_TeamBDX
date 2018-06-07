@@ -1,5 +1,6 @@
 
 .shop {
+  z-index: -1;
   height: 42%;
   width: 23%;
   background-size: 100% 100%;
@@ -9,8 +10,8 @@
   bottom: -8%;
   right: -3%;
   z-index: 1;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
   -webkit-transition: .1s ease-in-out;
   transition: .1s ease-in-out;
 }
@@ -32,7 +33,7 @@
 .btn-ct-shop {
   position: absolute;
   overflow: hidden;
-  height: 46%;
+  height: 49%;
   width:  0px;
   transition: .5s ease;
   top: 25%;
@@ -41,8 +42,8 @@
 
 .btn-shop {
   position: absolute;
-  height: 46%;
-  width: 15vw;
+  height: 49%;
+  width: 16vw;
   max-width: 30vh;
   background-size: 100% 100%;
   background-image: asset-url('btn-shop.png');

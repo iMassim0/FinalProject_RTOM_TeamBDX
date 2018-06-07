@@ -9,8 +9,8 @@
   top: 30%;
   right: 7%;
   z-index: 1;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
   -webkit-transition: .1s ease-in-out;
   transition: .1s ease-in-out;
 }
@@ -32,7 +32,7 @@
 .btn-ct-iti {
   position: absolute;
   overflow: hidden;
-  height: 41%;
+  height: 43%;
   width:  0px;
   transition: .5s ease;
   top: 55%;
@@ -41,7 +41,7 @@
 
 .btn-iti {
   position: absolute;
-  height: 41%;
+  height: 43%;
   width: 15vw;
   max-width: 30vh;
   background-size: 100% 100%;

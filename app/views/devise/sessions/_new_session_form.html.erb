@@ -2,37 +2,38 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <table class="signin">
     <tr>
-      <th class="signin-photo" rowspan="3"> <img src="http://img.over-blog.com/225x300/0/25/35/10/2012/Femme-miss-moche-12.jpeg" alt="PROUT2CUL" height="37%" width="80%"> </th>
-      <th class="signin-pseudo" colspan="2">
+      <th class="signin-photo" rowspan="3"> <img src="https://rlv.zcache.fr/t_shirt_logo_anonyme-re3261eb06e404651931a723b19ce2642_jyr6m_307.jpg?rvtype=content" alt="PROUT2CUL" height="37%" width="80%"> </th>
+      <th class="signin-pseudo" colspan="6">
         <div class="field">
           <%= f.label " " %><br />
           <%= f.text_field :login, autofocus: true, placeholder: "Pseudo"%>
         </div></th>
     </tr>
     <tr>
-      <td class="signin-mdp" colspan="2">
+      <td class="signin-mdp" colspan="6">
         <div class="field">
           <%= f.label " "%><br />
           <%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe"%>
         </div></td>
     </tr>
     <tr>
-      <td class="signin_last1">
-        <div class="actions">
-          <%= f.submit "Connection" %>
+      <td class="signin_last1" colspan="6">
+        <div>
+          <%= f.submit "Connexion" %>
         </div>
       </td>
-      <td class="signin_last2">
-        <% if devise_mapping.rememberable? -%>
-        <div class="">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div></td>
     </tr>
-    <% end -%>
+
     <% end %>
     <tr>
-      <td class="signin_bottom" colspan="3"><%= render "devise/shared/links" %></td>
+      <td class="signin_bottom" colspan="1">
+      </td>
+      <td class="signin_bottom" colspan="3">
+        <p><%= render "devise/shared/links0" %></p>
+      </td>
+      <td class="signin_bottom" colspan="3">
+        <p><%= render "devise/shared/links1" %></p>
+      </td>
     </tr>
   </table>
 </div>

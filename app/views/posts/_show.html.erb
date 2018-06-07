@@ -5,12 +5,14 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-6" id="comments-container">
     <%= render @post.comments %>
   </div>
   <div class="col-lg-6">
-    <%= form_for @comment, url: {controller: :comments, action: :create}, method: :post do |f| %>
+    <%= form_for [@post, @comment], remote: true do |f| %>
       <%= f.text_field :content, placeholder: "Ecrire un commentaire" %>
+      <%= f.hidden_field :post_id, value: @post.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.submit "Commenter" %>
     <% end %>
   </div>

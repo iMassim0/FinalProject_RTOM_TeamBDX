@@ -1,19 +1,15 @@
 <%= form_for(@user, url: {action: :payment}, method: :get) do |f| %>
   <div class="form-group">
-      <h3>Informations personnelles :</h3>
+      <h3>Informations de livraison :</h3>
       <div class="field">
         <%= f.label "Prénom" %>
-        <%= f.text_field :firstname, autocomplete: "#{@user.firstname}" %>
+        <%= f.text_field :del_firstname, autocomplete: "#{@user.firstname}" %>
       </div>
 
       <div class="field">
         <%= f.label "Nom" %>
-        <%= f.text_field :lastname, autocomplete: @user.lastname %>
+        <%= f.text_field :del_lastname, autocomplete: @user.lastname %>
       </div>
-  </div>
-
-  <div class="form-group">
-      <h3>Adresse de livraison :</h3>
       <div class="field">
         <%= f.label "Adresse" %>
         <%= f.text_field :del_address, autocomplete: @user.del_address, placeholder: "8 Rue des Oliviers" %>
@@ -30,12 +26,18 @@
       </div>
   </div>
 
-  <p id="shiptobilling" class="form-row">
-     L'adresse de facturation est la même que celle de livraison <input type="checkbox" onclick="SetBilling(this.checked);" checked="checked" />
-   </p>
+  <div class="form-group">
+      <h3>Informations de faturation :</h3>
+      <div class="field">
+        <%= f.label "Prénom" %>
+        <%= f.text_field :fac_firstname, autocomplete: "#{@user.firstname}" %>
+      </div>
 
-  <div id="deliveryaddres" class="form-group shipping_address" style="display:none;">
-      <h3>Adresse de facturation :</h3>
+      <div class="field">
+        <%= f.label "Nom" %>
+        <%= f.text_field :fac_lastname, autocomplete: @user.lastname %>
+      </div>
+
       <div class="field">
         <%= f.label "Adresse" %>
         <%= f.text_field :fac_address, autocomplete: @user.fac_address, placeholder: "8 Rue des Oliviers" %>

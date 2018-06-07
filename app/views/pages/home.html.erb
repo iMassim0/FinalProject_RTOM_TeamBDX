@@ -1,4 +1,71 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Connexion", new_user_session_path %>
-<%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
+
+<div class="nav">
+  <%= link_to root_path do %>
+    <div class="liv">
+      <div class="btn-ct-liv">
+        <div class="btn-liv">
+        </div>
+      </div>
+    </div>
+    <% end %>
+<%= link_to profile_path, remote: true do %>
+  <div class="conn">
+    <div class="btn-ct-conn">
+      <div class="btn-conn">
+      </div>
+    </div>
+  </div>
+  <% end %>
+<%= link_to shop_path, remote: true do %>
+  <div class="shop">
+    <div class="btn-ct-shop">
+      <div class="btn-shop">
+      </div>
+    </div>
+  </div>
+  <% end %>
+<%= link_to root_path do %>
+  <div class="iti">
+    <div class="btn-ct-iti">
+      <div class="btn-iti">
+      </div>
+    </div>
+  </div>
+  <% end %>
+<%= link_to root_path do %>
+  <div class="img">
+    <div class="btn-ct-img">
+      <div class="btn-img">
+      </div>
+    </div>
+  </div>
+  <% end %>
+<%= link_to article_path, remote: true do %>
+  <div class="pass">
+    <div class="btn-ct-pass">
+      <div class="btn-pass">
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="links">
+  <a href="#" class="home-link">Mentions Légales</a>
+  <a href="#" class="home-link">CGV</a>
+  <a href="#" class="home-link">Contacts</a>
+</div>
+
+
+</div>
+<div class="dashboard">
+  <div class="z-content bg-content" style="display: none;">
+    <%= link_to root_path do %>
+      <div class="close ">
+        <button type="button" name="button">X</button>
+      </div>
+    <% end %>
+      <div id="main-container">
+
+      </div>
+  </div>
+</div>

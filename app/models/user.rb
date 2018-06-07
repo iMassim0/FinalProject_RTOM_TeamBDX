@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  has_many :orders
+  has_many :posts
+  has_many :comments
+
   attr_accessor :login
 
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -20,7 +24,7 @@ class User < ApplicationRecord
   PHONE_REGEX = /\A\d{10}\z/
 
   validates :username, presence: true, uniqueness: { case_sensitive: :false }, format: { with: NAME_REGEX }
-  validates :del_zipcode, :fac_zipcode, format: { with: ZIPCODE_REGEX }
-  validates :phonenumber, format: { with: PHONE_REGEX }
+  validates :del_zipcode, :fac_zipcode, format: { with: ZIPCODE_REGEX }, allow_nil: true, allow_blank: true
+  validates :phonenumber, format: { with: PHONE_REGEX }, allow_nil: true, allow_blank: true
 
 end

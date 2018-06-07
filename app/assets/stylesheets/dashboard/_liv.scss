@@ -1,0 +1,59 @@
+
+.liv {
+  height: 55%;
+  width: 25%;
+  background-size: 100% 100%;
+  background-image: url('liv.png');
+  -webkit-filter: blur(0.6px);
+  -moz-filter: blur(0.6px);
+  -o-filter: blur(0.6px);
+  -ms-filter: blur(0.6px);
+  filter: blur(0.6px);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 40%;
+  left: 2%;
+  z-index: 1;
+  transform: rotate(3deg);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.liv:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+
+.liv:hover .btn-ct-liv {
+
+  width: 90%;
+  z-index: 3;
+  top: 45%;
+  left: 15%;
+}
+
+.btn-ct-liv {
+  position: absolute;
+  overflow: hidden;
+  height: 41%;
+  width:  0px;
+  transition: .5s ease;
+  top: 45%;
+  left: 15%;
+}
+
+.btn-liv {
+  position: absolute;
+  height: 41%;
+  width: 15vw;
+  max-width: 30vh;
+  background-size: 100% 100%;
+  background-image: url('btn-liv.png');
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+  transform: rotate(-3deg);
+}

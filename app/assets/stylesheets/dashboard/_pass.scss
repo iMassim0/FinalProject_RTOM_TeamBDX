@@ -1,0 +1,54 @@
+
+.pass {
+  height: 45%;
+  width: 35%;
+  background-size: 100% 100%;
+  background-image: url('pass.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 3%;
+  right: 32%;
+  z-index: 1;
+  transform: rotate(-2deg);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+.pass:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+
+.pass:hover .btn-ct-pass {
+
+  width: 90%;
+  z-index: 3;
+  top: 4%;
+  left: -6%;
+}
+
+.btn-ct-pass {
+  position: absolute;
+  overflow: hidden;
+  height: 42%;
+  width:  0px;
+  transition: .5s ease;
+  top: 4%;
+  left: -6%;
+}
+
+.btn-pass {
+  position: absolute;
+  height: 42%;
+  width: 15vw;
+  max-width: 30vh;
+  transform: rotate(2deg);
+  background-size: 100% 100%;
+  background-image: url('btn-pass.png');
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 3;
+}

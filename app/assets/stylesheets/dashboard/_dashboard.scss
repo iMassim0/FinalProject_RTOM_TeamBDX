@@ -1,0 +1,49 @@
+.dashboard {
+  height: auto; /* height:width ratio = 9/16 = .5625  */
+  width: auto;
+  max-width: 177.78vh;
+  max-height: 56.25vw;
+  margin: auto;
+  position: absolute;
+  top:0;bottom:0; /* vertical center */
+  left:0;right:0; /* horizontal center */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
+
+
+.blurred {
+filter: blur(5px) grayscale(100%) brightness(50%);
+-webkit-filter: blur(5px) grayscale(100%) brightness(50%);
+
+}
+
+.z-content {
+  height: 90vh;
+  width: 85vw;
+  z-index: 5;
+  position: fixed;
+}
+
+.dash-content {
+  display: flex;
+  flex-flow: row, nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-content {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.responsive {
+  max-width: 100%;
+  min-width: 100px;
+  width: auto;
+  height: auto;
+  margin: 0 0;
+}

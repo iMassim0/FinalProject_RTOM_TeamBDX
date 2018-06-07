@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  protect_from_forgery with: :exception
 
+  include ApplicationHelper
   protected
 
   def configure_permitted_parameters
@@ -13,7 +15,11 @@ class ApplicationController < ActionController::Base
                     :email,
                     :country,
                     :avatar,
-                    :birthday
+                    :birthday,
+                    :del_address,
+                    :del_zipcode,
+                    :del_town,
+                    :phonenumber
                     ])
   end
 end

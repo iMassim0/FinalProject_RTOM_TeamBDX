@@ -3,7 +3,7 @@
   height: 55%;
   width: 25%;
   background-size: 100% 100%;
-  background-image: url('liv.png');
+  background-image: asset-url('liv.png');
   -webkit-filter: blur(0.6px);
   -moz-filter: blur(0.6px);
   -o-filter: blur(0.6px);
@@ -51,7 +51,7 @@
   width: 15vw;
   max-width: 30vh;
   background-size: 100% 100%;
-  background-image: url('btn-liv.png');
+  background-image: asset-url('btn-liv.png');
   background-repeat: no-repeat;
   position: relative;
   z-index: 2;

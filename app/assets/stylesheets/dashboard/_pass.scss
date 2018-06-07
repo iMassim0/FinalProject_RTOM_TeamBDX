@@ -3,7 +3,7 @@
   height: 45%;
   width: 35%;
   background-size: 100% 100%;
-  background-image: url('pass.png');
+  background-image: asset-url('pass.png');
   background-repeat: no-repeat;
   position: absolute;
   bottom: 3%;
@@ -47,7 +47,7 @@
   max-width: 30vh;
   transform: rotate(2deg);
   background-size: 100% 100%;
-  background-image: url('btn-pass.png');
+  background-image: asset-url('btn-pass.png');
   background-repeat: no-repeat;
   position: relative;
   z-index: 3;

@@ -3,7 +3,7 @@
   height: 42%;
   width: 23%;
   background-size: 100% 100%;
-  background-image: url('shop.png');
+  background-image: asset-url('shop.png');
   background-repeat: no-repeat;
   position: absolute;
   bottom: -8%;
@@ -45,7 +45,7 @@
   width: 15vw;
   max-width: 30vh;
   background-size: 100% 100%;
-  background-image: url('btn-shop.png');
+  background-image: asset-url('btn-shop.png');
   background-repeat: no-repeat;
   position: relative;
   z-index: 2;

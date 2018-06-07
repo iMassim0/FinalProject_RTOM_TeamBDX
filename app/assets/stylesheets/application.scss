@@ -26,7 +26,7 @@ position: absolute;
 top:0;bottom:0; /* vertical center */
 left:0;right:0; /* horizontal center */
 box-sizing: border-box;
-background: #757575 url("background_dashboard.png") 50% 50%;
+background: #757575 asset-url("background_dashboard.png") 50% 50%;
 background-size: cover ;
 background-repeat: no-repeat;
 background-attachment: fixed;

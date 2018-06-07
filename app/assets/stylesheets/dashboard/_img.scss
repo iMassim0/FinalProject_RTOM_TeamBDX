@@ -3,7 +3,7 @@
   height: 29%;
   width: 24%;
   background-size: 100% 100%;
-  background-image: url('img.png');
+  background-image: asset-url('img.png');
   background-repeat: no-repeat;
   position: absolute;
   top: 22%;
@@ -49,7 +49,7 @@
   max-width: 30vh;
   background-size: 100% 100%;
   transform: rotate(6deg);
-  background-image: url('btn-img.png');
+  background-image: asset-url('btn-img.png');
   background-repeat: no-repeat;
   position: relative;
   z-index: 2;

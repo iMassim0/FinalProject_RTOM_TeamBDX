@@ -3,7 +3,7 @@
   height: 49%;
   width: 29%;
   background-size: 100% 100%;
-  background-image: url('iti.png');
+  background-image: asset-url('iti.png');
   background-repeat: no-repeat;
   position: absolute;
   top: 30%;
@@ -45,7 +45,7 @@
   width: 15vw;
   max-width: 30vh;
   background-size: 100% 100%;
-  background-image: url('btn-iti.png');
+  background-image: asset-url('btn-iti.png');
   background-repeat: no-repeat;
   position: relative;
   z-index: 2;

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :products
   resources :order_items
   resource :carts, only: [:show]
-  get '/shop',                      to: "pages#shop",       as: :shop
+  get '/shop',                   to: "pages#shop",       as: :shop
   get '/informations',              to: "carts#require",    as: :require
   patch '/payment',                 to: "carts#payment",    as: :payment
   post "/payment/stripe",           to: "carts#pay"

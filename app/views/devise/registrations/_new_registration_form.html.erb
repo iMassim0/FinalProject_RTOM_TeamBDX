@@ -1,0 +1,35 @@
+<div class="bab">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="bab1">
+    <div class="bab11">
+      <div class="bab111">
+        <p><%= f.text_field :firstname, autofocus: true, autocomplete: "firstname", placeholder: "Prénom", class: "bab-input"%></p>
+      </div>
+      <div class="bab112">
+        <p><%= f.text_field :lastname, autocomplete: "lastname", placeholder: "Nom de Famille", class: "bab-input"%></p>
+      </div>
+      </div>
+      <div class="bab12">
+        <p><%= f.text_field :username, autocomplete: "username", placeholder: "Pseudo", class: "bab-input"%></p>
+      </div>
+      <div class="bab13">
+        <p><%= f.text_field :country, autocomplete: "country", placeholder: "Pays d'Origine", class: "bab-input"%></p>
+      </div>
+      <div class="bab14">
+        <p><%= f.email_field :email, autocomplete: "email", placeholder: "Adresse Email", class: "bab-input"%></p>
+      </div>
+      <div class="bab15">
+        <div class="bab151">
+          <p><%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe", class: "bab-input"%></p>
+        </div>
+        <div class="bab152">
+          <p><%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmer mot de passe", class: "bab-input"%></p>
+        </div>
+      </div>
+      <div class="bab16">
+        <p><%= f.submit "Connexion", class: "btn-connect"%></p>
+      <div class="fd-bab-connect"></div>
+    </div>
+  </div>
+  <% end %>
+</div>

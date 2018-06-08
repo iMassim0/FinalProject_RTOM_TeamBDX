@@ -1,4 +1,5 @@
 <h1>Product for sale</h1>
+<% if !@products.nil? %>
   <% @products.each do |product| %>
     <% if product.availability == 1 %>
       <div class="well">
@@ -6,15 +7,19 @@
           <div class="col-sm-8">
             <h3><%= product.title %></h3>
           </div>
+          <% if user_signed_in? %>
           <div class="col-sm-4">
               <div class="pull-right">
-                <%= form_for(@order_item) do |f| %>
+                <%= form_for @order_item, remote: true do |f| %>
                   <%= f.hidden_field :product_id, value: product.id %>
                   <h5><%= number_to_currency(product.price, unit: '€') %></h5>
                     <%= f.hidden_field :quantity, value: 1, min: 1 %>
                     <% if !(current_order.products.include? product) %>
                       <%= f.submit "Add to cart", class:"btn btn-success" %>
                     <% end %>
+                <% end %>
+              <% else %>
+                  <%= link_to 'Se connecter pour acheter cet article', new_user_session_path %>
                 <% end %>
               </div>
           </div>
@@ -35,3 +40,6 @@
     </div>
     <% end %>
   <% end %>
+<% else %>
+<h2>Pas encore de produit!</h2>
+<% end %>

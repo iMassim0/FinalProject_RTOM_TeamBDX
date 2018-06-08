@@ -10,8 +10,8 @@
   right: 43%;
   z-index: 1;
   transform: rotate(-6deg);
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
   -webkit-transition: .1s ease-in-out;
   transition: .1s ease-in-out;
   opacity: 0.85;
@@ -35,7 +35,7 @@
 .btn-ct-img {
   position: absolute;
   overflow: hidden;
-  height: 53%;
+  height: 58%;
   width:  0px;
   transition: .5s ease;
   top: -1%;
@@ -44,7 +44,7 @@
 
 .btn-img {
   position: absolute;
-  height: 53%;
+  height: 58%;
   width: 15vw;
   max-width: 30vh;
   background-size: 100% 100%;

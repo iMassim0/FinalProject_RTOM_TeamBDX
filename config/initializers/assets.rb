@@ -11,6 +11,7 @@ Rails.application.config.assets.paths << Rails.root.join("lib", "assets", "image
 Rails.application.config.assets.paths << Rails.root.join("lib", "assets", "fonts")
 
 Rails.application.config.assets.precompile += %w( dashboard.css )
+Rails.application.config.assets.precompile += %w( favicon.ico )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.

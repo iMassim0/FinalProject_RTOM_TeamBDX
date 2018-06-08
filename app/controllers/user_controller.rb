@@ -1,9 +1,10 @@
 class UserController < ApplicationController
 
   def profile
-    @user = current_user
-    respond_to do |f|
-      f.js { render :layout => false }
+    if current_user
+      redirect_to profile_path
+    else
+      redirect_to new_user_session_path
     end
   end
 

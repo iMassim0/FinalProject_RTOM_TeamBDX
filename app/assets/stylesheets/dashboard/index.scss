@@ -4,53 +4,9 @@
 @import "img";
 @import "pass";
 @import "shop";
-@import "fonts";
 @import "dashboard";
-$my_beautydemo_font: 'beautydemo';
-$my_lemourserif_font: 'lemourserif';
-$my_pimpernel_font: 'pimpernel';
-
-body {
-  background-image: asset-url('background_dashboard');
-  background-attachment:fixed;
-  background-size: cover;
-}
-
-.nav {
-  height: auto; /* height:width ratio = 9/16 = .5625  */
-  width: auto;
-  max-width: 177.78vh;
-  max-height: 56.25vw;
-  margin: auto;
-  position: absolute;
-  top:0;bottom:0; /* vertical center */
-  left:0;right:0; /* horizontal center */
-  box-sizing: border-box;
-  background: #757575 asset-url("dashboard.png") 50% 50%;
-  background-size: contain ;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow: hidden;
-  z-index: 1;
-}
-
-a {
-  color: rgb(237, 228, 213);
-  text-decoration: none;
-}
-
-a:hover {
-  color: rgb(206,182,144);
-}
-
-.links {
-  width: 100%;
-  text-align: center;
-  font-family: $my_pimpernel_font;
-  position: absolute;
-  bottom: 0;
-  z-index: 20;
-  font-size: 1.2rem;
-  margin-left: 3%;
-  z-index: -1;
-}
+@import "pal";
+@import "fb";
+@import "insta";
+@import "msg";
+@import "gh";

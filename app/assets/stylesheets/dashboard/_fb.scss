@@ -1,0 +1,27 @@
+
+.fb {
+  height: 9%;
+  width: 5%;
+  background-size: 100% 100%;
+  background-image: asset-url('fb.png');
+  -webkit-filter: blur(0.6px);
+  -moz-filter: blur(0.6px);
+  -o-filter: blur(0.6px);
+  -ms-filter: blur(0.6px);
+  filter: blur(0.6px);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0.8%;
+  left: 9.3%;
+  z-index: 1;
+  transform: rotate(0deg);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.fb:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}

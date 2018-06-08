@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-lg-6">
+    <%= render @post %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6" id="comments-container">
+    <%= render @post.comments %>
+  </div>
+  <div class="col-lg-6">
+    <%= form_for [@post, @comment], remote: true do |f| %>
+      <%= f.text_field :content, placeholder: "Ecrire un commentaire" %>
+      <%= f.hidden_field :post_id, value: @post.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit "Commenter" %>
+    <% end %>
+  </div>
+</div>
+<%= link_to 'Edit', edit_post_path(@post), remote: true %> |
+<%= link_to 'Back', posts_path, remote: true %>

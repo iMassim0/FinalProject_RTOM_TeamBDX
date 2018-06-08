@@ -1,6 +1,0 @@
-<% if user_signed_in? %>
-<h2>Rentrez vos informations pour passer au paiement :</h2>
-<%= render 'form_require' %>
-<% else %>
-<h2>Vous devez avoir un <%= link_to 'compte', new_user_session_path %> pour valider votre panier !</h2>
-<% end %>

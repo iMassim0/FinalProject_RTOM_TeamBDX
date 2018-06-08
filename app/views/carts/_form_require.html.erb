@@ -1,28 +1,28 @@
-<%= form_for(@user, url: {action: :payment}, method: :get) do |f| %>
+<%= form_with(model: @user, url: {action: :payment}) do |f| %>
   <div class="form-group">
       <h3>Informations de livraison :</h3>
       <div class="field">
         <%= f.label "Prénom" %>
-        <%= f.text_field :del_firstname, autocomplete: "#{@user.firstname}" %>
+        <%= f.text_field :firstname, autocomplete: :firstname %>
       </div>
 
       <div class="field">
         <%= f.label "Nom" %>
-        <%= f.text_field :del_lastname, autocomplete: @user.lastname %>
+        <%= f.text_field :lastname, autocomplete: :lastname %>
       </div>
       <div class="field">
         <%= f.label "Adresse" %>
-        <%= f.text_field :del_address, autocomplete: @user.del_address, placeholder: "8 Rue des Oliviers" %>
+        <%= f.text_field :del_address, autocomplete: :del_address, placeholder: "8 Rue des Oliviers" %>
       </div>
 
       <div class="field">
         <%= f.label "Code Postal" %>
-        <%= f.text_field :del_zipcode, autocomplete: @user.del_zipcode, placeholder: "33000" %>
+        <%= f.text_field :del_zipcode, autocomplete: :del_zipcode, placeholder: "33000" %>
       </div>
 
       <div class="field">
         <%= f.label "Ville" %>
-        <%= f.text_field :del_town, autocomplete: @user.del_town, placeholder: "Bordeaux" %>
+        <%= f.text_field :del_town, autocomplete: :del_town, placeholder: "Bordeaux" %>
       </div>
   </div>
 
@@ -40,19 +40,19 @@
 
       <div class="field">
         <%= f.label "Adresse" %>
-        <%= f.text_field :fac_address, autocomplete: @user.fac_address, placeholder: "8 Rue des Oliviers" %>
+        <%= f.text_field :fac_address, autocomplete: :fac_address, placeholder: "8 Rue des Oliviers" %>
       </div>
 
       <div class="field">
         <%= f.label "Code Postal" %>
-        <%= f.text_field :fac_zipcode, autocomplete: @user.fac_zipcode, placeholder: "33000" %>
+        <%= f.text_field :fac_zipcode, autocomplete: :fac_zipcode, placeholder: "33000" %>
       </div>
 
       <div class="field">
         <%= f.label "Ville" %>
-        <%= f.text_field :fac_town, autocomplete: @user.fac_town, placeholder: "Bordeaux" %>
+        <%= f.text_field :fac_town, autocomplete: :fac_town, placeholder: "Bordeaux" %>
       </div>
   </div>
 
-  <%= f.submit "Go!", class: "btn btn-large btn-primary" %>
+  <%= f.submit "Confirmer la commande", class: "btn btn-large btn-primary" %>
 <% end %>

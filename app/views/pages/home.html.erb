@@ -1,6 +1,6 @@
 
 <div class="nav">
-  <%= link_to root_path do %>
+  <%= link_to book_path, remote: true do %>
     <div class="liv">
       <div class="btn-ct-liv">
         <div class="btn-liv">
@@ -53,7 +53,7 @@
     </div>
   </div>
   <% end %>
-<%= link_to root_path do %>
+<%= link_to trip_path, remote: true do %>
   <div class="iti">
     <div class="btn-ct-iti">
       <div class="btn-iti">
@@ -61,7 +61,7 @@
     </div>
   </div>
   <% end %>
-<%= link_to root_path do %>
+<%= link_to characters_path, remote: true do %>
   <div class="img">
     <div class="btn-ct-img">
       <div class="btn-img">
@@ -69,7 +69,7 @@
     </div>
   </div>
   <% end %>
-<%= link_to article_path, remote: true do %>
+<%= link_to blog_path, remote: true do %>
   <div class="pass">
     <div class="btn-ct-pass">
       <div class="btn-pass">
@@ -87,12 +87,8 @@
 </div>
 <div class="dashboard">
   <div class="z-content bg-content" style="display: none;">
-    <%= link_to root_path do %>
-      <div class="close ">
-        <button type="button" name="button">X</button>
-      </div>
-    <% end %>
-      <div id="main-container">
+    <%= button_to "Fermer", root_path, method: :get, class: "close" %>
+      <div id="main-container" class="main-container">
 
       </div>
   </div>

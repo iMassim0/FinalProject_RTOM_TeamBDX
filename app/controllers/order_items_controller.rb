@@ -8,6 +8,7 @@ class OrderItemsController < ApplicationController
     @order.user = current_user
     @order.save
     session[:order_id] = @order.id
+    @order_items = @order.order_items
     respond_to do |f|
       f.js { }
     end
@@ -25,6 +26,7 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
+    @order.update(subtotal: @order.subtotal)
     respond_to do |f|
       f.js { }
     end

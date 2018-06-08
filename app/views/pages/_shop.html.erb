@@ -1,4 +1,6 @@
+<div class="shop-class">
 <h1>Product for sale</h1>
+<%= link_to "Mon panier", carts_path, class: "h3", remote: true %>
 <% if !@products.nil? %>
   <% @products.each do |product| %>
     <% if product.availability == 1 %>
@@ -43,3 +45,4 @@
 <% else %>
 <h2>Pas encore de produit!</h2>
 <% end %>
+</div>

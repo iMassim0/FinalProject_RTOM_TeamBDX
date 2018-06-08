@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   end
 
   def shop
-
+    @products = Product.all
+    @order_item = OrderItem.new
     respond_to do |f|
       f.js { render :layout => false }
     end

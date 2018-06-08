@@ -5,11 +5,8 @@
 </div>
 
   <% if !(@order_items.length == 0) %>
-  <h4 class="text-right"><%= link_to 'Valider mon panier', require_path, class: "btn btn-success" %></h4>
+  <h4 class="text-right"><%= link_to 'Valider mon panier', require_path, class: "btn btn-success", remote: true  %></h4>
   <% end %>
 <% else %>
 <h4>Vous devez être connecté pour créer un panier</h4>
 <% end %>
-
-
-  <h4 class="text-right"><%= link_to 'Valider mon panier', require_path, class: "btn btn-success", remote: true %></h4>

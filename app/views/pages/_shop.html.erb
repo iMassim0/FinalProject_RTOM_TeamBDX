@@ -1,6 +1,6 @@
 <div class="shop-class">
-<h1>Product for sale</h1>
-<%= link_to "Mon panier", carts_path, class: "h3", remote: true %>
+<h1>L'ATELIER</h1>
+<%= link_to "Mon panier", carts_path, class: "h3 text-right", remote: true %>
 <% if !@products.nil? %>
   <% @products.each do |product| %>
     <% if product.availability == 1 %>
@@ -17,7 +17,7 @@
                   <h5><%= number_to_currency(product.price, unit: '€') %></h5>
                     <%= f.hidden_field :quantity, value: 1, min: 1 %>
                     <% if !(current_order.products.include? product) %>
-                      <%= f.submit "Add to cart", class:"btn btn-success" %>
+                      <%= f.submit "Ajouter au panier", class:"btn btn-success" %>
                     <% end %>
                 <% end %>
               <% else %>

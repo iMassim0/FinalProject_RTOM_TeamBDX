@@ -21,16 +21,16 @@ $my_pimpernel_font: 'pimpernel';
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border: 0.4px solid black;
-  width: 82%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 84%;
   height: 17%;
   margin-left: 2%;
-  margin-top: 69%;
+  margin-top: 66%;
 }
 
 .aba11 {
   height: 80%;
-  border: 0.4px solid black;
+  border: 0.4px solid rgba(0,0,0,0);
   width: 30%;
   text-align: center;
   display: flex;
@@ -43,9 +43,8 @@ $my_pimpernel_font: 'pimpernel';
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  justify-content: center;
   height: 80%;
-  border: 0.4px solid black;
+  border: 0.4px solid rgba(0,0,0,0);
   width: 60%;
   text-align: center;
   align-items: center;
@@ -54,50 +53,59 @@ $my_pimpernel_font: 'pimpernel';
 .aba121 {
   height: 30%;
   width: 90%;
-  border: 0.4px solid black;
+  border: 0.4px solid rgba(0,0,0,0);
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
 }
 
 .aba122 {
   height: 30%;
   width: 90%;
-  border: 0.4px solid black;
+  border: 0.4px solid rgba(0,0,0,0);
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
 }
 
 .input-connect {
-  width: 190%;
+  width: 90%;
   height: 50%;
   border: 0px solid rgba(0,0,0,0);
-
+  font-family: $my_pimpernel_font;
+  font-size: 1.6rem;
+  margin-left: 10%;
 }
 .input-connect:valid {
   outline: none;
   margin-left: 0;
   background-color: rgba(0,0,0,0);
-  font-family: $my_pimpernel_font;
-  font-size: 1.2rem;
+
 }
 
 .btn-connect {
+  border: 0px solid rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0);
+  font-family: $my_pimpernel_font;
+  color: rgb(205, 206, 196);
+  font-size: 1.2rem;
+  z-index: 40;
+}
+
+.fd-btn-connect {
   background-image: asset-url('mini-connect.png');
   background-size: cover;
-  border: 0px solid rgba(0,0,0,0);
-  background-color: none;
-  font-family: $my_pimpernel_font;
-  font-size: 1.2rem;
+  position: absolute;
+  bottom: 22.5%;
+  width: 34%;
+  height: 4.8%;
+  z-index: -2;
 }
 
 .aba123 {
   height: 30%;
   width: 90%;
-  border: 0.4px solid black;
+  border: 0.4px solid rgba(0,0,0,0);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -109,7 +117,7 @@ $my_pimpernel_font: 'pimpernel';
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 0.4px solid black;
+  border: 0.4px solid rgba(0,0,0,0);
   width: 82%;
   height: 4%;
   margin-left: 2%;
@@ -117,7 +125,7 @@ $my_pimpernel_font: 'pimpernel';
 }
 
 .aba21 {
-  border: 0.4px solid black;
+  border: 0.4px solid rgba(0,0,0,0);
   width: 40%;
   height: 80%;
   text-align: center;
@@ -129,7 +137,7 @@ $my_pimpernel_font: 'pimpernel';
 }
 
 .aba22 {
-  border: 0.4px solid black;
+  border: 0.4px solid rgba(0,0,0,0);
   width: 40%;
   height: 80%;
   text-align: center;
@@ -138,4 +146,8 @@ $my_pimpernel_font: 'pimpernel';
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.aba2 > .aba21 {
+  color: black;
 }

@@ -1,18 +1,10 @@
 .dashboard {
-  height: auto; /* height:width ratio = 9/16 = .5625  */
-  width: auto;
-  max-width: 177.78vh;
-  max-height: 56.25vw;
-  margin: auto;
-  position: absolute;
-  top:0;bottom:0; /* vertical center */
-  left:0;right:0; /* horizontal center */
-  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  overflow: auto;
 }
 
 
@@ -24,8 +16,8 @@ filter: blur(5px) grayscale(100%) brightness(50%);
 
 .z-content {
   height: 90vh;
-  width: 85vw;
-  z-index: 5;
+  width: 75vw;
+  z-index: 100;
   position: fixed;
 }
 

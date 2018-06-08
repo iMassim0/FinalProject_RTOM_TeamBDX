@@ -2,6 +2,7 @@ $my_beautydemo_font: 'beautydemo';
 $my_lemourserif_font: 'lemourserif';
 $my_pimpernel_font: 'pimpernel';
 
+.signin-class {
 a {
   text-decoration: none;
 }
@@ -49,7 +50,7 @@ a:visited {
   width: 90%;
   margin: auto;
   z-index: 2;
-    overflow: scroll;
+  overflow-y: auto;
 }
 
 .signin, .signin-mdp, .signin-pseudo, .signin_last1, .signin_last2 {
@@ -88,4 +89,6 @@ input:focus {
   border: 2px solid rgba(0,0,0,0);
   height: 100%;
   font-size: 100%;
+}
+
 }

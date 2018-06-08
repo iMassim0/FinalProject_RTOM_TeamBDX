@@ -1,39 +1,28 @@
-<div class="passport-form">
+<div class="aba">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <table class="signin">
-    <tr>
-      <th class="signin-photo" rowspan="3"> <%= image_tag 'anonym.png',  height: "37%", width: "72%"%> </th>
-      <th class="signin-pseudo" colspan="6">
-        <div class="field">
-          <%= f.label " " %><br />
-          <%= f.text_field :login, autofocus: true, placeholder: "Pseudo"%>
-        </div></th>
-    </tr>
-    <tr>
-      <td class="signin-mdp" colspan="6">
-        <div class="field">
-          <%= f.label " "%><br />
-          <%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe"%>
-        </div></td>
-    </tr>
-    <tr>
-      <td class="signin_last1" colspan="6">
-        <div>
-          <%= f.submit "Connexion" %>
-        </div>
-      </td>
-    </tr>
-
-    <% end %>
-    <tr>
-      <td class="signin_bottom" colspan="1">
-      </td>
-      <td class="signin_bottom" colspan="3">
-        <p><%= render "devise/shared/links0" %></p>
-      </td>
-      <td class="signin_bottom" colspan="3">
-        <p><%= render "devise/shared/links1" %></p>
-      </td>
-    </tr>
-  </table>
+  <div class="aba1">
+    <div class="aba11">
+      <p><%= image_tag 'anonym.png',  height: "37%", width: "72%"%></p>
+    </div>
+    <div class="aba12">
+      <div class="aba121">
+      <p><%= f.text_field :login, autofocus: true, placeholder: "Pseudo", class: "input-connect" %></p>
+      </div>
+      <div class="aba122">
+      <p><%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe", class: "input-connect" %></p>
+      </div>
+      <div class="aba123">
+      <p><%= f.submit "Connexion", class: "btn-connect"%></p>
+      </div>
+    </div>
+  </div>
+  <div class="aba2">
+    <div class="aba21">
+      <p><%= render "devise/shared/links0" %></p>
+    </div>
+    <div class="aba22 ">
+      <p><%= render "devise/shared/links1" %></p>
+    </div>
+  </div>
+  <% end %>
 </div>

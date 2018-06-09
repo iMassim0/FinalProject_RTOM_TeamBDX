@@ -1,6 +1,6 @@
 <%= form_with(model: @user, url: {action: :payment}) do |f| %>
   <div class="form-group">
-      <h3>Informations de livraison :</h3>
+      <h3>Informations personnelles :</h3>
       <div class="field">
         <%= f.label "Prénom" %>
         <%= f.text_field :firstname, autocomplete: :firstname %>
@@ -9,6 +9,23 @@
       <div class="field">
         <%= f.label "Nom" %>
         <%= f.text_field :lastname, autocomplete: :lastname %>
+      </div>
+      <div class="field">
+        <%= f.label "Numéro de téléphone" %>
+        <%= f.text_field :phonenumber, autocomplete: :phonenumber, placeholder: "0---------" %>
+      </div>
+  </div>
+
+  <div class="form-group">
+      <h3>Adresse de livraison :</h3>
+      <div class="field">
+        <%= f.label "Prénom" %>
+        <%= f.text_field :del_firstname, autocomplete: :firstname %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Nom" %>
+        <%= f.text_field :del_lastname, autocomplete: :lastname %>
       </div>
       <div class="field">
         <%= f.label "Adresse" %>
@@ -27,15 +44,15 @@
   </div>
 
   <div class="form-group">
-      <h3>Informations de faturation :</h3>
+      <h3>Adresse de facturation :</h3>
       <div class="field">
         <%= f.label "Prénom" %>
-        <%= f.text_field :fac_firstname, autocomplete: "#{@user.firstname}" %>
+        <%= f.text_field :fac_firstname, autocomplete: :fac_firstname %>
       </div>
 
       <div class="field">
         <%= f.label "Nom" %>
-        <%= f.text_field :fac_lastname, autocomplete: @user.lastname %>
+        <%= f.text_field :fac_lastname, autocomplete: :fac_lastname %>
       </div>
 
       <div class="field">

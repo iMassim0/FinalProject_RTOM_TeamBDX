@@ -20,21 +20,14 @@ font-family: $my_..._font;
 @import "fonts";
 @import "dashboard";
 @import "user";
+@import "shop/index";
+@import "bootstrap";
 
 $my_beautydemo_font: 'beautydemo';
 $my_lemourserif_font: 'lemourserif';
 $my_pimpernel_font: 'pimpernel';
 
 body {
-height: auto; /* height:width ratio = 9/16 = .5625  */
-width: auto;
-max-width: 177.78vh;
-max-height: 56.25vw;
-margin: auto;
-position: absolute;
-top:0;bottom:0; /* vertical center */
-left:0;right:0; /* horizontal center */
-box-sizing: border-box;
 background: #757575 asset-url("background_dashboard.png") 50% 50%;
 background-size: cover ;
 background-repeat: no-repeat;

@@ -1,18 +1,16 @@
 .shop-class {
+  height: 100%;
+  width: 100%;
 }
 
-.red {
-  background-color: red;
+.shop-head {
+  height: 10vh;
 }
 
-.blue {
-  background-color: skyblue;
+.shop-preview, .shop-info {
+  height: 50vh;
 }
 
-.green {
-  background-color: green;
-}
-
-.yellow {
-  background-color: yellow;
+.shop-carousel {
+  height: 30vh;
 }

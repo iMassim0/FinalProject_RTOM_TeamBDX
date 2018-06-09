@@ -1,40 +1,60 @@
 <div class="shop-class">
-      <div class="container-fluid text-center">
-          <div class="row">
-            <div class="col-lg-6">
+      <div class="container-fluid shop-head text-center">
+          <div class="row align-items-center" style="padding-top: 1%;">
+            <div class="col-lg-8">
               <h1>L'ATELIER</h1>
             </div>
-            <div class="col-lg-5 text-right">
-              <%= link_to "Voir mon panier", carts_path, remote: true, class: "btn btn-info" %>
+            <div class="col-lg-4">
+              <%= link_to "Voir mon panier", carts_path, remote: true %>
             </div>
           </div>
+      </div>
 
-    <div class="row text-center">
+  <div class="container-fluid">
+      <div class="row ">
+          <div class="col-lg-8 shop-preview">
+            <p>test</p>
+          </div>
+          <div class="col-lg-4 shop-info">
+            <p>machin</p>
+          </div>
+      </div>
+
+
+    <div class="row shop-carousel align-items-center justify-content-around text-center">
 
           <% if !@products.nil? %>
             <% @products.each do |product| %>
               <% if product.availability == 1 %>
-                <div class="col-lg-4">
-                  <div class="col-lg-6">
+                <div class="col-lg-3 border">
+                  <div class="col-lg-12">
                     <h3>
                       <%= product.title %>
                     </h3>
                   </div>
 
                   <% if user_signed_in? %>
+                        <div class="row align-items-center justify-content-center">
                     <div class="col-lg-6">
                         <%= form_for @order_item, remote: true do |f| %>
+                          <%= image_tag product.image, style: "width:8vw; height:auto;margin:1%;" %>
                           <%= f.hidden_field :product_id, value: product.id %>
+                      </div>
+                          <div class="col-lg-6">
                           <p><%= product.price %> €</p>
+                          </div>
+                            </div>
                           <%= f.hidden_field :quantity, value: 1, min: 1 %>
 
                             <% if !(current_order.products.include? product) %>
-
+                            <div class="col-lg-12">
                               <%= f.submit "Ajouter au panier" %>
+                            </div>
 
                             <% end %>
+
                         <% end %>
-                    </div>
+
                 </div>
                 <% else %>
                   <%= link_to 'Se connecter pour acheter cet article', new_user_session_path %>
@@ -46,10 +66,10 @@
 
 
               <% elsif product.availability == 0 %>
-                  <div class="col-sm-8">
+                  <div class="col-sm-12">
                     <h3><%= product.title %></h3>
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-12">
                       <div class="pull-right">
                         <p>Rupture de stock</p>
                       </div>
@@ -64,5 +84,6 @@
             <% end %>
 
           </div>
-    </div>
+      </div>
+
 </div>

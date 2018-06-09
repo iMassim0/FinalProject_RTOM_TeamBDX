@@ -1,29 +1,25 @@
-<div class="aba">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="aba1">
-    <div class="aba11">
+
+  <div class="div-signin">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="dsi-img">
       <p><%= image_tag 'anonym.png',  height: "37%", width: "72%"%></p>
     </div>
-    <div class="aba12">
-      <div class="aba121">
+    <div class="dsi-pseudo">
       <p><%= f.text_field :login, autofocus: true, placeholder: "Pseudo", class: "input-connect" %></p>
-      </div>
-      <div class="aba122">
-      <p><%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe", class: "input-connect" %></p>
-      </div>
-      <div class="aba123">
-        <p><%= f.submit "Connexion", class: "btn-connect"%></p>
-        <div class="fd-btn-connect"></div>
-      </div>
     </div>
-  </div>
-  <div class="aba2">
-    <div class="aba21">
+    <div class="dsi-pwd">
+      <p><%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe", class: "input-connect" %></p>
+    </div>
+    <div class="dsi-btn">
+      <p><%= f.submit "Connexion", class: "btn-connect"%></p>
+    </div>
+    <div class="dsi-fd-btn">
+    </div>
+    <div class="dsi-cre">
       <p><%= render "devise/shared/links0" %></p>
     </div>
-    <div class="aba22 ">
+    <div class="dsi-oubli">
       <p><%= render "devise/shared/links1" %></p>
     </div>
+      <% end %>
   </div>
-  <% end %>
-</div>

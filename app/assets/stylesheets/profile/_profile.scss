@@ -117,12 +117,14 @@
 .aa12 {
   margin-top: 5%;
   font-family: $my_pimpernel_font;
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   height: 100%;
-  border: 0.4px solid rgba(0,0,0,0);
+  border: 0.4px solid rgba(0,0,0,1);
   width: 60%;
+  display: flex;
   text-align: center;
   align-items: center;
+  justify-content: center;
 }
 
 .aa2 {

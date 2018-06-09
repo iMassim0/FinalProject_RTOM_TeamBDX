@@ -28,7 +28,8 @@ $my_pimpernel_font: 'pimpernel';
   width: 84%;
   height: 17%;
   margin-left: 2%;
-  margin-top: 66%;
+  margin-top: 72%;
+  overflow: scroll;
 }
 
 .aba11 {
@@ -94,7 +95,7 @@ $my_pimpernel_font: 'pimpernel';
   background-color: rgba(0,0,0,0);
   font-family: $my_pimpernel_font;
   color: rgb(205, 206, 196);
-  font-size: 1.2vh;
+  font-size: 2.5vh;
   z-index: 40;
 }
 

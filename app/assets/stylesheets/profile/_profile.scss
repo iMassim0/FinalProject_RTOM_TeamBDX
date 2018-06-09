@@ -1,0 +1,167 @@
+.pi_content {
+  border: 0.1px solid rgba(0,0,0,0);
+  height: 25%;
+  width: 14%;
+  font-family: $my_beautydemo_font;
+  font-size: 2vw;
+  position: absolute;
+  top: 49.5%;
+  right: 8%;
+  z-index: 56;
+  line-height: 1em;
+  overflow: scroll;
+  margin: 0 0 0 2%;
+  vertical-align: text-top;
+}
+
+
+.orders {
+  height: 42%;
+  width: 20.5%;
+  font-family: $my_pimpernel_font;
+  font-size: 1.2rem;
+  border: 0.1px dashed rgba(0,0,0,0);
+  display: flex;
+  flex-direction: column;
+  z-index: 52;
+  position: absolute;
+  top: 26.5%;
+  left: 49.8%;
+  transform: rotate(2.5deg);
+  background-color: rgba(231,231,231,0.5);
+  text-align: center;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+
+.ordertotal {
+  background-color: rgba(184, 188, 166, 0.8);
+
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  background: asset-url('conn-pass.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 25%;
+  height: 65%;
+  position: absolute;
+  top: 42%;
+  left: 3%;
+  transform: rotate(-2deg);
+  z-index: 8;
+}
+
+.infos {
+  height: 75%;
+  width: 45%;
+  background-size: contain;
+  background-image: asset-url('carnet_user.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 3%;
+  right: 26%;
+  z-index: 1;
+  transform: rotate(2deg);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+
+}
+
+.postit {
+  height: 38%;
+  width: 25%;
+  background-size: contain;
+  background-image: asset-url('postit.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 20%;
+  right: 1%;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(0deg);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+
+.aa1 {
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 80%;
+  height: 19%;
+  margin-left: 4%;
+  margin-top: 74%;
+}
+
+.aa11 {
+  margin-top: 5%;
+  height: 100%;
+  background-image: asset-url('anonym.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 0.1px solid rgba(0,0,0,0);
+  width: 40%;
+  text-align: center;
+}
+
+.aa12 {
+  margin-top: 5%;
+  font-family: $my_pimpernel_font;
+  font-size: 1.8vw;
+  height: 100%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 60%;
+  text-align: center;
+  align-items: center;
+}
+
+.aa2 {
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  align-items: space-around;
+  justify-content: space-around;
+  font-family: $my_pimpernel_font;
+  font-size: 1.8vw;
+  height: 10%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 80%;
+  margin-left: 4%;
+}
+
+.aa21 {
+  margin-top: 8%;
+  font-family: $my_pimpernel_font;
+  font-size: 1.2vw;
+  height: 50%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 40%;
+  text-align: center;
+  align-items: center;
+  color: black;
+}
+
+.aa22 {
+  margin-top: 8%;
+  font-family: $my_pimpernel_font;
+  font-size: 1.2vw;
+  height: 50%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 40%;
+  text-align: center;
+  align-items: center;
+}
+
+.story > a {
+    color: black;
+}

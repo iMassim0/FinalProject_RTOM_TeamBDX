@@ -16,6 +16,7 @@
 /*
 font-family: $my_..._font;
 */
+
 @import "fonts";
 @import "dashboard";
 @import "user";
@@ -47,6 +48,7 @@ z-index: 10;
   width: auto;
   max-width: 177.78vh;
   max-height: 56.25vw;
+  min-height: 550px;
   margin: auto;
   position: absolute;
   top:0;bottom:0; /* vertical center */
@@ -66,7 +68,7 @@ z-index: 10;
 }
 
 a {
-  color: rgb(237, 228, 213);
+  color: rgb(92, 93, 96);
   text-decoration: none;
 }
 

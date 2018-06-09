@@ -2,6 +2,14 @@ $my_beautydemo_font: 'beautydemo';
 $my_lemourserif_font: 'lemourserif';
 $my_pimpernel_font: 'pimpernel';
 
+.signup {
+  height: auto; /* height:width ratio = 9/16 = .5625  */
+  width: auto;
+  max-width: 177.78vh;
+  max-height: 56.25vw;
+  overflow: scroll;
+}
+
 .bab {
   background: asset-url('conn-pass.png');
   background-size: cover;
@@ -12,7 +20,9 @@ $my_pimpernel_font: 'pimpernel';
   top: 22%;
   left: 36%;
   transform: rotate(-3deg);
-  border: 0.4px solid rgba(0,0,0,0);
+  border: 0.4px solid rgba(0,0,0,1);
+  min-width: 370px;
+  min-height: 470px;
 }
 
 .bab1 {
@@ -22,7 +32,7 @@ $my_pimpernel_font: 'pimpernel';
   justify-content: flex-start;
   width: 84%;
   height: 38%;
-  border: 0.4px solid rgba(0,0,0,0);
+  border: 0.4px solid rgba(0,0,0,1);
   position: absolute;
   top: 54%;
   left: 3%;
@@ -32,7 +42,7 @@ $my_pimpernel_font: 'pimpernel';
   width: 100%;
   height: 90%;
   margin: 0;
-  border: 0.4px solid rgba(0,0,0,0);
+  border: 0.4px solid rgba(0,0,0,1);
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
@@ -44,12 +54,12 @@ $my_pimpernel_font: 'pimpernel';
   border-left: none;
   background: rgba(0, 0, 0, 0);
   font-family: $my_pimpernel_font;
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 
 .bab16 {
   padding-top: 0%;
-  border: 0.4px solid rgba(0,0,0,0);
+  border: 0.4px solid rgba(0,0,0,1);
   height: 140%;
 }
 
@@ -61,4 +71,8 @@ $my_pimpernel_font: 'pimpernel';
   width: 34%;
   height: 11%;
   z-index: -2;
+}
+
+.close-bab {
+
 }

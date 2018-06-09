@@ -73,7 +73,7 @@ $my_pimpernel_font: 'pimpernel';
   height: 50%;
   border: 0px solid rgba(0,0,0,0);
   font-family: $my_pimpernel_font;
-  font-size: 1.6rem;
+  font-size: 3vh;
   margin-left: 10%;
 }
 .input-connect:valid {
@@ -88,7 +88,7 @@ $my_pimpernel_font: 'pimpernel';
   background-color: rgba(0,0,0,0);
   font-family: $my_pimpernel_font;
   color: rgb(205, 206, 196);
-  font-size: 1.2rem;
+  font-size: 1.2vh;
   z-index: 40;
 }
 

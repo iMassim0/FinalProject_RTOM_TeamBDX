@@ -1,33 +1,60 @@
-    <div class="col-lg-6 bg-info">
-      <h2>Mes infos</h2>
-      <p>Pseudo: <%= @user.username %></p>
-      <p>Nom: <%= @user.lastname %></p>
-      <p>Prénom: <%= @user.firstname %></p>
-    </div>
+<div class="nav">
 
-    <div class="col-lg-6 bg-danger">
-      <h2>Mes commandes passées :</h2>
-      <table class="table">
-        <thead>
-          <tr class="table-active">
-            <th scope="col">N° de commande</th>
-            <th scope="col">Articles</th>
-            <th scope="col">Prix</th>
-          </tr>
-        </thead>
-        <tbody>
-      <% @user.orders.each do |order| %>
-          <tr>
-            <th class="table-active" rowspan="<%= order.order_items.length %>"><%= order.id %></th>
-        <% order.order_items.each do |item| %>
-            <td><%= item.product.title %></td>
-            <td><%= item.product.price %> €</td>
-          </tr>
-        <% end %>
-        <tr class="table-secondary">
-          <th></th>
-          <th>SOUS-TOTAL</th>
-          <th><%= order.subtotal %> €</th>
+  <div class="pi_content">
+    <i class="far fa-check-circle"></i> Se créer un compte</br>
+    <i class="far fa-circle"></i> Acheter le livre</br>
+    <i class="far fa-circle"></i> Visiter l'atelier</br>
+    <i class="far fa-circle"></i> Laisser son</br><i class="far fa-check-circle"></i>temoignage
+  </div>
+
+  <div class="story">
+      <div class="aa1">
+        <div class="aa11">
+        </div>
+        <div class="aa12">
+            <p>Voyageur: <%= @user.username.capitalize %></p>
+        </div>
+      </div>
+      <div class="aa2">
+        <div class="aa21">
+          <%= link_to 'Changer ma photo' %>
+        </div>
+        <div class="aa22">
+            <%= link_to 'Se déconnecter' %>
+        </div>
+      </div>
+  </div>
+
+  <div class="infos">
+  </div>
+  <div class="postit">
+  </div>
+
+  <div class="orders">
+    <h2>Mes commandes passées :</h2>
+    <table class="table">
+      <thead>
+        <tr class="thead">
+          <th> # </th>
+          <th>Articles</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+    <% @user.orders.each do |order| %>
+        <tr class="orderdetails">
+          <th class="" rowspan="<%= order.order_items.length %>"><%= order.id %></th>
+          <% order.order_items.each do |item| %>
+          <td><%= item.product.title %></td>
+          <td><%= item.product.price %> €</td>
         </tr>
       <% end %>
-    </div>
+      <tr class="ordertotal">
+        <th colspan="2">SOUS-TOTAL</th>
+        <th><%= order.subtotal %> €</th>
+
+      </tr>
+    <% end %>
+  </tbody>
+  </div>
+</div>

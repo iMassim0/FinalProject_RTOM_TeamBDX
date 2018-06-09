@@ -48,7 +48,6 @@ z-index: 10;
   width: auto;
   max-width: 177.78vh;
   max-height: 56.25vw;
-  min-height: 550px;
   margin: auto;
   position: absolute;
   top:0;bottom:0; /* vertical center */
@@ -57,7 +56,6 @@ z-index: 10;
   background: #757575 asset-url("dashboard.png") 50% 50%;
   background-size: contain ;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   overflow: hidden;
   z-index: 1;
 }

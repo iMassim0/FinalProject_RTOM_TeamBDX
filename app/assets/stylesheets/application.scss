@@ -54,14 +54,17 @@ min-height: 300px;
   z-index: 1;
 }
 
-.links + a {
-  color: rgb(237, 228, 213);
-  text-decoration: none;
+a {
+    color: rgb(237, 228, 213);
 }
 
-a {
-  color: rgb(92, 93, 96);
+.link {
+  color: rgb(237, 228, 213) !important;
   text-decoration: none;
+  z-index: 39;
+  position: absolute;
+  bottom: 5%;
+  top: 45%;
 }
 
 a:hover {
@@ -70,36 +73,41 @@ a:hover {
 
 input {
   font-family: $my_pimpernel_font;
-  font-size: 180%;
+  font-size: 1.2vw;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: rgba(0,0,0,0);
+  letter-spacing: 2px;
 }
-@media screen and (max-width: 1600px) {
+
+input:valid {
+  outline: none;
+}
+
+@media screen and (min-width: 1000px){
   input {
-    font-size: 140%;
+    font-size: 2vh;
+  }
+  a {
+    font-size: 1.65vh;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px){
   input {
-    font-size: 100%;
+    font-size: 1.5vh;
+  }
+  a {
+    font-size: 0.9vh;
   }
 }
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 700px){
   input {
-    font-size: 60%;
+    font-size: 1.2vw;
   }
-}
-@media screen and (max-width: 1600px) {
-  input {
-    font-size: 140%;
-  }
-}
-@media screen and (max-width: 1000px) {
-  input {
-    font-size: 100%;
-  }
-}
-@media screen and (max-width: 600px) {
-  input {
-    font-size: 60%;
+  a {
+    font-size: 0.75vw;
   }
 }
 
@@ -109,8 +117,8 @@ input {
   font-family: $my_pimpernel_font;
   position: absolute;
   bottom: 0;
-  z-index: 20;
   font-size: 1.6rem;
   margin-left: 3%;
   z-index: -1;
+  color: rgb(237, 228, 213) !important;
 }

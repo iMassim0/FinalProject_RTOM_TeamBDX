@@ -1,7 +1,0 @@
-<% if user_signed_in? %>
-<%= link_to "Compte : #{current_user.username}", root_path, class: "btn btn-link" %>
-<%= link_to "Market", shop_path, class: "btn btn-link" %>
-<% else %>
-<%= link_to "Market", shop_path, class: "btn btn-link" %>
-
-<% end %>

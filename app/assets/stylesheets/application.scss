@@ -10,16 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- */
-
-
-/*
-font-family: $my_..._font;
+ * font-family: $my_..._font;
 */
 
-@import "fonts";
-@import "dashboard";
-@import "user";
+@import "fonts/fonts";
+@import "dashboard/index";
+@import "profile/index";
 @import "shop/index";
 @import "bootstrap";
 

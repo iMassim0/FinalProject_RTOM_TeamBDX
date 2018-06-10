@@ -1,16 +1,20 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="div-signin">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <div class="btn-sign close">
+      <a href="<%=root_path%>"><i class="fas fa-window-close"></i></a>
+    </div>
+    <div class="dsi-email">
+      <p>    <%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+    </div>
+    <div class="dsi-btn">
+      <p><%= f.submit "Envoyer les informations", class: "btn-connect"%></p>
+    </div>
+    <div class="dsi-cre">
+      <p><%= render "devise/shared/links0" %></p>
+    </div>
+    <div class="dsi-oubli">
+      <p><%= render "devise/shared/links1" %></p>
+    </div>
+      <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Envoyer les informations" %>
-  </div>
-<% end %>
-
 <%= render "devise/shared/links" %>

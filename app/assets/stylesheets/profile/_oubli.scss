@@ -1,0 +1,23 @@
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
+
+.close {
+  position: absolute;
+  top: 2%;
+  right: 17%;
+  color: rgba(0,0,0,0.9);
+}
+
+.div-signin {
+  background: asset-url('conn-pass.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30%;
+  height: 70%;
+  position: absolute;
+  top: 22%;
+  left: 36%;
+  transform: rotate(-3deg);
+  z-index: 1;
+}

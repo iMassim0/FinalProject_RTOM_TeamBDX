@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_06_08_124329) do
     t.string "image"
     t.string "description"
     t.boolean "published", default: false
+    t.string "size"
   end
 
   create_table "users", force: :cascade do |t|

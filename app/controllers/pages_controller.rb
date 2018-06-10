@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
 
+  def landing
+  end
+
   def home
     @user = current_user
   end

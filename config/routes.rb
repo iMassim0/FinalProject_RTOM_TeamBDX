@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :products
   resources :order_items
   resource :carts, only: [:show]
-  get '/shop',                   to: "pages#shop",       as: :shop
+  get '/shop',                      to: "pages#shop",       as: :shop
   get '/informations',              to: "carts#require",    as: :require
   patch '/payment',                 to: "carts#payment",    as: :payment
   post "/payment/stripe",           to: "carts#pay"
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/temoignages',               to: "posts#index",      as: :blog
   resources :posts
   post "/posts/:post_id/comments",  to: 'comments#create',  as: :post_comments
-
+  get "/welcome",                   to: 'pages#landing',    as: :landing
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

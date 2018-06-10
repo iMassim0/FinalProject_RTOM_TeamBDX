@@ -17,142 +17,29 @@ $my_pimpernel_font: 'pimpernel';
   z-index: 1;
 }
 
-.aba1 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  border: 0.4px solid rgba(0,0,0,0);
-  width: 84%;
-  height: 17%;
-  margin-left: 2%;
-  margin-top: 72%;
-  overflow: scroll;
-}
-
-.aba11 {
-  height: 80%;
-  border: 0.4px solid rgba(0,0,0,0);
-  width: 30%;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.aba12 {
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
-  height: 80%;
-  border: 0.4px solid rgba(0,0,0,0);
-  width: 60%;
-  text-align: center;
-  align-items: center;
-}
-
-.aba121 {
-  height: 30%;
-  width: 90%;
-  border: 0.4px solid rgba(0,0,0,0);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.aba122 {
-  height: 30%;
-  width: 90%;
-  border: 0.4px solid rgba(0,0,0,0);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: auto;
-  z-index: 2;
-  overflow-y: auto;
-}
-
-.input-connect {
-  width: 90%;
-  height: 50%;
-  border: 0px solid rgba(0,0,0,0);
-  font-family: $my_pimpernel_font;
-  font-size: 150%;
-  margin-left: 10%;
-}
-.input-connect:valid {
-  outline: none;
-  margin-left: 0;
-  background-color: rgba(0,0,0,0);
-
-}
-
-.btn-connect {
-  border: 0px solid rgba(0,0,0,0);
-  background-color: rgba(0,0,0,0);
-  font-family: $my_pimpernel_font;
-  color: rgb(205, 206, 196);
-  font-size: 150%;
-  z-index: 40;
-}
-
-.dsi-fd-btn {
-  background-image: asset-url('mini-connect.png');
-  background-size: cover;
+.dsi-img {
   position: absolute;
-  bottom: 22.5%;
-  width: 34%;
-  height: 4.8%;
-  z-index: -2;
-}
-
-.aba123 {
-  height: 30%;
-  width: 90%;
+  top: 56%;
+  left: 5%;
+  background-image: asset-url('anonym.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 0.4px solid rgba(0,0,0,0);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  width: 20%;
+  height: 15%;
+  overflow: scroll;
+  z-index: 30;
 }
 
-.aba2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+.dsi-pseudo {
+  position: absolute;
+  top: 53%;
+  left: 30%;
   border: 0.4px solid rgba(0,0,0,0);
-  width: 82%;
-  height: 4%;
-  margin-left: 2%;
-  margin-top: 2%;
-}
-
-.aba21 {
-  border: 0.4px solid rgba(0,0,0,0);
-  width: 40%;
-  height: 80%;
-  text-align: center;
-  align-content: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.aba22 {
-  border: 0.4px solid rgba(0,0,0,0);
-  width: 40%;
-  height: 80%;
-  text-align: center;
-  vertical-align: middle;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.aba2 > .aba21 {
-  color: black;
+  width: 80%;
+  height: 15%;
+  overflow: scroll;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
 }

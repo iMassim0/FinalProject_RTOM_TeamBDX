@@ -2,7 +2,6 @@
   <div class="div-signin">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="dsi-img">
-      <p><%= image_tag 'anonym.png',  height: "37%", width: "72%"%></p>
     </div>
     <div class="dsi-pseudo">
       <p><%= f.text_field :login, autofocus: true, placeholder: "Pseudo", class: "input-connect" %></p>

@@ -25,3 +25,11 @@ function openObject(objectName) {
     }
     document.getElementById(objectName).style.display = "block";
 }
+
+$(".dashboard").on({
+   click: function(){
+      $(".nav").removeClass("blurred");
+      $(".z-cnotent").fadeIn(0);
+      $("#main-container").hide();
+   }
+},":not(.dashboard)");

@@ -58,7 +58,24 @@ min-height: 300px;
   background-size: contain ;
   background-repeat: no-repeat;
   overflow: hidden;
-  z-index: 1;
+  z-index: 100;
+}
+
+.click_outside {
+  position: absolute;
+  top:0;bottom:0; /* vertical center */
+  left:0;right:0; /* horizontal center */
+  z-index: 99;
+}
+
+.main-container {
+  width: 90vw;
+  height: 90vh;
+  box-sizing: border-box;
+  background: #757575 asset-url("") 50% 50%;
+  background-size: contain ;
+  background-repeat: no-repeat;
+  z-index: 100;
 }
 
 a {

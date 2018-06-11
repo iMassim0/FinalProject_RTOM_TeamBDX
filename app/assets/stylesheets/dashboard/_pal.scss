@@ -8,8 +8,8 @@
   left: -0.5%;
   &:hover {
     .buttons:not(:last-of-type) {
-      width: 35px;
-      height: 35px;
+      width: 70px;
+      height: 70px;
       margin: 15px 0 0;
       opacity: 1;
     }
@@ -37,8 +37,8 @@
   opacity: 0;
   transition: .4s;
   &:nth-last-of-type(1) {
-    width: 35px;
-    height: 35px;
+    width: 70px;
+    height: 70px;
     opacity: 1;
   }
   &:nth-last-of-type(2) {

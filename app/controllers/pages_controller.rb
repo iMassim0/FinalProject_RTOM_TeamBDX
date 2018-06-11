@@ -8,8 +8,10 @@ class PagesController < ApplicationController
   end
 
   def shop
+    @user = current_user
     @products = Product.all
     @order_item = OrderItem.new
+    @current_order = current_order
     respond_to do |f|
       f.js { render :layout => false }
     end

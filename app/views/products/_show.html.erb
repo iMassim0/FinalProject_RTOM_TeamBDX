@@ -1,0 +1,19 @@
+<div class="card-title">
+  <h4><%= @product.title %></h4>
+  <h5><%= link_to "Retour à l'atelier", shop_path, remote: true %></h5>
+</div>
+  <div class="card-content">
+    <div class="card-description">
+      <h3>Description : </h3>
+        <h2><%= @product.description %></h2><br>
+      <h3>Prix : </h3>
+        <h2><%= number_to_currency(@product.price, unit: '€') %> €</h2><br>
+      <h3>Dimensions : </h3>
+        <h2><%= @product.size %>m</h2>
+    </div>
+    <div class="card-image">
+      <%= image_tag ("#{@product.image}"), class: "img-item" %>
+    </div>
+    <div class="card-btn">
+    </div>
+  </div>

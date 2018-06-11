@@ -1,68 +1,33 @@
 <div class="shop-class">
-      <div class="container-fluid text-center">
-          <div class="row">
-            <div class="col-lg-6">
-              <h1>L'ATELIER</h1>
-            </div>
-            <div class="col-lg-5 text-right">
-              <%= link_to "Voir mon panier", carts_path, remote: true, class: "btn btn-info" %>
-            </div>
-          </div>
+  <h1>l'Atelier</h1>
+</div>
 
-    <div class="row text-center">
+<% if user_signed_in? %>
+<div class="cart-content">
+  <div class="number-item"><h3><%= current_order.products.length %> articles dans votre <br><%= link_to carts_path, remote: true do %>sac à dos<% end %>.</h3></div>
+  <div class="cart-logo"></div>
+</div>
+<% else %>
+  <div class="txt-cart">Connectez-vous pour avoir accès à votre sac à dos!</div>
+<% end %>
 
-          <% if !@products.nil? %>
-            <% @products.each do |product| %>
-              <% if product.availability == 1 %>
-                <div class="col-lg-4">
-                  <div class="col-lg-6">
-                    <h3>
-                      <%= product.title %>
-                    </h3>
-                  </div>
-
-                  <% if user_signed_in? %>
-                    <div class="col-lg-6">
-                        <%= form_for @order_item, remote: true do |f| %>
-                          <%= f.hidden_field :product_id, value: product.id %>
-                          <p><%= product.price %> €</p>
-                          <%= f.hidden_field :quantity, value: 1, min: 1 %>
-
-                            <% if !(current_order.products.include? product) %>
-
-                              <%= f.submit "Ajouter au panier" %>
-
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-                <% else %>
-                  <%= link_to 'Se connecter pour acheter cet article', new_user_session_path %>
-
-
-                <% end %>
-
-
-
-
-              <% elsif product.availability == 0 %>
-                  <div class="col-sm-8">
-                    <h3><%= product.title %></h3>
-                  </div>
-                  <div class="col-sm-4">
-                      <div class="pull-right">
-                        <p>Rupture de stock</p>
-                      </div>
-                  </div>
-
-
-              <% end %>
-            <% end %>
-
-            <% else %>
-            <h2>Pas encore de produit!</h2>
-            <% end %>
-
-          </div>
+<div class="showcase">
+<% @products.each do |product| %>
+  <div class="item">
+      <%= image_tag ("#{product.image}"), class: 'item-image'%>
+  <%= link_to product_path(product), remote: true  do %>
+  <div class="overlay">
+    <div class="item-infos">
+      <div class="item-title"><%= product.title.capitalize %></div>
+      <hr>
+      <% if product.availability == 1 %>
+        <div class="item-description"><%= product.description %></div>
+      <% else %>
+        <div class="item-description">Oeuvre déjà commandée...</div>
+      <% end %>
     </div>
+  </div>
+  <% end %>
+  </div>
+<% end %>
 </div>

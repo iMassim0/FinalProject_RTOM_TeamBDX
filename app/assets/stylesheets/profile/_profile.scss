@@ -20,7 +20,6 @@
   width: 14%;
   font-family: $my_pimpernel_font;
   font-size: 1.5vw;
-  line-height: 1.2;
   position: absolute;
   top: 49.5%;
   right: 8%;
@@ -29,6 +28,10 @@
   overflow: scroll;
   margin: 0 0 0 2%;
   vertical-align: text-top;
+  .far {
+    margin-bottom: 1.7vh;
+    margin-top: 1.7vh;
+  }
 }
 
 

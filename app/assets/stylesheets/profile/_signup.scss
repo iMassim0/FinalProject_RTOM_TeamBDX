@@ -2,17 +2,9 @@ $my_beautydemo_font: 'beautydemo';
 $my_lemourserif_font: 'lemourserif';
 $my_pimpernel_font: 'pimpernel';
 
-.signup {
-  height: auto; /* height:width ratio = 9/16 = .5625  */
-  width: auto;
-  max-width: 177.78vh;
-  max-height: 56.25vw;
-  overflow: scroll;
-}
-
-.bab {
+.div-signup {
   background: asset-url('conn-pass.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   width: 30%;
   height: 70%;
@@ -20,67 +12,104 @@ $my_pimpernel_font: 'pimpernel';
   top: 22%;
   left: 36%;
   transform: rotate(-3deg);
-  border: 0.4px solid rgba(0,0,0,0);
-  min-width: 370px;
-  min-height: 470px;
+  z-index: 1;
 }
 
-.bab1 {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 84%;
-  height: 38%;
-  border: 0.4px solid rgba(0,0,0,0);
+.dsu-pseudo {
   position: absolute;
-  top: 58%;
-  left: 3%;
-}
-
-.bab11, .bab12, .bab13, .bab14, .bab15, .bab16 {
-  width: 100%;
-  height: 90%;
-  margin: 0;
+  top: 53%;
+  left: 10%;
   border: 0.4px solid rgba(0,0,0,0);
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.bab-input {
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  background: rgba(0, 0, 0, 0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
   font-family: $my_pimpernel_font;
-  font-size: 2rem;
+  font-size: 100;
 }
 
-.bab16, .btn-signup {
-  color: rgb(205, 206, 196);
-  font-family: $my_pimpernel_font;
-  padding-top: 0%;
-  border: 0.4px solid rgba(0,0,0,0);
-  height: 140%;
-  background-color: rgba(0,0,0,0);
-  border-top:  none;
-  border-left: none;
-  border-right: none;
-  font-size: 2.5vh;
-}
-
-.fd-bab-connect {
-  background-image: asset-url('mini-connect.png');
-  background-size: cover;
+.dsu-email {
   position: absolute;
-  right: 28%;
-  bottom: 16%;
-  width: 45%;
-  height: 14%;
-  z-index: -2;
+  top: 53%;
+  left: 50%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
 }
 
-.close-bab {
+.dsu-country {
+  position: absolute;
+  top: 73%;
+  left: 10%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+}
 
+.dsu-pwd1 {
+  position: absolute;
+  top: 63%;
+  left: 10%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+}
+
+.dsu-pwd2 {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+}
+
+.dsu-btn {
+  position: absolute;
+  top: 71.5%;
+  left: 55%;
+  // background: asset-url('mini-connect.png') 20% 20%;
+  // background-repeat: no-repeat;
+  // background-size: 140% 50%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 20%;
+  overflow: visible;
+  height: 4.5%;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+  border-bottom: none;
+  text-align: center;
+}
+
+.dsu-btn:hover {
+  background-color: rgb(206,182,144);
+  border-radius: 2px;
+}
+
+.btn-sign {
+  color: rgb(96, 99, 104);
+}
+
+.dsu-connect {
+  position: absolute;
+  top: 82.5%;
+  left: 33%;
+  color: rgba(0,0,0,0.9);
 }

@@ -1,41 +1,30 @@
-<div class="bab">
-  <div class="close-bab">
-    <i class="fas fa-window-close"></i>
+  <div class="div-signup">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="btn-sign close">
+      <a href="<%=root_path%>"><i class="fas fa-window-close"></i></a>
+    </div>
+    <div class="dsu-pseudo">
+      <p><%= f.text_field :username, autocomplete: "username", placeholder: "Pseudo"%></p>
+    </div>
+    <div class="dsu-country">
+      <p><%= f.text_field :country, autocomplete: "country", placeholder: "Pays d'origine"%></p>
+    </div>
+    <div class="dsu-email">
+      <p><%= f.email_field :email, autocomplete: "email", placeholder: "Adresse Email", class: "bab-input"%></p>
+    </div>
+    <div class="dsu-pwd1">
+      <p><%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe" %></p>
+    </div>
+    <div class="dsu-pwd2">
+      <p><%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmer mot de passe" %></p>
+    </div>
+    <div class="dsu-btn">
+      <p><%= f.submit "Créer", class: "btn-sign"%></p>
+    </div>
+    <div class="dsu-fd-btn">
+    </div>
+    <div class="dsu-connect">
+      <p><%= render "devise/shared/links" %></p>
+    </div>
+      <% end %>
   </div>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class="bab1">
-    <div class="bab11">
-      <div class="bab12">
-        <p><%= f.text_field :username, autocomplete: "username", placeholder: "Pseudo", class: "bab-input"%></p>
-      </div>
-      <div class="bab13">
-        <p><%= f.text_field :country, autocomplete: "country", placeholder: "Pays d'origine", class: "bab-input"%></p>
-      </div>
-
-    </div>
-    <div class="bab11">
-      <div class="bab14">
-        <p><%= f.email_field :email, autocomplete: "email", placeholder: "Adresse Email", class: "bab-input"%></p>
-      </div>
-    </div>
-
-
-
-
-
-
-      <div class="bab15">
-        <div class="bab151">
-          <p><%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe", class: "bab-input"%></p>
-        </div>
-        <div class="bab152">
-          <p><%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmer mot de passe", class: "bab-input"%></p>
-        </div>
-      </div>
-      <div class="bab16">
-        <p><%= f.submit "Connexion", class: "btn-signup"%></p>
-      <div class="fd-bab-connect"></div>
-    </div>
-  </div>
-  <% end %>
-</div>

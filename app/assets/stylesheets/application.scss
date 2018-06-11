@@ -88,6 +88,23 @@ input {
   letter-spacing: 2px;
 }
 
+.btn-gen {
+  font-family: $my_pimpernel_font;
+  font-size: 1vw;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.btn-gen:valid {
+  outline: none;
+}
+
+.btn-gen:hover {
+  background-color: rgb(206,182,144);
+}
+
 input:valid {
   outline: none;
 }

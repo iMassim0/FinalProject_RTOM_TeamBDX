@@ -1,11 +1,13 @@
+<div class="container-fluid w-100 d-flex flex-row">
+  <div class="container">
 <%= form_with(model: @user, url: {action: :payment}) do |f| %>
+<form>
   <div class="form-group">
       <h3>Informations personnelles :</h3>
       <div class="field">
         <%= f.label "Prénom" %>
         <%= f.text_field :firstname, autocomplete: :firstname %>
       </div>
-
       <div class="field">
         <%= f.label "Nom" %>
         <%= f.text_field :lastname, autocomplete: :lastname %>
@@ -15,14 +17,14 @@
         <%= f.text_field :phonenumber, autocomplete: :phonenumber, placeholder: "0---------" %>
       </div>
   </div>
-
+</div>
+<div class="container">
   <div class="form-group">
       <h3>Adresse de livraison :</h3>
       <div class="field">
         <%= f.label "Prénom" %>
         <%= f.text_field :del_firstname, autocomplete: :firstname %>
       </div>
-
       <div class="field">
         <%= f.label "Nom" %>
         <%= f.text_field :del_lastname, autocomplete: :lastname %>
@@ -31,35 +33,31 @@
         <%= f.label "Adresse" %>
         <%= f.text_field :del_address, autocomplete: :del_address, placeholder: "8 Rue des Oliviers" %>
       </div>
-
       <div class="field">
         <%= f.label "Code Postal" %>
         <%= f.text_field :del_zipcode, autocomplete: :del_zipcode, placeholder: "33000" %>
       </div>
-
       <div class="field">
         <%= f.label "Ville" %>
         <%= f.text_field :del_town, autocomplete: :del_town, placeholder: "Bordeaux" %>
       </div>
   </div>
-
+</div>
+<div class="container">
   <div class="form-group">
       <h3>Adresse de facturation :</h3>
       <div class="field">
         <%= f.label "Prénom" %>
         <%= f.text_field :fac_firstname, autocomplete: :fac_firstname %>
       </div>
-
       <div class="field">
         <%= f.label "Nom" %>
         <%= f.text_field :fac_lastname, autocomplete: :fac_lastname %>
       </div>
-
       <div class="field">
         <%= f.label "Adresse" %>
         <%= f.text_field :fac_address, autocomplete: :fac_address, placeholder: "8 Rue des Oliviers" %>
       </div>
-
       <div class="field">
         <%= f.label "Code Postal" %>
         <%= f.text_field :fac_zipcode, autocomplete: :fac_zipcode, placeholder: "33000" %>
@@ -70,6 +68,9 @@
         <%= f.text_field :fac_town, autocomplete: :fac_town, placeholder: "Bordeaux" %>
       </div>
   </div>
-
-  <%= f.submit "Confirmer la commande", class: "btn btn-large btn-primary" %>
+</div>
+</div>
+<div class="container-fluid w-100 d-flex flex-row">
+  <%= f.submit "Confirmer la commande", class: "card-d3" %>
+</div>
 <% end %>

@@ -62,7 +62,8 @@ $my_pimpernel_font: 'pimpernel';
   color: rgba(141, 151, 168,0.9);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: stretch;
   h3 {
     text-decoration: underline;
     font-size: 3vh !important;
@@ -78,9 +79,12 @@ $my_pimpernel_font: 'pimpernel';
   text-align: center;
   font-size: 3vh !important;
   padding-top: 4%;
-  position: relative;
-  bottom: 0;
-  right: 0;
+}
+
+.card-d2:hover {
+  background-color: rgba(106,112,122,0.2);
+  color: rgba(237, 228, 213, 1);
+  cursor: pointer;
 }
 
 .card-image {

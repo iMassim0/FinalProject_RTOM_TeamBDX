@@ -26,7 +26,7 @@
         </a>
         </div>
     </div>
-    <br/>
+
     <div class="card-description">
       <div class="card-d1">
       <h3>Description : </h3>
@@ -35,28 +35,17 @@
       <h3>Prix : </h3>
         <h2><%= @product.price %> €</h2><br>
       <h3>Dimensions : </h3>
-<<<<<<< HEAD
-        <h2><%= @product.size %>cm</h2>
-      </div>
-      <div class="card-d2">
-        <p>Ajouter l'article à mon sac à dos</p>
-      </div>
-=======
         <h2><%= @product.size %></h2>
           <% if !(current_user.products.include? @product) %>
             <div class="card-btn">
               <%= form_for @order_item, remote: true do |f| %>
                 <%= f.hidden_field :product_id, value: @product.id %>
                 <%= f.hidden_field :quantity, value: 1, min: 1 %>
-                <%= f.submit "Ajouter au sac à dos", class:"btn btn-success" %>
+                <%= f.submit "Ajouter au sac à dos", class:"card-d2" %>
               <% end %>
             </div>
           <% end %>
+    </div>
 
-    </div>
-    <div class="card-image">
-      <%= image_tag @product.image, class: "img-item" %>
->>>>>>> front3
-    </div>
 
   </div>

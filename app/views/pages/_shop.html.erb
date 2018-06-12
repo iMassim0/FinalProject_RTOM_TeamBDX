@@ -3,16 +3,20 @@
 </div>
 
 <% if user_signed_in? %>
-<div class="cart-content">
-  <div class="number-item"><h3><%= current_order.products.length %> articles dans votre <br><%= link_to carts_path, remote: true do %>sac à dos<% end %>.</h3></div>
-  <div class="cart-logo"></div>
-</div>
+  <div class="cart-content">
+    <div class="number-item"><h3><%= current_order.products.length %> articles dans votre <br><%= link_to carts_path, remote: true do %>sac à dos<% end %>.</h3></div>
+    <div class="cart-logo"></div>
+  </div>
 <% else %>
-  <div class="txt-cart">Connectez-vous pour avoir accès à votre sac à dos!</div>
+  <div class="cart-content">
+    <div class="number-item"><h3>Connectez-vous pour avoir accès à votre sac à dos!</h3></div>
+    <div class="cart-logo"></div>
+  </div>
 <% end %>
 
 <div class="showcase">
 <% @products.each do |product| %>
+ <% if product.published? %>
   <div class="item">
       <%= image_tag ("#{product.image}"), class: 'item-image'%>
   <%= link_to product_path(product), remote: true  do %>
@@ -29,5 +33,6 @@
   </div>
   <% end %>
   </div>
+ <% end %>
 <% end %>
 </div>

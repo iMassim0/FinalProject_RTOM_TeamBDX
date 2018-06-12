@@ -1,10 +1,10 @@
 <div class="shop-class">
-  <h1>l'Atelier</h1>
+  <h1>Atelier</h1>
 </div>
 
 <% if user_signed_in? %>
   <div class="cart-content">
-    <div class="number-item"><h3><%= current_order.products.length %> articles dans votre <br><%= link_to carts_path, remote: true do %>sac à dos<% end %>.</h3></div>
+    <div class="number-item"><h3><%= link_to carts_path, remote: true do %><%= current_order.products.length %> article(s)<br>dans votre sac à dos<% end %>.</h3></div>
     <div class="cart-logo"></div>
   </div>
 <% else %>
@@ -25,7 +25,7 @@
       <div class="item-title"><%= product.title.capitalize %></div>
       <hr>
       <% if product.availability == 1 %>
-        <div class="item-description"><p><%= product.quotation %></p></div>
+        <div class="item-description"><p><%= simple_format(product.quotation) %></p></div>
       <% else %>
         <div class="item-description">Oeuvre déjà commandée...</div>
       <% end %>

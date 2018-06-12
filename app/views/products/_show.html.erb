@@ -2,18 +2,43 @@
   <h4><%= @product.title %></h4>
   <h5><%= link_to "Retour à l'atelier", shop_path, remote: true %></h5>
 </div>
+<div class="card-quotation">
+  <h2><%= simple_format(@product.quotation) %></h2>
+</div>
   <div class="card-content">
+    <div class="card-image">
+        <div id="carouselExampleControls" class="carousel slide img-item" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= image_tag ("#{@product.image}"), class: "d-block w-100" %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag ("ZOOM_#{@product.image}"), class: "d-block w-100" %>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        </div>
+    </div>
+    <br/>
     <div class="card-description">
+      <div class="card-d1">
       <h3>Description : </h3>
-        <h2><%= @product.description %></h2><br>
+        <h2>Pièce unique.</h2>
+        <h2><%= simple_format(@product.description) %></h2><br>
       <h3>Prix : </h3>
         <h2><%= number_to_currency(@product.price, unit: '€') %> €</h2><br>
       <h3>Dimensions : </h3>
-        <h2><%= @product.size %>m</h2>
-    </div>
-    <div class="card-image">
-      <%= image_tag ("#{@product.image}"), class: "img-item" %>
-    </div>
-    <div class="card-btn">
+        <h2><%= @product.size %>cm</h2>
+      </div>
+      <div class="card-d2">
+        <p>Ajouter l'article à mon sac à dos</p>
+      </div>
     </div>
   </div>

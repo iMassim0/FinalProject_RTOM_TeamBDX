@@ -14,14 +14,25 @@
       </div>
     </div>
     <% end %>
-<%= link_to profile_path do %>
-  <div class="conn">
-    <div class="btn-ct-conn">
-      <div class="btn-conn">
+<% if !user_signed_in? %>
+  <%= link_to profile_path do %>
+    <div class="conn">
+      <div class="btn-ct-conn">
+        <div class="btn-conn">
+        </div>
       </div>
     </div>
-  </div>
-  <% end %>
+    <% end %>
+<% else %>
+  <%= link_to profile_path do %>
+    <div class="prof">
+      <div class="btn-ct-prof">
+        <div class="btn-prof">
+        </div>
+      </div>
+    </div>
+    <% end %>
+<% end %>
 <%= link_to shop_path, remote: true do %>
   <div class="shop">
     <div class="btn-ct-shop">

@@ -4,7 +4,7 @@ $my_pimpernel_font: 'pimpernel';
 
 .cart-content {
   position: absolute;
-  top: 0;
+  top: 5%;
   left:0;
   width: 25%;
   height: 10%;
@@ -56,6 +56,8 @@ $my_pimpernel_font: 'pimpernel';
     line-height: 2;
     letter-spacing: 1.5;
     color: rgba(255,255,255,0.9);
+    font-family: $my_beautydemo_font;
+    font-size: 10vh !important;
   }
 }
 
@@ -83,6 +85,11 @@ $my_pimpernel_font: 'pimpernel';
   z-index: 0;
 }
 
+.item-title {
+  font-family: $my_beautydemo_font;
+  font-size: 7.5vh !important;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -103,7 +110,7 @@ $my_pimpernel_font: 'pimpernel';
 .item-infos {
   font-family: $my_pimpernel_font;
   color: white;
-  font-size: 20px;
+  font-size: 2vw;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -112,8 +119,8 @@ $my_pimpernel_font: 'pimpernel';
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
-}
-
-hr {
-  color: white;
+  .item-description {
+    font-size: 1.2vw;
+    line-height: 0.85;
+  }
 }

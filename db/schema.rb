@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_06_11_072748) do
     t.string "description"
     t.boolean "published", default: false
     t.string "size"
+    t.text "quotation"
   end
 
   create_table "users", force: :cascade do |t|

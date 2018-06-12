@@ -1,40 +1,17 @@
-
 <div class="nav">
+  <nav class="btn-ctn">
+    <a class="buttons" target="_blank" href="https://github.com/iMassim0/FinalProject_RTOM_TeamBDX" tooltip="Github"></a>
+    <a class="buttons" target="_blank" href="mailto:prout2cul@koukoucki.com" tooltip="Mail"></a>
+    <a class="buttons" target="_blank" href="https://www.instagram.com/resiliencetravelofmango/" tooltip="Instagram"></a>
+    <a class="buttons" target="_blank" href="https://www.facebook.com/ResilienceTravelofMango/" tooltip="Facebook"></a>
+    <a class="buttons" target="_blank" href="#" tooltip="Contacts"><span><span class="pal"></span></span></a>
+  </nav>
   <%= link_to book_path, remote: true do %>
     <div class="liv">
       <div class="btn-ct-liv">
         <div class="btn-liv">
         </div>
       </div>
-    </div>
-    <% end %>
-    <%= link_to root_path do %>
-      <div class="pal">
-      </div>
-      <% end %>
-
-      <nav class="container">
-        <a class="buttons" href="#" tooltip="Githug"></a>
-        <a class="buttons" href="#" tooltip="Mail"></a>
-        <a class="buttons" href="#" tooltip="Instagram"></a>
-        <a class="buttons" href="#" tooltip="Facebook"></a>
-        <a class="buttons" href="#" tooltip="Contacts"><span><span class="rotate"></span></span></a>
-      </nav>
-
-    <%= link_to root_path do %>
-    <div class="fb">
-    </div>
-    <% end %>
-    <%= link_to root_path do %>
-    <div class="insta">
-    </div>
-    <% end %>
-    <%= link_to root_path do %>
-    <div class="msg">
-    </div>
-    <% end %>
-    <%= link_to root_path do %>
-    <div class="gh">
     </div>
     <% end %>
 <%= link_to profile_path do %>
@@ -87,9 +64,12 @@
 </div>
 <div class="dashboard">
   <div class="z-content bg-content" style="display: none;">
-    <%= button_to "Fermer", root_path, method: :get, class: "close" %>
       <div id="main-container" class="main-container">
 
       </div>
   </div>
+</div>
+<div class="links">
+  <a href="#" class="link">Mentions Légales</a>
+  <a href="#" class="link">CGV</a>
 </div>

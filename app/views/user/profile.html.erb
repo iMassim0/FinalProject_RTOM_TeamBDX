@@ -1,33 +1,125 @@
-    <div class="col-lg-6 bg-info">
-      <h2>Mes infos</h2>
-      <p>Pseudo: <%= @user.username %></p>
-      <p>Nom: <%= @user.lastname %></p>
-      <p>Prénom: <%= @user.firstname %></p>
+<div class="nav">
+    <%= link_to root_path do %>
+      <div class="home-return"></div>
+    <% end %>
+    
+  <div class="pi_content">
+    <i class="far fa-check-circle"></i>  Se creer un compte</br>
+    <% if !current_user.bookorder %>
+      <i class="far fa-circle"></i> Acheter le livre</br>
+    <% else %>
+      <i class="far fa-check-circle"></i> Acheter le livre</br>
+    <% end %>
+    <% if current_user.orders.empty? %>
+      <i class="far fa-circle"></i> Visiter l'atelier</br>
+    <% else %>
+      <i class="far fa-check-circle"></i> Visiter l'atelier</br>
+    <% end %>
+    <% if current_user.posts.empty? %>
+      <i class="far fa-circle"></i> Laisser son temoignage</br>
+    <% else %>
+      <i class="far fa-check-circle"></i> Laisser son temoignage</br>
+    <% end %>
+  </div>
+
+  <div class="story">
+      <div class="aa1">
+        <div class="aa11">
+        </div>
+        <div class="aa12">
+          <br>
+            <p><%= @user.username.capitalize %></p>
+            <p><%= @user.email %></p>
+            <p><%= link_to 'Mon livre', book_path, class: "btn-sign"%></p>
+        </div>
+      </div>
+      <div class="aa2">
+        <div class="aa21">
+          <%= link_to 'Changer ma photo', class: "btn-sign" %>
+        </div>
+        <div class="aa22">
+          <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn-sign" %>
+        </div>
+      </div>
+  </div>
+  <div class="infos">
+  </div>
+  <div class="postit">
+  </div>
+  <div class="orders">
+
+    <div class="w3-bar w3-black">
+      <button class="btn-gen" onclick="openObject('commandes')">Mes commandes</button>
+      <button class="btn-gen" onclick="openObject('temoignages')">Mes témoignages</button>
+      <button class="btn-gen" onclick="openObject('commentaires')">Mes commentaires</button>
     </div>
 
-    <div class="col-lg-6 bg-danger">
-      <h2>Mes commandes passées :</h2>
+    <div id="commandes" class="w3-container tabs">
       <table class="table">
         <thead>
-          <tr class="table-active">
-            <th scope="col">N° de commande</th>
-            <th scope="col">Articles</th>
-            <th scope="col">Prix</th>
+          <tr class="thead">
+            <th> # </th>
+            <th>Articles</th>
+            <th>Prix</th>
           </tr>
         </thead>
         <tbody>
       <% @user.orders.each do |order| %>
-          <tr>
-            <th class="table-active" rowspan="<%= order.order_items.length %>"><%= order.id %></th>
-        <% order.order_items.each do |item| %>
+          <tr class="orderdetails">
+            <th class="" rowspan="<%= order.order_items.length %>"><%= order.id %></th>
+            <% order.order_items.each do |item| %>
             <td><%= item.product.title %></td>
             <td><%= item.product.price %> €</td>
           </tr>
         <% end %>
-        <tr class="table-secondary">
-          <th></th>
-          <th>SOUS-TOTAL</th>
-          <th><%= order.subtotal %> €</th>
-        </tr>
-      <% end %>
+          <tr class="ordertotal">
+            <th colspan="2">SOUS-TOTAL</th>
+            <th><%= order.subtotal %> €</th>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
+    <div id="temoignages" class="w3-container tabs" style="display:none">
+      <table class="table">
+        <thead>
+          <tr class="thead">
+            <th> # </th>
+            <th>Titre</th>
+            <th>Lien</th>
+          </tr>
+        </thead>
+        <tbody>
+      <% @user.posts.each_with_index do |post, i| %>
+          <tr class="ordertotal">
+            <td><%= i + 1 %></td>
+            <td><%= post.title %></td>
+            <td><%= link_to 'Lien', post_path(post) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div id="commentaires" class="w3-container tabs" style="display:none">
+      <table class="table">
+        <thead>
+          <tr class="thead">
+            <th> # </th>
+            <th>Article concerné</th>
+            <th>Contenu</th>
+          </tr>
+        </thead>
+        <tbody>
+      <% @user.comments.each_with_index do |comment, i| %>
+          <tr class="ordertotal">
+            <td><%= i + 1 %></td>
+            <td><%= link_to post_path(comment.post) do %><%= comment.post.title %><% end %></td>
+            <td><%= comment.content %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

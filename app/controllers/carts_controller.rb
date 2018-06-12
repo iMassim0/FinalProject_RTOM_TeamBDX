@@ -1,9 +1,9 @@
 class CartsController < ApplicationController
   def show
     @order_items = current_order.order_items
-      respond_to do |f|
-        f.js { }
-      end
+    respond_to do |f|
+      f.js { }
+    end
   end
 
   def require
@@ -26,10 +26,11 @@ class CartsController < ApplicationController
     @order = current_order
     new_charge
     if @charge.save
-      current_order.products.each {|o| o.update(availability: 0)}
+      @order.products.each {|o| o.update(availability: 0)}
+      @order.update(status: "payé")
       session[:order_id] = nil
       flash[:success] = "Paiement réussi"
-      render 'user/profile'
+      redirect_to root_path
     else
       flash[:error] = "Problème de paiement"
       redirect_to payment_path

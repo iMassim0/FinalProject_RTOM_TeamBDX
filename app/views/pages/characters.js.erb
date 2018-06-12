@@ -1,3 +1,5 @@
 $('#main-container').html("<%= j (render 'characters') %>");
 $('#main-container').parents().fadeIn(600);
+$('body').append('<div class="clickoutside"><%= link_to root_path do %><div class="click_outside"> </div><% end %></div>');
 $('.nav').addClass("blurred");
+$('.blurred').append('<div class="clickoutside"><%= link_to root_path do %><div class="click_outside"> </div><% end %></div>');

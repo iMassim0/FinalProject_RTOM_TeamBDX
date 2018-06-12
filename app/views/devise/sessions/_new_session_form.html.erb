@@ -1,39 +1,27 @@
-<div class="passport-form">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <table class="signin">
-    <tr>
-      <th class="signin-photo" rowspan="3"> <img src="https://rlv.zcache.fr/t_shirt_logo_anonyme-re3261eb06e404651931a723b19ce2642_jyr6m_307.jpg?rvtype=content" alt="PROUT2CUL" height="37%" width="80%"> </th>
-      <th class="signin-pseudo" colspan="6">
-        <div class="field">
-          <%= f.label " " %><br />
-          <%= f.text_field :login, autofocus: true, placeholder: "Pseudo"%>
-        </div></th>
-    </tr>
-    <tr>
-      <td class="signin-mdp" colspan="6">
-        <div class="field">
-          <%= f.label " "%><br />
-          <%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe"%>
-        </div></td>
-    </tr>
-    <tr>
-      <td class="signin_last1" colspan="6">
-        <div>
-          <%= f.submit "Connexion" %>
-        </div>
-      </td>
-    </tr>
 
-    <% end %>
-    <tr>
-      <td class="signin_bottom" colspan="1">
-      </td>
-      <td class="signin_bottom" colspan="3">
-        <p><%= render "devise/shared/links0" %></p>
-      </td>
-      <td class="signin_bottom" colspan="3">
-        <p><%= render "devise/shared/links1" %></p>
-      </td>
-    </tr>
-  </table>
-</div>
+  <div class="div-signin">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="btn-sign close">
+      <a href="<%=root_path%>"><i class="fas fa-window-close"></i></a>
+    </div>
+    <div class="dsi-img">
+    </div>
+    <div class="dsi-pseudo">
+      <p><%= f.text_field :login, autofocus: true, placeholder: "Pseudo", class: "input-connect" %></p>
+    </div>
+    <div class="dsi-pwd">
+      <p><%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe", class: "input-connect" %></p>
+    </div>
+    <div class="dsi-btn">
+      <p><%= f.submit "Connexion", class: "btn-connect"%></p>
+    </div>
+    <div class="dsi-fd-btn">
+    </div>
+    <div class="dsi-cre">
+      <p><%= render "devise/shared/links0" %></p>
+    </div>
+    <div class="dsi-oubli">
+      <p><%= render "devise/shared/links1" %></p>
+    </div>
+      <% end %>
+  </div>

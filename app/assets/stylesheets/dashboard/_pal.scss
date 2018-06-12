@@ -1,45 +1,19 @@
 
-.pal {
-  height: 9%;
-  width: 6%;
-  background-size: 100% 100%;
-  background-image: asset-url('pal.png');
-  -webkit-filter: blur(0.6px);
-  -moz-filter: blur(0.6px);
-  -o-filter: blur(0.6px);
-  -ms-filter: blur(0.6px);
-  filter: blur(0.6px);
-  background-repeat: no-repeat;
-  position: absolute;
-  bottom: 1%;
-  left: 1%;
-  z-index: 1;
-  transform: rotate(2deg);
-  -webkit-filter: grayscale(60%);
-  filter: grayscale(60%);
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
-}
 
-.pal:hover {
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
-}
-
-.container {
-  z-index: 50;
+.btn-ctn {
+  z-index: 70;
   margin: 1em;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: absolute;
+  bottom: -1%;
+  left: -0.5%;
   &:hover {
     .buttons:not(:last-of-type) {
-      width: 60px;
-      height: 60px;
-      margin: 15px auto 0;
+      width: 70px;
+      height: 70px;
+      margin: 15px 0 0;
       opacity: 1;
     }
-    .rotate {
+    .pal {
       background-image: url('pal.png');
       transform: rotate(0deg);
     }
@@ -49,22 +23,22 @@
 .buttons {
   @for $i from 2 through 6 {
     &:nth-last-of-type(#{$i}) {
-      transition-delay: #{($i - 1) * 20ms};
+      transition-delay: #{($i - 1) * 200ms};
     }
   }
   display: block;
-  width: 35px;
-  height: 35px;
-  margin: 20px auto 0;
+  width: 15px;
+  height: 15px;
+  margin: 10px 0 0;
   text-decoration: none;
   position: relative;
   border-radius: 50%;
-  box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0), 0px 4px 12px -7px rgba(0, 0, 0, 0);
   opacity: 0;
-  transition: .2s;
+  transition: .4s;
   &:nth-last-of-type(1) {
-    width: 56px;
-    height: 56px;
+    width: 70px;
+    height: 70px;
     opacity: 1;
   }
   &:nth-last-of-type(2) {
@@ -85,8 +59,8 @@
   }
 
   &:hover {
-    box-shadow: 0 0 4px rgba(0,0,0,.14),
-    0 4px 8px rgba(0,0,0,.28);
+    box-shadow: 0 0 4px rgba(0,0,0,0),
+    0 4px 8px rgba(0,0,0,0);
   }
 }
 
@@ -94,17 +68,18 @@ span {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  &.rotate {
-    background: #DB4437 url('https://cbwconline.com/IMG/Codepen/Add.svg') center no-repeat;
+  &.pal {
+    background: url('pal.png');
+    background-size: cover;
     position: absolute;
-    transform: rotate(90deg);
+    transform: rotate(0deg);
     transition: .3s;
   }
 }
 
 [tooltip]{
   &:before {
-      z-index: 50;
+      z-index: 170;
   content: attr(tooltip);
   background: #585858;
   padding: 5px 7px;
@@ -114,14 +89,15 @@ span {
   font: 500 12px Roboto;
   white-space: nowrap;
   position: absolute;
-  bottom: 20%;
-  right: 100%;
+  bottom: 100%;
+  left: 100%;
   visibility: hidden;
   opacity: 0;
   transition: .3s;
+  z-index: 170;
   }
   &:hover:before {
-      z-index: 50;
+      z-index: 170;
     visibility: visible;
     opacity: 1;
   }

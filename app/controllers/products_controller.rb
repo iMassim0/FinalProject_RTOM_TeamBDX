@@ -19,6 +19,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    set_product
+    respond_to do |f|
+      f.js { render :layout => false }
+    end
+  end
+
   def edit
   end
 

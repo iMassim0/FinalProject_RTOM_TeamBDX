@@ -1,0 +1,115 @@
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
+
+.div-signup {
+  background: asset-url('conn-pass.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30%;
+  height: 70%;
+  position: absolute;
+  top: 22%;
+  left: 36%;
+  transform: rotate(-3deg);
+  z-index: 1;
+}
+
+.dsu-pseudo {
+  position: absolute;
+  top: 53%;
+  left: 10%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+}
+
+.dsu-email {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+}
+
+.dsu-country {
+  position: absolute;
+  top: 73%;
+  left: 10%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+}
+
+.dsu-pwd1 {
+  position: absolute;
+  top: 63%;
+  left: 10%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+}
+
+.dsu-pwd2 {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 30%;
+  height: 5%;
+  overflow: visible;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+}
+
+.dsu-btn {
+  position: absolute;
+  top: 71.5%;
+  left: 55%;
+  // background: asset-url('mini-connect.png') 20% 20%;
+  // background-repeat: no-repeat;
+  // background-size: 140% 50%;
+  border: 0.4px solid rgba(0,0,0,0);
+  width: 20%;
+  overflow: visible;
+  height: 4.5%;
+  z-index: 30;
+  font-family: $my_pimpernel_font;
+  font-size: 100;
+  border-bottom: none;
+  text-align: center;
+}
+
+.dsu-btn:hover {
+  background-color: rgb(206,182,144);
+  border-radius: 2px;
+}
+
+.btn-sign {
+  color: rgb(96, 99, 104);
+}
+
+.dsu-connect {
+  position: absolute;
+  top: 82.5%;
+  left: 33%;
+  color: rgba(0,0,0,0.9);
+}

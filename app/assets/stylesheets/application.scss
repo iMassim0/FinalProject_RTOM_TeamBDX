@@ -10,36 +10,38 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- */
-
-
-/*
-font-family: $my_..._font;
+ * font-family: $my_..._font;
 */
-@import "fonts";
-@import "dashboard";
-@import "user";
+
+@import "fonts/fonts";
+@import "dashboard/index";
+@import "profile/index";
+@import "shop/index";
+@import "bootstrap";
 
 $my_beautydemo_font: 'beautydemo';
 $my_lemourserif_font: 'lemourserif';
 $my_pimpernel_font: 'pimpernel';
 
 body {
-height: auto; /* height:width ratio = 9/16 = .5625  */
-width: auto;
-max-width: 177.78vh;
-max-height: 56.25vw;
-margin: auto;
-position: absolute;
-top:0;bottom:0; /* vertical center */
-left:0;right:0; /* horizontal center */
-box-sizing: border-box;
 background: #757575 asset-url("background_dashboard.png") 50% 50%;
 background-size: cover ;
 background-repeat: no-repeat;
 background-attachment: fixed;
 overflow: hidden;
 z-index: 10;
+min-height: 300px;
+}
+
+.landing {
+  background: #757575 asset-url("background_firstpage.jpg") 50% 50%;
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  padding-top: 35vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 .nav {
@@ -55,23 +57,100 @@ z-index: 10;
   background: #757575 asset-url("dashboard.png") 50% 50%;
   background-size: contain ;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   overflow: hidden;
-  z-index: 1;
+  z-index: 100;
 }
 
-.links + a {
-  color: rgb(237, 228, 213);
-  text-decoration: none;
+.click_outside {
+  position: absolute;
+  top:0;bottom:0; /* vertical center */
+  left:0;right:0; /* horizontal center */
+  z-index: 99;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 0;
+  box-sizing: border-box;
+  background: rgba(0,0,0,0.3);
+  background-size: contain ;
+  background-repeat: no-repeat;
+  z-index: 100;
 }
 
 a {
+    color: rgb(237, 228, 213);
+}
+
+.links {
   color: rgb(237, 228, 213);
   text-decoration: none;
+  z-index: 139;
+  position: absolute;
+  bottom: 5%;
+  right: 0%;
 }
 
 a:hover {
   color: rgb(206,182,144);
+}
+
+input {
+  font-family: $my_pimpernel_font;
+  font-size: 1.2vw;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: rgba(0,0,0,0);
+  letter-spacing: 2px;
+}
+
+.btn-gen {
+  font-family: $my_pimpernel_font;
+  font-size: 1vw;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.btn-gen:valid {
+  outline: none;
+}
+
+.btn-gen:hover {
+  background-color: rgb(206,182,144);
+}
+
+input:valid {
+  outline: none;
+}
+
+@media screen and (min-width: 1000px){
+  input {
+    font-size: 2vh;
+  }
+  a {
+    font-size: 1.65vh;
+  }
+}
+@media screen and (max-width: 1000px){
+  input {
+    font-size: 1.5vh;
+  }
+  a {
+    font-size: 0.9vh;
+  }
+}
+
+@media screen and (max-width: 700px){
+  input {
+    font-size: 1.2vw;
+  }
+  a {
+    font-size: 0.75vw;
+  }
 }
 
 .links {
@@ -80,8 +159,8 @@ a:hover {
   font-family: $my_pimpernel_font;
   position: absolute;
   bottom: 0;
-  z-index: 20;
   font-size: 1.6rem;
   margin-left: 3%;
   z-index: -1;
+  color: rgb(237, 228, 213) !important;
 }

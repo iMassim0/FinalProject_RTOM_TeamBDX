@@ -2,7 +2,7 @@
     <%= link_to root_path do %>
       <div class="home-return"></div>
     <% end %>
-    
+
   <div class="pi_content">
     <i class="far fa-check-circle"></i>  Se creer un compte</br>
     <% if !current_user.bookorder %>
@@ -64,7 +64,7 @@
           </tr>
         </thead>
         <tbody>
-      <% @user.orders.each do |order| %>
+      <% @user.orders.where(status: "payé").each do |order| %>
           <tr class="orderdetails">
             <th class="" rowspan="<%= order.order_items.length %>"><%= order.id %></th>
             <% order.order_items.each do |item| %>
@@ -73,7 +73,7 @@
           </tr>
         <% end %>
           <tr class="ordertotal">
-            <th colspan="2">SOUS-TOTAL</th>
+            <th colspan="2">TOTAL</th>
             <th><%= order.subtotal %> €</th>
           </tr>
           <% end %>

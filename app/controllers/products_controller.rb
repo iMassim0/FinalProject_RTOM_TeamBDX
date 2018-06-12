@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
 
   def show
     set_product
+    @order_item = OrderItem.new
     respond_to do |f|
       f.js { render :layout => false }
     end

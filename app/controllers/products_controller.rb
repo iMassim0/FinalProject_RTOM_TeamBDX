@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
 
   def show
     set_product
+    @order_item = OrderItem.new
     respond_to do |f|
       f.js { render :layout => false }
     end
@@ -49,6 +50,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:title, :price)
+      params.require(:product).permit(:title, :price, :description, :image, :size)
     end
 end

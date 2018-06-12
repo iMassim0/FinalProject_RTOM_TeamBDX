@@ -44,6 +44,11 @@
                 <%= f.submit "Ajouter au sac à dos", class:"card-d2" %>
               <% end %>
             </div>
+          <% elsif @product.availability == 0 %>
+            <div class="card-btn">
+              <br>
+              <h2>Oeuvre déja vendue</h2>
+            </div>
           <% end %>
     </div>
 

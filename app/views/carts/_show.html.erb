@@ -1,16 +1,20 @@
 <div class="shop-class">
   <h1>Mon sac a dos</h1>
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_order.products.any? %>
     <div class="shopping-cart">
       <%= render "carts/shopping_cart" %>
     </div>
     <% if !(@order_items.length == 0) %>
     <%= link_to require_path, remote: true do %><h4 class="card-d3">Prêt pour la commande</h4><% end %>
     <% end %>
+  <% elsif user_signed_in? && current_order.products.empty? %>
+  <div class="shopping-cart specific">
+    <h2>Retournez vite à <%= link_to "la boutique", shop_path, remote: true %> commander votre premier objet!</h2>
+  </div>
   <% else %>
-    <div class="shopping-cart">
-      <h4>Merci de <%= link_to "vous connecter", new_user_session_path %> pour créer un panier.</h4>
-      <p>Retourner à <%= link_to "la boutique", shop_path, remote: true %>.</p>
+    <div class="shopping-cart specific">
+      <h3>Merci de <%= link_to "vous connecter", new_user_session_path %> pour créer un panier.</h3>
+      <h2>Retourner à <%= link_to "la boutique", shop_path, remote: true %>.</h2>
     </div>
   <% end %>
 </div>

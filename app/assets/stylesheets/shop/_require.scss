@@ -5,10 +5,25 @@ $my_pimpernel_font: 'pimpernel';
 .require {
   background-color: rgba(255,255,255,0.2);
   font-family: $my_pimpernel_font;
-  color: black;
+  color: rgba(237, 228, 213, 1);
   font-size: 1.6vw;
-  height: 50%;
+  height: 60%;
   margin: 0% 0 10%;
+}
+
+.specific {
+  background-color: rgba(255,255,255,0.2);
+  font-family: $my_pimpernel_font;
+  color: rgba(237, 228, 213, 1);
+  font-size: 1.6vw;
+  height: 60%;
+  padding: 2% 0;
+}
+
+.specific a {
+  padding-top: 2%;
+  color: rgba(0,0,0, 1);
+  font-size: 1.6vw;
 }
 
 .form-group h3 {
@@ -18,9 +33,17 @@ $my_pimpernel_font: 'pimpernel';
   padding-top: 2%;
 }
 
-.container {
-  width: 33%;
+.container-require {
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.field-require {
+  width: 100%;
+  padding: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;

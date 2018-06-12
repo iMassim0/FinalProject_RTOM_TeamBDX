@@ -77,6 +77,10 @@
             <td><%= item.product.price %> €</td>
           </tr>
         <% end %>
+          <tr class="orderdetails">
+            <th colspan="2">Order status</th>
+            <th><%= order.status %></th>
+          </tr>
           <tr class="ordertotal">
             <th colspan="2">TOTAL</th>
             <th><%= order.subtotal %> €</th>

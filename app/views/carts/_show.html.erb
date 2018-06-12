@@ -1,12 +1,12 @@
-<div class="">
-<h2>Mon panier</h2>
+<div class="shop-class">
+<h1>Mon sac à dos</h1>
 <% if user_signed_in? %>
 <div class="shopping-cart">
   <%= render "carts/shopping_cart" %>
 </div>
 
   <% if !(@order_items.length == 0) %>
-  <h4 class="text-right"><%= link_to 'Valider mon panier', require_path, class: "btn btn-success", remote: true  %></h4>
+  <h4 class="mt-3"><%= link_to 'Valider mon panier', require_path, class: "btn btn-success", remote: true  %></h4>
   <% end %>
 <% else %>
 <h4>Merci de <%= link_to "vous connecter", new_user_session_path %> pour créer un panier.</h4>

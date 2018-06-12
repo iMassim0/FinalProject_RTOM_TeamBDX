@@ -8,8 +8,8 @@
   </div>
 <% end %>
 <% if @order_items.size == 0 %>
-  <p class="text-center">
-    Votre panier est vide. Visitez <%= link_to "la boutique", shop_path, remote: true %> pour y ajouter des articles.
+  <p class="cart mt-3">
+    Votre sac à dos est vide. Visitez <%= link_to "l'atelier", shop_path, remote: true %> pour y ajouter des articles.
   </p>
 <% else %>
   <% @order_items.each do |order_item| %>

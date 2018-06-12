@@ -25,7 +25,7 @@
       <div class="item-title"><%= product.title.capitalize %></div>
       <hr>
       <% if product.availability == 1 %>
-        <div class="item-description"><%= product.description %></div>
+        <div class="item-description"><p><%= product.quotation %></p></div>
       <% else %>
         <div class="item-description">Oeuvre déjà commandée...</div>
       <% end %>

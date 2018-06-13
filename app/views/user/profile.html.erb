@@ -25,6 +25,7 @@
   <div class="story">
       <div class="aa1">
         <div class="aa11">
+          <%= image_tag @user.avatar_url %>
         </div>
         <div class="aa12">
           <br>
@@ -35,7 +36,7 @@
       </div>
       <div class="aa2">
         <div class="aa21">
-          <%= link_to 'Changer ma photo', class: "btn-sign" %>
+          <%= link_to 'Editer mes informations', edit_user_registration_path, class: "btn-sign" %>
         </div>
         <div class="aa22">
           <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn-sign" %>

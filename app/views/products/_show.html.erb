@@ -1,30 +1,30 @@
-<div class="card-title">
-  <h4><%= @product.title %></h4>
-  <h5><%= link_to "Retour à l'atelier", shop_path, remote: true %></h5>
-</div>
-<div class="card-quotation">
-  <h2><%= simple_format(@product.quotation) %></h2>
-</div>
+  <div class="card-title">
+    <h4><%= @product.title %></h4>
+    <h5><%= link_to "Retour à l'atelier", shop_path, remote: true %></h5>
+  </div>
+  <div class="card-quotation">
+    <h2><%= simple_format(@product.quotation) %></h2>
+  </div>
   <div class="card-content">
     <div class="card-image">
-        <div id="carouselExampleControls" class="carousel slide img-item" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= image_tag ("#{@product.image}"), class: "d-block w-100" %>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= image_tag ("#{@product.image}"), class: "d-block w-100" %>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag ("ZOOM_#{@product.image}"), class: "d-block w-100" %>
+            </div>
           </div>
-          <div class="carousel-item">
-            <%= image_tag ("ZOOM_#{@product.image}"), class: "d-block w-100" %>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-        </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+      </div>
     </div>
 
     <div class="card-description">
@@ -36,21 +36,49 @@
         <h2><%= @product.price %> €</h2><br>
       <h3>Dimensions : </h3>
         <h2><%= @product.size %></h2>
-          <% if !(current_user.products.include? @product) %>
+          <% if user_signed_in? && @product.availability == 1 %>
+
+            <% if !(current_user.products.include? @product) %>
+              <div class="card-btn">
+                <%= form_for @order_item, remote: true do |f| %>
+                  <%= f.hidden_field :product_id, value: @product.id %>
+                  <%= f.hidden_field :quantity, value: 1, min: 1 %>
+                  <%= f.submit "Ajouter au sac à dos", class:"card-d2" %>
+                <% end %>
+              </div>
+
+            <% elsif current_order.products.include? @product %>
+              <div class="card-btn">
+                <br>
+                <h2>Déja dans votre panier</h2>
+              </div>
+
+            <% else %>
+            <div class="card-btn">
+              <br>
+              <h2>Oeuvre déja vendue</h2>
+            </div>
+            <% end %>
+
+          <% elsif user_signed_in? && @product.availability == 0 %>
+
+            <div class="card-btn">
+              <br>
+              <h2>Oeuvre déja vendue</h2>
+            </div>
+
+          <% else %>
+
             <div class="card-btn">
               <%= form_for @order_item, remote: true do |f| %>
                 <%= f.hidden_field :product_id, value: @product.id %>
                 <%= f.hidden_field :quantity, value: 1, min: 1 %>
                 <%= f.submit "Ajouter au sac à dos", class:"card-d2" %>
               <% end %>
-            </div>
-          <% elsif @product.availability == 0 %>
-            <div class="card-btn">
-              <br>
-              <h2>Oeuvre déja vendue</h2>
+
             </div>
           <% end %>
     </div>
-
-
   </div>
+
+</div>

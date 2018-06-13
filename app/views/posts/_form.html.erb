@@ -10,10 +10,11 @@
       </ul>
     </div>
   <% end %>
-
+<div class="new_post">
   <%= form.text_field :title, placeholder: "Titre" %>
   <%= form.text_field :description, placeholder: "Description" %>
   <%= form.text_area :content, placeholder: "Contenu" %>
+</div>
   <div class="actions">
     <%= form.submit %>
   </div>

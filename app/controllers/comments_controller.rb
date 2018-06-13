@@ -1,7 +1,20 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
+  helper_method :create_comment
+
   def create
+    @comment = Comment.new(comment_params)
+    respond_to do |format|
+      if @comment.save
+        format.js { }
+      else
+        format.js { }
+      end
+    end
+  end
+
+  def create_comment
     @comment = Comment.new(comment_params)
     respond_to do |format|
       if @comment.save

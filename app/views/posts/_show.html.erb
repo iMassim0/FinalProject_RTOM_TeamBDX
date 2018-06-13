@@ -19,6 +19,8 @@
           <p><%= comment.content %></p>
       </div>
     <% end %>
+    <div id="comment-container" style="display: none;">
+    </div>
     <div class="ps-leave-comments">
       <%= form_for [@post, @comment], remote: true do |f| %>
         <%= f.text_field :content, placeholder: "Ecrire un commentaire" %>

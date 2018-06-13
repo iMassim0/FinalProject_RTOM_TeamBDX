@@ -6,6 +6,11 @@
   <div class="cart-content">
     <div class="number-item"><h3><%= link_to carts_path, remote: true do %><%= current_order.products.length %> article(s)<br>dans votre sac à dos<% end %>.</h3></div>
     <div class="cart-logo"></div>
+    <% if @user.is_admin %>
+      <%= link_to products_path do %>
+        <%= image_tag ("admin.png"), class: "admin-logo" %>
+      <% end %>
+    <% end %>
   </div>
 <% else %>
   <div class="cart-content">

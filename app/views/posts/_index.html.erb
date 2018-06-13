@@ -2,30 +2,31 @@
   <h1>Temoignages</h1>
 </div>
 <div class="btn-post">
-<%= link_to 'Laisser une trace', new_post_path, remote: true %>
+<%= link_to 'A votre tour de parler de vos rencontres en voyage...', new_post_path, remote: true %>
 </div>
-<div class="showpost" style="background-color: rgba(255,255,255,0.2);height: 90%;">
+<div class="showpost">
 <% @posts.each do |post| %>
  <% if !post.publish? %>
   <div class="post">
     <div class="post-title">
+      <div class="tit"><h1><%= post.title.capitalize %></h1></div>
       <div class="post-manage">
-        <% if current_user.is_admin == true %>
-          <h3>
-            <%= link_to 'Edit', edit_post_path(post), remote: true %>
-            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
-          </h3>
-        <% end %>
-      </div>
-      <%= post.title.capitalize %>
-      <div class="post-show">
-        <h3>
-          <%= link_to 'Show', post, remote: true %>
-        </h3>
+        <%= image_tag ("#{post.user.avatar}"), class: "post-img" %>
+        <h5> écrit par <%= post.user.username %> le <%= post.created_at.strftime("%e %B %Y à %X") %></h5>
+        <h3><%= link_to 'Afficher', post, remote: true %></h3>
+      <% if current_user.is_admin == false && post.user == current_user %>
+        <h3><%= link_to 'Editer', edit_post_path(post), remote: true %></h3>
+      <% elsif current_user.is_admin == true %>
+        <h3><%= link_to 'Editer', edit_post_path(post), remote: true %></h3>
+        <h3><%= link_to 'Supprimer', post, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></h3>
+      <% end %>
       </div>
     </div>
     <hr>
-    <div class="post-description"><p><%= post.description %></p></div>
+    <div class="post-description">
+      <div class="pd-left"><p>Résumé : <i><%= post.description %></i></p></div>
+      <div class="pd-right"><p><%= post.comments.length %> commentaire(s)</p></div>
+    </div>
   </div>
   <% end %>
   <% end %>

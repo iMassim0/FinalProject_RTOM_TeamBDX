@@ -59,6 +59,7 @@ class PostsController < ApplicationController
 
 
   def destroy
+    @post.comments.each {|comment| comment.destroy}
     @post.destroy
     respond_to do |format|
       format.js { }

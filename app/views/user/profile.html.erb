@@ -2,7 +2,7 @@
     <%= link_to root_path do %>
       <div class="home-return"></div>
     <% end %>
-    
+
   <div class="pi_content">
     <i class="far fa-check-circle"></i>  Se creer un compte</br>
     <% if !current_user.bookorder %>
@@ -64,7 +64,12 @@
           </tr>
         </thead>
         <tbody>
-      <% @user.orders.each do |order| %>
+      <% if current_user.orders.empty? %>
+        <tr class="ordertotal">
+          <td colspan="3">Pas encore de commande</td>
+        </tr>
+      <% else %>
+        <% @user.orders.where(status: "payé").each do |order| %>
           <tr class="orderdetails">
             <th class="" rowspan="<%= order.order_items.length %>"><%= order.id %></th>
             <% order.order_items.each do |item| %>
@@ -72,11 +77,16 @@
             <td><%= item.product.price %> €</td>
           </tr>
         <% end %>
+          <tr class="orderdetails">
+            <th colspan="2">Order status</th>
+            <th><%= order.status %></th>
+          </tr>
           <tr class="ordertotal">
-            <th colspan="2">SOUS-TOTAL</th>
+            <th colspan="2">TOTAL</th>
             <th><%= order.subtotal %> €</th>
           </tr>
           <% end %>
+      <% end %>
         </tbody>
       </table>
     </div>
@@ -90,6 +100,11 @@
           </tr>
         </thead>
         <tbody>
+      <% if current_user.posts.empty? %>
+      <tr class="ordertotal">
+        <td colspan="3">Pas encore de témoignage</td>
+      </tr>
+      <% else %>
       <% @user.posts.each_with_index do |post, i| %>
           <tr class="ordertotal">
             <td><%= i + 1 %></td>
@@ -98,6 +113,7 @@
           </tr>
           <% end %>
         </tbody>
+      <% end %>
       </table>
     </div>
     <div id="commentaires" class="w3-container tabs" style="display:none">
@@ -110,6 +126,11 @@
           </tr>
         </thead>
         <tbody>
+      <% if current_user.comments.empty? %>
+        <tr class="ordertotal">
+          <td colspan="3">Pas encore de commentaire</td>
+        </tr>
+      <% else %>
       <% @user.comments.each_with_index do |comment, i| %>
           <tr class="ordertotal">
             <td><%= i + 1 %></td>
@@ -118,6 +139,7 @@
           </tr>
           <% end %>
         </tbody>
+      <% end %>
       </table>
     </div>
 

@@ -1,33 +1,38 @@
 <div class="shop-class">
-  <h1>l'Atelier</h1>
+  <h1>Atelier</h1>
 </div>
 
 <% if user_signed_in? %>
-<div class="cart-content">
-  <div class="number-item"><h3><%= current_order.products.length %> articles dans votre <br><%= link_to carts_path, remote: true do %>sac à dos<% end %>.</h3></div>
-  <div class="cart-logo"></div>
-</div>
+  <div class="cart-content">
+    <div class="number-item"><h3><%= link_to carts_path, remote: true do %><%= current_order.products.length %> article(s)<br>dans votre sac à dos<% end %>.</h3></div>
+    <div class="cart-logo"></div>
+  </div>
 <% else %>
-  <div class="txt-cart">Connectez-vous pour avoir accès à votre sac à dos!</div>
+  <div class="cart-content">
+    <div class="number-item"><h3>Connectez-vous pour avoir accès à votre sac à dos!</h3></div>
+    <div class="cart-logo"></div>
+  </div>
 <% end %>
 
 <div class="showcase">
 <% @products.each do |product| %>
+ <% if product.published? %>
   <div class="item">
-      <%= image_tag ("#{product.image}"), class: 'item-image'%>
-  <%= link_to product_path(product), remote: true  do %>
+      <%= image_tag product.image, class: 'item-image' %>
+      <%= link_to product_path(product), remote: true  do %>
   <div class="overlay">
     <div class="item-infos">
       <div class="item-title"><%= product.title.capitalize %></div>
       <hr>
       <% if product.availability == 1 %>
-        <div class="item-description"><%= product.description %></div>
+        <div class="item-description"><p><%= simple_format(product.quotation) %></p></div>
       <% else %>
-        <div class="item-description">Oeuvre déjà commandée...</div>
+        <div class="item-description">Oeuvre déjà vendue ...</div>
       <% end %>
     </div>
   </div>
   <% end %>
   </div>
+ <% end %>
 <% end %>
 </div>

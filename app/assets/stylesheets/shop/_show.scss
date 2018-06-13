@@ -5,47 +5,94 @@ $my_pimpernel_font: 'pimpernel';
 .card-title {
   width: 100%;
   height: 10%;
-  margin: 5% 0 -5% 0;
-  text-align: center;
+  margin: 2.5% 0;
+  text-align: right;
   font-family: $my_pimpernel_font;
-  color: rgba(237, 228, 213, 0);
+  color: rgba(255,255,255,0.8);
+  h5 {
+    margin: -2% 7% 0 0 ;
+    font-size: 3vh;
+  }
   h4 {
-      font-size: 2.5vw !important;
-      color: rgba(141, 151, 168,0.9);
+      font-size: 10vh !important;
+      color: rgba(237, 228, 213, 1);
+      font-family: $my_beautydemo_font;
+      text-align: center
   }
   line-height: 1.5;
   vertical-align: bottom;
 }
 
-.card-content {
-  width: 100%;
-  height: 80%;
-  background-color: rgba(141, 151, 168,0);
+.card-quotation {
+  margin: 4% auto 0;
+  width: 90%;
+  height: auto;
+  background-color: rgba(0, 0, 0,0.5);
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  h2 {
+      font-size: 2.5vh !important;
+      color: white;
+      font-family: $my_pimpernel_font;
+      padding: 4% 1% 0 1%;
+      text-align: center;
+  }
+}
+
+.card-content {
+  margin: 2% auto;
+  width: 90%;
+  height: 80%;
+  background-color: rgba(0, 0, 0,0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
 .card-description {
+  height: 100%;
   text-align: justify;
   font-family: $my_pimpernel_font;
-  padding: 1% 1%;
-  width: 35%;
-  height: 70%;
-  background-color: rgba(0, 0, 0,0.5);
+  padding: 1% 1% 0 1%;
   font-size: 2vh !important;
-  margin: auto 0;
+  margin: 0 0;
   color: rgba(141, 151, 168,0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  h3 {
+    text-decoration: underline;
+    font-size: 3vh !important;
+  }
+}
+
+.card-d2 {
+  height: 10%;
+  width: 100%;
+  background-color: rgba(106,112,122,1);
+  color: rgba(0,0,0,1);
+  font-weight: bold;
+  text-align: center;
+  font-size: 3vh !important;
+  padding-top: 4%;
+}
+
+.card-d2:hover {
+  background-color: rgba(106,112,122,0.2);
+  color: rgba(237, 228, 213, 1);
+  cursor: pointer;
 }
 
 .card-image {
-  width: 50%;
-  height: 70%;
-  ;
+  background-color: rgba(0, 0, 0,0.5);
+  width: 100%;
 }
 
 .img-item {
-  width: 100%;
+  margin: auto;
   height: 100%;
 }

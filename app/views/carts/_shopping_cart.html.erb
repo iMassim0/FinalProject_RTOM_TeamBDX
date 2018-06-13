@@ -1,19 +1,21 @@
-<% if !@order_item.nil? && @order_item.errors.any? %>
-  <div class="alert alert-danger">
-    <ul>
-    <% @order_item.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
 <% if @order_items.size == 0 %>
-  <p class="text-center">
-    Votre panier est vide. Visitez <%= link_to "la boutique", shop_path, remote: true %> pour y ajouter des articles.
+  <p class="empty">
+    Votre sac à dos est vide. Visitez <%= link_to "l'atelier", shop_path, remote: true %> pour y ajouter des articles.
   </p>
 <% else %>
-  <% @order_items.each do |order_item| %>
-    <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
-  <% end %>
-  <h4 class="text-right">Prix total : <span style="color: green"><%= current_order.subtotal %> €</span></h4>
+    <% @order_items.each do |order_item| %>
+      <div class="cart-title"><h5><%= link_to "Retour à l'atelier", shop_path, remote: true %></h5></div>
+      <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
+    <% end %>
 <% end %>
+
+<div class="w-50 jumbotron-fluid shopping-cart">
+  <div class="container">
+    <br/>
+    <h3 class="subtotal">Subtotal: <span><%= number_to_currency(current_order.subtotal, unit: '€ ') %></span></h3>
+    <h3 class="tax">Dont TVA (20%): <span><%= number_to_currency(current_order.tax, unit: '€ ') %></span></h3>
+    <h3 class="shipping">Frais d'expedition: <span><%= number_to_currency(current_order.shipping, unit: '€ ') %></span></h3>
+    <br/>
+    <h2 class="total">Total: <span><%= number_to_currency(current_order.total, unit: '€ ') %></span></h2>
+  </div>
+</div>

@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
 
   def show
     set_product
+    @order_item = OrderItem.new
     respond_to do |f|
       f.js { render :layout => false }
     end
@@ -42,6 +43,22 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+    def set_publish
+      @product = Product.find(params[:id])
+      @product.published = true
+      if @product.save
+        redirect_to products_path
+      end
+    end
+
+    def set_unpublish
+      @product = Product.find(params[:id])
+      @product.published = false
+      if @product.save
+        redirect_to products_path
+      end
+    end
+
   private
 
     def set_product
@@ -49,6 +66,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:title, :price)
+      params.require(:product).permit(:title, :price, :description, :size, :image, :published, :quotation)
     end
 end

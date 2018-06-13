@@ -1,4 +1,6 @@
-
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
 
 .btn-ctn {
   z-index: 70;
@@ -14,7 +16,7 @@
       opacity: 1;
     }
     .pal {
-      background-image: url('pal.png');
+      background-image: asset-url('pal.png');
       transform: rotate(0deg);
     }
   }
@@ -42,19 +44,19 @@
     opacity: 1;
   }
   &:nth-last-of-type(2) {
-  background: url('fb.png');
+  background: asset-url('fb.png');
   background-size: contain;
   }
   &:nth-last-of-type(3) {
-  background: url('insta.png');
+  background: asset-url('insta.png');
   background-size: contain;
   }
   &:nth-last-of-type(4) {
-  background-image: url('msg.png');
+  background-image: asset-url('msg.png');
   background-size: contain;
   }
   &:nth-last-of-type(5) {
-  background-image: url('gh.png');
+  background-image: asset-url('gh.png');
   background-size: contain;
   }
 
@@ -69,7 +71,7 @@ span {
   height: 100%;
   border-radius: 50%;
   &.pal {
-    background: url('pal.png');
+    background: asset-url('pal.png');
     background-size: cover;
     position: absolute;
     transform: rotate(0deg);
@@ -86,7 +88,8 @@ span {
   margin-right: 10px;
   border-radius: 2px;
   color: #FFF;
-  font: 500 12px Roboto;
+  font-family: $my_pimpernel_font;
+  font: 500 3vw;
   white-space: nowrap;
   position: absolute;
   bottom: 100%;

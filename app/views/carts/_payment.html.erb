@@ -1,5 +1,7 @@
-<h2>Récapitulatif</h2>
-
+<div class="shop-class">
+<h1>Recapitulatif</h1>
+</div>
+<div class="container-fluid w-50 require">
   <table class="table">
     <thead>
       <tr>
@@ -13,22 +15,22 @@
         <tr>
           <td><%= i+1 %></td>
           <td><%= order_item.product.title %></td>
-          <td><%= number_to_currency(order_item.product.price, unit: "€") %></td>
+          <td><%= number_to_currency(order_item.product.price, unit: "€ ") %></td>
         </tr>
       <% end %>
         <tr>
           <td colspan="2">Dont TVA (20%)</td>
-          <td><%= number_to_currency(current_order.tax, unit: '€') %></td>
+          <td><%= number_to_currency(current_order.tax, unit: '€ ') %></td>
         </tr>
         <tr>
           <td colspan="2">Livraison</td>
-          <td><%= number_to_currency(current_order.shipping, unit: '€') %></td>
+          <td><%= number_to_currency(current_order.shipping, unit: '€ ') %></td>
         </tr>
         <tr>
           <td colspan="2">Total</td>
-          <td><%= number_to_currency(current_order.total, unit: '€') %></td>
+          <td><%= number_to_currency(current_order.total, unit: '€ ') %></td>
         </tr>
-        <td> <%= form_for @order, url: {action: :pay, order: @order}, method: :post do |f| %>
+        <td colspan="3"> <%= form_for @order, url: {action: :pay, order: @order}, method: :post do |f| %>
                 <script
                   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="pk_test_Opg2gROUTgRgICX8bwtIslCn"
@@ -43,6 +45,7 @@
                 </script>
               <% end %>
         </td>
-</td>
     </tbody>
   </table>
+
+</div>

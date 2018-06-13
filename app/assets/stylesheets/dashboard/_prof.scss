@@ -1,0 +1,52 @@
+
+.prof {
+  height: 23%;
+  width: 15%;
+  background-size: 100% 100%;
+  background-image: asset-url('conn.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  z-index: 1;
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+.prof:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+
+.prof:hover .btn-ct-prof {
+
+  width: 200%;
+  z-index: 3;
+  top: 65%;
+  left: -3%;
+}
+
+.btn-ct-prof {
+  position: absolute;
+  overflow: hidden;
+  height: 66%;
+  width:  0px;
+  transition: .5s ease;
+  top: 65%;
+  left: -3%;
+}
+
+.btn-prof {
+  position: absolute;
+  height: 66%;
+  width: 15vw;
+  max-width: 35vh;
+  background-size: 100% 100%;
+  background-image: asset-url('btn-prof.png');
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+}

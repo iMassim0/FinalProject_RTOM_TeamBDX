@@ -40,7 +40,7 @@ gem 'stripe'
 # gem 'gmail'
 #
 # Mailing
-# gem 'mailjet'
+gem 'mailjet'
 
 
 # Use Redis adapter to run Action Cable in production

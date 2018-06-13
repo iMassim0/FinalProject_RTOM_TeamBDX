@@ -1,6 +1,11 @@
-<h1>Editing Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', @post, remote: true %> |
-<%= link_to 'Back', posts_path, remote: true %>
+<div class="post-class">
+  <h1>Edition de l'article par <%= current_user.username %></h1>
+</div>
+<div class="post-show">
+  <div class="ps-btn">
+    <%= link_to 'Retourner aux témoignages', posts_path, remote: true %>
+  </div>
+  <div class="ps-content">
+    <%= render 'form', post: @post %>
+  </div>
+</div>

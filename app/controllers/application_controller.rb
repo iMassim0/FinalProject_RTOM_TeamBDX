@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper_method :set_user, :require_admin, :require_login
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
 
@@ -21,6 +22,32 @@ class ApplicationController < ActionController::Base
                     :del_town,
                     :phonenumber
                     ])
+  end
+
+  def require_login
+    unless user_signed_in?
+      flash[:error] =  "Merci de vous connecter pour accéder à cette page."
+      redirect_to new_user_registration_path
+    end
+  end
+
+
+  def require_admin
+  if set_user
+    if @user.is_admin == false
+      flash[:error] =  "Vous n'avez pas les droits Admin."
+      redirect_to root_path
+    end
+  else
+    require_login
+  end
+  end
+
+  def set_user
+    if current_user
+      @user = current_user
+    end
+    return @user
   end
 
   private

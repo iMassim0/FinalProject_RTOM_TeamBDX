@@ -1,4 +1,4 @@
-<div class="container-fluid" style="overflow:scroll; background-color: rgba(255,255,255,0.5);">
+<div class="container" style="height: 100%; background-color: rgba(255,255,255,0.5);">
 <h1>Products</h1>
 
 <%= link_to 'New Product', new_product_path %>
@@ -12,6 +12,7 @@
         <th>Size</th>
         <th colspan="2">Citation</th>
         <th>Published</th>
+        <th>Image</th>
         <th>Price</th>
         <th colspan="3">Actions</th>
         <th></th>
@@ -25,6 +26,7 @@
         <td><%= product.size %></td>
         <td colspan="2"><%= simple_format(product.quotation) %></td>
         <td><%= product.published %></td>
+        <td><%= cl_image_tag product.image_url %></td>
         <td><%= product.price %></td>
         <td>
           <% if product.published == true %>

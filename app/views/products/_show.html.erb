@@ -10,10 +10,10 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= image_tag ("#{@product.image}"), class: "d-block w-100" %>
+              <%= image_tag ("#{@product.image_url}"), class: "d-block w-100" %>
             </div>
             <div class="carousel-item">
-              <%= image_tag ("ZOOM_#{@product.image}"), class: "d-block w-100" %>
+              <%= image_tag ("ZOOM_#{@product.image_url}"), class: "d-block w-100" %>
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

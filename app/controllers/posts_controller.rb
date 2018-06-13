@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_collection, only: [:index, :create, :update, :destroy]
-
+  before_action :require_login, only: [:new, :edit]
 
   def index
     respond_to do |f|

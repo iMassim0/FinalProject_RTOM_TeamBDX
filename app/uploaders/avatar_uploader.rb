@@ -2,7 +2,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   include Cloudinary::CarrierWave
 
-  process :tags => ['item_pic']
+  process :tags => ['avatar']
 
   version :standard do
     process :resize_to_fill => [100, 150, :north]
@@ -11,7 +11,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def public_id
     return "my_folder/" + Cloudinary::Utils.random_public_id;
   end
-
+  # Choose what kind of storage to use for this uploader:
+  storage :file
+  # storage :fog
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

@@ -1,4 +1,7 @@
 class CartsController < ApplicationController
+
+  before_action :require_login, only: [:require, :payment]
+
   def show
     @order_items = current_order.order_items
     respond_to do |f|

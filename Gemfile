@@ -25,7 +25,7 @@ gem 'bootstrap', '~> 4.1.1'
 
 gem "font-awesome-rails"
 
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
 
 gem 'cloudinary'
 

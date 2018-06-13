@@ -1,0 +1,85 @@
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
+
+.post-class {
+  width: 100%;
+  background-color: rgba(255,255,255,0);
+  margin: 0 auto -3%;
+  text-align: center;
+  border-radius: 10px;
+  font-family: $my_pimpernel_font;
+  letter-spacing: 1.5;
+  h1 {
+    line-height: 2;
+    letter-spacing: 1.5;
+    color: rgba(255,255,255,0.9);
+    font-family: $my_beautydemo_font;
+    font-size: 10vh !important;
+  }
+}
+
+.btn-post {
+  text-align: center;
+}
+
+.btn-post a {
+  font-family: $my_beautydemo_font !important;
+  font-size: 5vh !important;
+}
+
+.showpost {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.post {
+  width: 95%;
+  height: 20%;
+  margin: 0 auto;
+  background-color: rgba(141, 151, 168,0.5);
+  position: relative;
+}
+
+.post-title {
+  font-family: $my_beautydemo_font;
+  font-size: 4vh !important;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 80%;
+  height: 20%;
+}
+
+.post-title a, .post-show a {
+  margin: 2%;
+  font-family: $my_pimpernel_font;
+  font-size: 2.8vh;
+}
+
+.post-manage, .post-show {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.post-infos {
+  font-family: $my_pimpernel_font;
+  color: white;
+  font-size: 2vw;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  .post-description {
+    font-size: 1.2vw;
+    line-height: 0.85;
+  }
+}

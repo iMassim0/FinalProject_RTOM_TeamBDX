@@ -21,7 +21,7 @@ Devise.setup do |config|
   config.mailer_sender = 'resiliencetravelofmango@gmail.com'
 
   # Configure the class responsible to send e-mails.
-  config.mailer = 'GeneralMailer'
+  # config.mailer = 'GeneralMailer'
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'

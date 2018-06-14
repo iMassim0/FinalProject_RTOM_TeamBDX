@@ -34,12 +34,15 @@ class CartsController < ApplicationController
 
   def pay
     @order = current_order
+    @user = current_user
     new_charge
     if @charge.save
       @order.products.each {|o| o.update(availability: 0)}
       @order.update(status: "payé")
       session[:order_id] = nil
       flash[:success] = "Paiement réussi"
+      GeneralMailer.with(user: @user, order: @order).order_to_customer.deliver_now
+      GeneralMailer.with(user: @user, order: @order).order_to_admin.deliver_now
       redirect_to root_path
     else
       flash[:error] = "Problème de paiement"

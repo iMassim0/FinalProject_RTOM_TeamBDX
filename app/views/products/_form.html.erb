@@ -22,7 +22,7 @@
   <div class="form-group">
     <%= f.label :image, "Image" %>
     <%= f.hidden_field(:image_cache) %>
-    <%= f.file_field(:image, :folder => "images") %>
+    <%= f.file_field(:image, multiple: true, :folder => "images") %>
   </div>
   <div class="form-group">
     <%= f.label :price, "Price" %>

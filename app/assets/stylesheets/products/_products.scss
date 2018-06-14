@@ -1,0 +1,30 @@
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
+
+.index-title {
+  width: 90vw;
+  height: max-content;
+  background-color: rgba(255,255,255,0.4);
+  text-align: center;
+  margin: 2% auto 0;
+}
+
+.index-products {
+  width: 90vw;
+  height: 90vh;
+  overflow: auto;
+  background-color: rgba(255,255,255,0.4);
+  margin: 0 auto;
+  font-family: $my_pimpernel_font;
+}
+
+.index-title a {
+  font-family: $my_pimpernel_font;
+  font-size: 1.5vw;
+  color: grey;
+}
+.index-title h1 {
+  font-family: $my_beautydemo_font;
+  font-size: 5vw;
+}

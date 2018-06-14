@@ -35,17 +35,6 @@ z-index: 10;
 min-height: 300px;
 }
 
-.landing {
-  background: #757575 asset-url("background_firstpage.jpg") 50% 50%;
-  background-size: cover ;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  text-align: center;
-  padding-top: 35vh;
-  width: 100vw;
-  height: 100vh;
-}
-
 .nav {
   height: auto; /* height:width ratio = 9/16 = .5625  */
   width: auto;

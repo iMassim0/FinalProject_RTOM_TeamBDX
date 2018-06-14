@@ -1,14 +1,11 @@
 
 $( document ).ready(function() {
-var cookie = document.cookie;
-if (cookie.indexOf('visited=', 0) == -1) {
-    var expiration = new Date();
-    expiration.setDate(expiration.getMinutes()+60);
-		console.log(expiration);
-    document.cookie = 'visited=1;expires=' + expiration + ';path=/';
-		console.log(document.cookie);
+let visited = false;
+if ( visited == false ) {
+		console.log("Yay, première visite !")
     var element = document.getElementById('landing');
-    element.style.display = 'block';
+    element.style.display = 'flex';
+		visited = true;
 };
 var movementStrength = 25;
 var height = movementStrength / $(window).height();

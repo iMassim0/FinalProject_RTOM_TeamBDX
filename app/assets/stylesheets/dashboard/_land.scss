@@ -7,10 +7,14 @@ z-index:300;
 height:100%;
 background-size: calc(100% + 50px);
 display: none;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 0 10% 0 0;
 }
 
 .btn-ct-land:hover {
-  cursor: grabbing;
+  cursor: pointer;
 }
 
 .none {
@@ -26,7 +30,7 @@ display: none;
 .btn-ct-land {
   width: 10%;
   height: 10%;
-  margin: 2% 50% 0 40%;
+  margin: 2% 50% 0 43%;
 }
 
 .logo-land {

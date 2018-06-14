@@ -24,7 +24,7 @@
       <% @products.each do |product| %>
       <tr>
         <td><%= product.title %></td>
-        <td><%= product.description %></td>
+        <td><%= product.quotation %></td>
         <td><%= product.size %></td>
         <td colspan="2"><%= simple_format(product.quotation) %></td>
         <td><%= product.published %></td>

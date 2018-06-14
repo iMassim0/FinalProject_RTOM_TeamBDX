@@ -24,9 +24,14 @@
 
   <div class="story">
       <div class="aa1">
-        <div class="aa11">
-          <%= cl_image_tag @user.avatar_url %>
-        </div>
+        <% if !(@user.avatar_url == nil) %>
+          <div class="aa111">
+            <%= cl_image_tag(@user.avatar_url, :width=>80, :fetch_format=>:auto, :crop=>"scale", class: "roung_image") %>
+          </div>
+        <% else %>
+          <div class="aa11">
+          </div>
+        <% end %>
         <div class="aa12">
           <br>
             <p><%= @user.username.capitalize %></p>

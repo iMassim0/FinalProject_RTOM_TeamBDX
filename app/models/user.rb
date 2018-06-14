@@ -44,11 +44,11 @@ class User < ApplicationRecord
 
 
 
-    def self.ordering
+    def ordering
       @order_validation = true
     end
 
-    def self.ordering?
+    def ordering?
       @order_validation
     end
 

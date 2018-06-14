@@ -193,8 +193,8 @@
 	<header class="mt2 mb2" style="margin-bottom: 20px; margin-top: 20px;">
 		<img src="http://res.cloudinary.com/resiliencetravelofmango/image/upload/v1528981269/logo_rtom.png" style="height: auto; width: 100%;margin: 0 auto;">
 	</header>
-	<h1 style="box-sizing: border-box; font-size: 1.25rem; margin: 0; margin-bottom: 0.5em; padding: 0;">Cher <%= @user.username %>,</h1>
-	<p style="box-sizing: border-box; margin: 0; margin-bottom: 0.5em; padding: 0;">Resilience Travel of Mango vous remercie pour votre commande. Vous trouverez ci-dessous le récapitulatif :</p>
+	<h1 style="box-sizing: border-box; font-size: 1.25rem; margin: 0; margin-bottom: 0.5em; padding: 0;">Margaux! Une commande! Au toooooop 🤪</h1>
+	<p style="box-sizing: border-box; margin: 0; margin-bottom: 0.5em; padding: 0;">Voici le récapitulatif de la commande de <%= @user.firstname.capitalize %> <%= @user.lastname.upcase %>:</p>
 
     <div class="container">
 			    <table>
@@ -209,10 +209,10 @@
       <tbody>
         <% @order.products.each do |product| %>
           <tr style="border: 0.3px solid white">
-          <td style="border: 0.3px solid white"><%= item.title  %></td>
+          <td style="border: 0.3px solid white"><%= product.title  %></td>
           <td style="border: 0.3px solid white"><%= image_tag "#{product.image_url}", size: "100x100" %></td>
-          <td style="border: 0.3px solid white"><%= item.description %></td>
-          <td style="border: 0.3px solid white"><%= item.price %> €</td>
+          <td style="border: 0.3px solid white"><%= product.description %></td>
+          <td style="border: 0.3px solid white"><%= product.price %> €</td>
           </tr>
         <% end %>
       </tbody>
@@ -227,10 +227,12 @@
     </table>
             </div>
 
-    <h3>Vous serez prochainement informé de la livraison de votre commande.</h3>
+    <h3>Mets à jour les infos sur le site et tiens au courant <%= @user.username.capitalize %>!</h3>
 
     <br>
-    <h3>Ne cessez jamais d'explorer...</h3>
+    <h3>Et ne cesse jamais d'explorer...</h3>
+    <h3>De faire des bisous au dev qui a pondu çà</h3>
+    <h3>Et de continuer tes jolies oeuvres!</h3>
     <h3>Artistiquement,</h3>
 
     <img src="http://res.cloudinary.com/resiliencetravelofmango/image/upload/v1528993300/logo_m.png" alt="signature">

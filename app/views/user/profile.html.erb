@@ -36,7 +36,6 @@
           <br>
             <p><%= @user.username.capitalize %></p>
             <p><%= @user.email %></p>
-            <p><%= link_to 'Mon livre', book_path, class: "btn-sign"%></p>
         </div>
       </div>
       <div class="aa2">
@@ -70,14 +69,14 @@
           </tr>
         </thead>
         <tbody>
-      <% if current_user.orders.any? %>
+      <% if current_user.orders.length < 2 %>
         <tr class="ordertotal">
           <td colspan="3">Pas encore de commande</td>
         </tr>
       <% else %>
-        <% @user.orders.where(status: "payé").each do |order| %>
+        <% @user.orders.where(status: "payé").each_with_index do |order, i| %>
           <tr class="orderdetails">
-            <th class="" rowspan="<%= order.order_items.length %>"><%= order.id %></th>
+            <th class="" rowspan="<%= order.order_items.length %>"><%= i+1 %></th>
             <% order.order_items.each do |item| %>
             <td><%= item.product.title %></td>
             <td><%= item.product.price %> €</td>

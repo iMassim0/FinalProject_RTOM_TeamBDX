@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post "/posts/:post_id/comments",  to: 'comments#create',          as: :post_comments
   get "/bienvenue",                 to: 'pages#landing',            as: :landing
   post '/panier/:id',               to: "carts#update",             as: :adding
+  get '/locations',                 to: 'pages#locations'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

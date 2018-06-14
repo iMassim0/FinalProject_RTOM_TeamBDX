@@ -41,8 +41,8 @@ class CartsController < ApplicationController
       @order.update(status: "payé")
       session[:order_id] = nil
       flash[:success] = "Paiement réussi"
-      GeneralMailer.with(user: @user, order: @order).order_to_customer.deliver_now
-      GeneralMailer.with(user: @user, order: @order).order_to_admin.deliver_now
+      OrderMailer.with(user: @user, order: @order).order_to_customer.deliver_now
+      OrderMailer.with(user: @user, order: @order).order_to_admin.deliver_now
       redirect_to root_path
     else
       flash[:error] = "Problème de paiement"

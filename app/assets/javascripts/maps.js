@@ -1,4 +1,5 @@
 function myMap() {
+
   var bordeaux = new google.maps.LatLng(44.8637226,-0.6211603)
   var kochi = new google.maps.LatLng(9.9385818,76.1803488);
   var varkala = new google.maps.LatLng(8.7432563,76.699973);
@@ -27,10 +28,12 @@ function myMap() {
   var kona = new google.maps.LatLng(19.6643281,-155.9905465);
   var waipio = new google.maps.LatLng(20.1114619,-155.6038046);
   var san_francisco = new google.maps.LatLng(37.7576948,-122.4726194);
-  var path = [bordeaux, kochi, varkala, jodhpur, mathura, delhi, bhaktapur, chame, yak_kharka, thorong_la_pass, kawah_ijen, gili_t, gunung_rinjani, amed, koyasan, miyajima, hiroshima, onomichi, kurashiki, okayama, kyoto, tokyo, waikiki, kehena_beach, kilauea, kona, waipio, san_francisco, bordeaux]
+  var path = [bordeaux, kochi, varkala, jodhpur, mathura, delhi, bhaktapur, chame, yak_kharka, thorong_la_pass, kawah_ijen, gili_t, gunung_rinjani, amed, koyasan, miyajima, hiroshima, kyoto, tokyo, waikiki, kehena_beach, kilauea, kona, waipio, san_francisco]
+
+  var mapCenter = new google.maps.LatLng(31.3938605,134.663557);
 
   var mapCanvas = document.getElementById("googleMap");
-  var mapOptions = {center: bordeaux, zoom: 2, mapTypeId: google.maps.MapTypeId.TERRAIN};
+  var mapOptions = {center: mapCenter, zoom: 2, mapTypeId: google.maps.MapTypeId.TERRAIN};
   var map = new google.maps.Map(mapCanvas,mapOptions);
 
   var flightPath = new google.maps.Polyline({
@@ -57,18 +60,24 @@ function myMap() {
     i += 1;
 
     google.maps.event.addListener(marker, 'click', function(event) {
-        toggleLocation(infoWindow);
+        var location = infoWindow.getContent();
+        toggleLocation(location);
     });
 
   });
 
 };
 
-function toggleLocation(infoWindow) {
+function toggleLocation(location) {
   $('#trip-container').html("");
-  $('#trip-container').load(`locations.html #marker-${infoWindow.getContent()}`);
-}
+  $('#trip-container').load(`locations.html #marker-${location}`);
+};
 
+  $('li').on('li', "click", function () {
+    itemNumber = $(this).eq();
+    $('#trip-container').html("");
+    $('#trip-container').load(`locations.html #marker-${itemNumber}`);
+});
 
 // function getFormInfos() {
 //

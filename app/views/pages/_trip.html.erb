@@ -2,10 +2,42 @@
   <div style="width: 65%;">
     <div id="googleMap"></div>
   </div>
-  <div class="bg-info" style="width: 35%; height: 100%;">
-    <h2>Itinéraire</h2>
-    <p>blabla</p>
+  <div id="trip-list" style="width: 35%; height: 100%;">
+    <h2 class="text-center p-4">Itinéraire</h2>
+    <ul>
+      <li>Kochi - KERALA (India)</li>
+      <li>Varkala - KERALA (India)</li>
+      <li>Jodhpur - RAJASTHAN (India)</li>
+      <li>Mathura - UTTAR PRADESH (India)</li>
+      <li>Dehli - India</li>
+      <li>Bhaktapur - NEPAL</li>
+      <li>Chame - NEPAL</li>
+      <li>Yak Kharka - NEPAL</li>
+      <li>Thorong Pedi - NEPAL</li>
+      <li>Thorong La Pass - NEPAL </li>
+      <li>Kawah Ijen - JAVA (Indonesia)</li>
+      <li>Gili T - LOMBOK (Indonesia)</li>
+      <li>Gunung Rinjani - LOMBOK (Indonesia)</li>
+      <li>Amed - BALI (Indonesia)</li>
+      <li>Jemeluk - BALI (Indonesia)</li>
+      <li>KoyaSan - JAPAN</li>
+      <li>Miyajima - JAPAN</li>
+      <li>Hiroshima - JAPAN</li>
+      <li>Kyoto - JAPAN</li>
+      <li>Tokyo - JAPAN</li>
+      <li>Waikiki (Oahu) - HAWAII</li>
+      <li>Kehena Beach (Big Island) - HAWAII</li>
+      <li>Kilauea Volcano (Big Island) - HAWAII</li>
+      <li>Kona (Big Island) - HAWAII</li>
+      <li>Waipio Valley (Big Island) - HAWAII</li>
+      <li>San Francisco - CALIFORNIA (USA)</li>
+    </ul>
+
   </div>
 </div>
+<!--
+pour les throng lapass, ’’thorong pedi” pour le premier, le deuxième reste tel quel
+
+et pour Amed, le premier reste Amed et le deuxième JEMELUK (modifié) -->
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=myMap"></script>

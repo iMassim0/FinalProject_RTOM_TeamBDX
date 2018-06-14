@@ -34,3 +34,6 @@
 
 # Ignore the .env local key library
 .env
+
+# Ignore application configuration
+/config/application.yml

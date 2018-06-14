@@ -10,11 +10,11 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= image_tag ("#{@product.image}"), class: "d-block w-100" %>
+              <%= cl_image_tag("#{@product.image_url}", :width=>700, :fetch_format=>:auto, :crop=>"scale") %>
             </div>
-            <div class="carousel-item">
-              <%= image_tag ("ZOOM_#{@product.image}"), class: "d-block w-100" %>
-            </div>
+            <!-- <div class="carousel-item">
+              <%= cl_image_tag("ZOOM_#{@product.image_url}", :width=>700, :fetch_format=>:auto, :crop=>"scale") %>
+            </div> -->
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

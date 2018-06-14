@@ -1,37 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<div class="container-fluid">
-<div class="row">
-  <h1>Posts</h1>
-  <div class="col-lg-6">
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= link_to 'Show', post, remote: true %></td>
-        <td><%= link_to 'Edit', edit_post_path(post), remote: true %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="post-class">
+  <h1>Temoignages</h1>
 </div>
-  <div class="col-lg-6">
+<div class="btn-post">
+<%= link_to 'A votre tour de parler de vos rencontres en voyage...', new_post_path, remote: true %>
+</div>
+<div class="showpost">
+<% @posts.each do |post| %>
+ <% if !post.publish? %>
+  <div class="post">
+    <div class="post-title">
+      <div class="tit"><h1><%= post.title.capitalize %></h1></div>
+      <div class="post-manage">
+        <%= image_tag ("#{post.user.avatar}"), class: "post-img" %>
+        <h5> écrit par <%= post.user.username %> le <%= post.created_at.strftime("%e %B %Y à %X") %></h5>
+        <h3><%= link_to 'Afficher', post, remote: true %></h3>
+      <% if current_user.is_admin == false && post.user == current_user %>
+        <h3><%= link_to 'Editer', edit_post_path(post), remote: true %></h3>
+      <% elsif current_user.is_admin == true %>
+        <h3><%= link_to 'Editer', edit_post_path(post), remote: true %></h3>
+        <h3><%= link_to 'Supprimer', post, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></h3>
+      <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="post-description">
+      <div class="pd-left"><p>Résumé : <i><%= post.description %></i></p></div>
+      <div class="pd-right"><p><%= post.comments.length %> commentaire(s)</p></div>
+    </div>
   </div>
-</div>
-
-<div class="row">
-  <h2>Truc</h2>
-  <div class="col-lg-6">
-<%= link_to 'New Post', new_post_path, remote: true %>
-</div>
-  </div>
-
+  <% end %>
+  <% end %>
 </div>

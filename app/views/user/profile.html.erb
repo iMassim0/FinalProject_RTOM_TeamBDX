@@ -24,18 +24,23 @@
 
   <div class="story">
       <div class="aa1">
-        <div class="aa11">
-        </div>
+        <% if !(@user.avatar_url == nil) %>
+          <div class="aa111">
+            <%= cl_image_tag(@user.avatar_url, :width=>80, :fetch_format=>:auto, :crop=>"scale", class: "roung_image") %>
+          </div>
+        <% else %>
+          <div class="aa11">
+          </div>
+        <% end %>
         <div class="aa12">
           <br>
             <p><%= @user.username.capitalize %></p>
             <p><%= @user.email %></p>
-            <p><%= link_to 'Mon livre', book_path, class: "btn-sign"%></p>
         </div>
       </div>
       <div class="aa2">
         <div class="aa21">
-          <%= link_to 'Changer ma photo', class: "btn-sign" %>
+          <%= link_to 'Editer mes informations', edit_user_registration_path, class: "btn-sign" %>
         </div>
         <div class="aa22">
           <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn-sign" %>
@@ -64,14 +69,14 @@
           </tr>
         </thead>
         <tbody>
-      <% if current_user.orders.empty? %>
+      <% if current_user.orders.length < 2 %>
         <tr class="ordertotal">
           <td colspan="3">Pas encore de commande</td>
         </tr>
       <% else %>
-        <% @user.orders.where(status: "payé").each do |order| %>
+        <% @user.orders.where(status: "payé").each_with_index do |order, i| %>
           <tr class="orderdetails">
-            <th class="" rowspan="<%= order.order_items.length %>"><%= order.id %></th>
+            <th class="" rowspan="<%= order.order_items.length %>"><%= i+1 %></th>
             <% order.order_items.each do |item| %>
             <td><%= item.product.title %></td>
             <td><%= item.product.price %> €</td>

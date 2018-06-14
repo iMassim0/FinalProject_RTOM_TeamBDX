@@ -1,0 +1,110 @@
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
+
+.post-class {
+  width: 100%;
+  background-color: rgba(255,255,255,0);
+  margin: 0 auto -3%;
+  text-align: center;
+  border-radius: 10px;
+  font-family: $my_pimpernel_font;
+  letter-spacing: 1.5;
+}
+
+.post-class h1 {
+    line-height: 2;
+    letter-spacing: 1.5;
+    color: rgba(255,255,255,0.9);
+    font-family: $my_beautydemo_font;
+    font-size: 10vh !important;
+  }
+
+  .post-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -2% 1% 0 0;
+  }
+
+.btn-post {
+  text-align: center;
+}
+
+.btn-post a {
+  font-family: $my_pimpernel_font !important;
+  font-size: 5vh !important;
+}
+
+.showpost {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.post {
+  width: 95%;
+  height: 40%;
+  margin: 2% auto;
+  background-color: rgba(141, 151, 168,0.5);
+  position: relative;
+}
+
+.post-title {
+  font-family: $my_beautydemo_font;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  margin: 2%;
+  width: 95%;
+  height: 20%;
+}
+
+.tit {
+  width: 60%;
+  font-size: 5vh !important;
+}
+
+.tit h1 {
+  font-size: 3vw !important;
+}
+
+.post-title h5 {
+  font-family: $my_pimpernel_font;
+  font-size: 1.5vw !important;
+}
+
+.post-title h3, .post-title a {
+  margin: 2%;
+  font-family: $my_pimpernel_font;
+  font-size: 2.8vh;
+}
+
+.post-manage {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.post-description {
+  font-family: $my_pimpernel_font;
+  color: white;
+  font-size: 1.5vw;
+  height: 50%;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pd-left, .pd-right {
+  margin: 0 2% 0;
+}

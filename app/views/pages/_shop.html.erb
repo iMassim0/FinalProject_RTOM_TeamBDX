@@ -6,6 +6,11 @@
   <div class="cart-content">
     <div class="number-item"><h3><%= link_to carts_path, remote: true do %><%= current_order.products.length %> article(s)<br>dans votre sac à dos<% end %>.</h3></div>
     <div class="cart-logo"></div>
+    <% if @user.is_admin %>
+      <%= link_to products_path do %>
+        <%= image_tag ("logo_admin.png"), class: "admin-logo" %>
+      <% end %>
+    <% end %>
   </div>
 <% else %>
   <div class="cart-content">
@@ -18,7 +23,9 @@
 <% @products.each do |product| %>
  <% if product.published? %>
   <div class="item">
-      <%= image_tag product.image, class: 'item-image' %>
+      <% if !(product.image_url == nil) %>
+        <%= cl_image_tag("#{product.image_url}", :width=>350, :fetch_format=>:auto, :crop=>"scale") %>
+      <% end %>
       <%= link_to product_path(product), remote: true  do %>
   <div class="overlay">
     <div class="item-infos">

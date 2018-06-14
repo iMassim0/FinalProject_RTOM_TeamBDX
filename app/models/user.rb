@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  attr_accessor :avatar
+
+  mount_uploader :avatar, AvatarUploader
+
   has_many :orders
   has_many :products, through: :orders
   has_many :posts
@@ -27,5 +31,26 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: { case_sensitive: :false }, format: { with: NAME_REGEX }
   validates :del_zipcode, :fac_zipcode, format: { with: ZIPCODE_REGEX }, allow_nil: true, allow_blank: true
   validates :phonenumber, format: { with: PHONE_REGEX }, allow_nil: true, allow_blank: true
+
+  validates_presence_of :del_firstname,
+                        :del_lastname,
+                        :del_zipcode,
+                        :del_town,
+                        :fac_firstname,
+                        :fac_lastname,
+                        :fac_zipcode,
+                        :fac_town,
+                        :phonenumber, if: :ordering?
+
+
+
+    def ordering
+      @order_validation = true
+    end
+
+    def ordering?
+      @order_validation
+    end
+
 
 end

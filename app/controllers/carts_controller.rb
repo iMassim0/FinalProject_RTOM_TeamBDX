@@ -1,4 +1,7 @@
 class CartsController < ApplicationController
+
+  before_action :require_login, only: [:require, :payment]
+
   def show
     @order_items = current_order.order_items
     respond_to do |f|
@@ -8,6 +11,7 @@ class CartsController < ApplicationController
 
   def require
     @user = current_user
+    @user.ordering
     respond_to do |f|
       f.js { }
     end
@@ -16,20 +20,29 @@ class CartsController < ApplicationController
   def payment
     @order = current_order
     @user = current_user
-    @user.update(params_user)
-    respond_to do |f|
-      f.js { }
+    @user.ordering
+    if @user.update(params_user)
+      respond_to do |f|
+        f.js { }
+      end
+    else
+      respond_to do |f|
+        f.js { render :require }
+      end
     end
   end
 
   def pay
     @order = current_order
+    @user = current_user
     new_charge
     if @charge.save
       @order.products.each {|o| o.update(availability: 0)}
       @order.update(status: "payé")
       session[:order_id] = nil
       flash[:success] = "Paiement réussi"
+      GeneralMailer.with(user: @user, order: @order).order_to_customer.deliver_now
+      GeneralMailer.with(user: @user, order: @order).order_to_admin.deliver_now
       redirect_to root_path
     else
       flash[:error] = "Problème de paiement"

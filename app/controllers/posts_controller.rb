@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_collection, only: [:index, :create, :update, :destroy]
-
+  before_action :require_login, only: [:new, :edit]
 
   def index
     respond_to do |f|
@@ -59,6 +59,7 @@ class PostsController < ApplicationController
 
 
   def destroy
+    @post.comments.each {|comment| comment.destroy}
     @post.destroy
     respond_to do |format|
       format.js { }

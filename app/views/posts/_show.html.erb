@@ -1,21 +1,33 @@
-<p id="notice"><%= notice %></p>
-<div class="row">
-  <div class="col-lg-6">
+<div class="post-class">
+  <h1><%= @post.title %>, par <%= @post.user.username %></h1>
+</div>
+<div class="post-show">
+  <div class="ps-btn">
+    <% if @post.user == current_user || current_user.is_admin %>
+      <%= link_to 'Editer', edit_post_path(@post), remote: true %>
+    <% end %>
+    <%= link_to 'Retourner aux témoignages', posts_path, remote: true %>
+  </div>
+  <div class="ps-content">
     <%= render @post %>
   </div>
-</div>
-<div class="row">
-  <div class="col-lg-6" id="comments-container">
-    <%= render @post.comments %>
-  </div>
-  <div class="col-lg-6">
-    <%= form_for [@post, @comment], remote: true do |f| %>
-      <%= f.text_field :content, placeholder: "Ecrire un commentaire" %>
-      <%= f.hidden_field :post_id, value: @post.id %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <%= f.submit "Commenter" %>
+  <div class="comments-side">
+    <% @post.comments.each do |comment| %>
+      <div class="ps-comments">
+          <em>Par <%= comment.user.username %>, le <%= comment.created_at.strftime("%e %B %Y à %X") %>:</em>
+          <hr>
+          <p><%= comment.content %></p>
+      </div>
     <% end %>
+    <div id="comment-container" style="display: none;">
+    </div>
+    <div class="ps-leave-comments">
+      <%= form_for [@post, @comment], remote: true do |f| %>
+        <%= f.text_field :content, placeholder: "Ecrire un commentaire" %>
+        <%= f.hidden_field :post_id, value: @post.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.submit "Réagir" %>
+      <% end %>
+    </div>
   </div>
 </div>
-<%= link_to 'Edit', edit_post_path(@post), remote: true %> |
-<%= link_to 'Back', posts_path, remote: true %>

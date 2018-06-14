@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
 
   before_action :set_product, only: [:edit, :update, :destroy]
 
+  before_action :require_admin, only: [:index, :new, :edit]
+
   def index
     @products = Product.all
   end
@@ -66,6 +68,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:title, :price, :description, :size, :image, :published, :quotation)
+      params.require(:product).permit(:title, :price, :size, :description, :image, :image_cache, :published, :quotation)
     end
 end

@@ -1,0 +1,73 @@
+#landing {
+background:url('background_firstpage.jpg') -25px -50px;
+position:fixed ;
+top:0;
+width:100%;
+z-index:300;
+height:100%;
+background-size: calc(100% + 50px);
+display: none;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 0 10% 0 0;
+}
+
+.btn-ct-land:hover {
+  cursor: pointer;
+}
+
+.none {
+  position: relative;
+  display: none;
+  z-index: -100;
+}
+
+.logo-land {
+  margin: -12% 3% 0 0;
+}
+
+.btn-ct-land {
+  width: 10%;
+  height: 10%;
+  margin: 2% 50% 0 43%;
+}
+
+.logo-land {
+    opacity:0;
+    -moz-animation: anim 1.5s linear forwards 0.95s;
+    -webkit-animation: anim 1.5s linear forwards 0.95s;
+    -o-animation: anim 1.5s linear forwards 0.95s;
+    -ms-animation: anim 1.5s linear forwards 0.95s;
+    animation: anim 1.5s linear forwards 0.95s;
+}
+
+.btn-land {
+opacity:0;
+-moz-animation: anim 1s linear forwards 2s;
+-webkit-animation: anim 1s linear forwards 2s;
+-o-animation: anim 1s linear forwards 2s;
+-ms-animation: anim 1s linear forwards 2s;
+animation: anim 1s linear forwards 2s;
+}
+
+@-moz-keyframes anim {
+   0%  {opacity:0;}
+   100% {opacity:1;}
+}
+@-webkit-keyframes anim {
+   0%  {opacity:0;}
+   100% {opacity:1;}
+}
+@-o-keyframes anim {
+   0%  {opacity:0;}
+   100% {opacity:1;}
+}
+@-ms-keyframes anim {
+   0%  {opacity:0;}
+   100% {opacity:1;}
+}
+@keyframes anim {
+   0%  {opacity:0;}
+   100% {opacity:1;}
+}

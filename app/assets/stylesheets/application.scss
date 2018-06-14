@@ -17,6 +17,8 @@
 @import "dashboard/index";
 @import "profile/index";
 @import "shop/index";
+@import "posts/index";
+@import "products/index";
 @import "bootstrap";
 
 $my_beautydemo_font: 'beautydemo';
@@ -31,17 +33,6 @@ background-attachment: fixed;
 overflow: hidden;
 z-index: 10;
 min-height: 300px;
-}
-
-.landing {
-  background: #757575 asset-url("background_firstpage.jpg") 50% 50%;
-  background-size: cover ;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  text-align: center;
-  padding-top: 35vh;
-  width: 100vw;
-  height: 100vh;
 }
 
 .nav {
@@ -102,7 +93,18 @@ input {
   border-top: none;
   border-left: none;
   border-right: none;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(255,255,255,0.1);
+  letter-spacing: 2px;
+}
+
+textarea {
+  font-family: $my_pimpernel_font;
+  font-size: 1.2vw;
+  width: 200px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: rgba(255,255,255,0.1);
   letter-spacing: 2px;
 }
 

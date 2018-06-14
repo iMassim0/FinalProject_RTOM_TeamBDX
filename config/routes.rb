@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/informations',              to: "carts#require",            as: :require
   patch '/paiement',                to: "carts#payment",            as: :payment
   post "/paiement/stripe",          to: "carts#pay"
+  patch "/comment",                 to: "comments#create_comment",  as: :comment
   get "/profil",                    to: "user#profile",             as: :profile
   get "/livre",                     to: "book#index",               as: :book
   get "/personnages",               to: "pages#characters",         as: :characters

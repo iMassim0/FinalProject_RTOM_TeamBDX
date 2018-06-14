@@ -1,1 +1,10 @@
-<h2>page Trip</h2>
+<div class="d-flex">
+  <div style="width: 65%;">
+    <div id="googleMap"></div>
+  </div>
+  <div class="bg-info" style="width: 35%; height: 100%;">
+    <h2>Itinéraire</h2>
+  </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=myMap"></script>

@@ -11,6 +11,7 @@ class CartsController < ApplicationController
 
   def require
     @user = current_user
+    @user.ordering
     respond_to do |f|
       f.js { }
     end
@@ -19,9 +20,15 @@ class CartsController < ApplicationController
   def payment
     @order = current_order
     @user = current_user
-    @user.update(params_user)
-    respond_to do |f|
-      f.js { }
+    @user.ordering
+    if @user.update(params_user)
+      respond_to do |f|
+        f.js { }
+      end
+    else
+      respond_to do |f|
+        f.js { render :require }
+      end
     end
   end
 

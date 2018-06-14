@@ -64,7 +64,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "FinalProject_THP_TeamBDX_RToM_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { :host => "https://resiliencetravelofmango.heroku.com" }
+  config.action_mailer.default_url_options = { :host => "https://resiliencetravelofmango.herokuapp.com" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => "in-v3.mailjet.com",

@@ -1,18 +1,16 @@
 class ImageUploader < CarrierWave::Uploader::Base
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
-  include Cloudinary::CarrierWave
 
-  process :tags => ['image']
+    include Cloudinary::CarrierWave
 
-  version :standard do
-    process :resize_to_fill => [100, 150, :north]
-  end
+    process :tags => ['image']
 
-  def public_id
-    return "my_folder/" + Cloudinary::Utils.random_public_id;
-  end
+    version :standard do
+      process :resize_to_fill => [100, 150, :north]
+    end
+
+    def public_id
+      return "images/" + Cloudinary::Utils.random_public_id;
+    end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

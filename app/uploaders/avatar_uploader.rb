@@ -9,7 +9,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def public_id
-    return "my_folder/" + Cloudinary::Utils.random_public_id;
+    return "avatars/" + Cloudinary::Utils.random_public_id;
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

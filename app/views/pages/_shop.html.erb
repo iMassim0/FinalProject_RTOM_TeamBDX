@@ -23,7 +23,9 @@
 <% @products.each do |product| %>
  <% if product.published? %>
   <div class="item">
-      <%= cl_image_tag("#{product.image_url}", :width=>350, :fetch_format=>:auto, :crop=>"scale") %>
+      <% if !(product.image_url == nil) %>
+        <%= cl_image_tag("#{product.image_url}", :width=>350, :fetch_format=>:auto, :crop=>"scale") %>
+      <% end %>
       <%= link_to product_path(product), remote: true  do %>
   <div class="overlay">
     <div class="item-infos">

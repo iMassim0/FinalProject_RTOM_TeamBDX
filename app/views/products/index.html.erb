@@ -1,22 +1,22 @@
 <div class="index-title">
-  <h1>Products</h1>
+  <h1>Produits</h1>
 
-  <%= link_to 'New Product', new_product_path %> |
-  <%= link_to 'Return to home', root_path %>
+  <%= link_to 'Nouveau Produit', new_product_path %> |
+  <%= link_to 'Dashboard', root_path %>
 </div>
 <div class="index-products">
   <table class="table">
     <thead>
       <tr>
-        <th>Title</th>
+        <th>Titre</th>
         <th>Description</th>
-        <th>Size</th>
-        <th colspan="2">Citation</th>
-        <th>Published</th>
-        <th>Change</th>
-        <th>Price</th>
-        <th>Image(s)</th>
-        <th colspan="2">Actions</th>
+        <th>Citation</th>
+        <th>Dimensions</th>
+        <th>Publié</th>
+        <th>Publier</th>
+        <th>Prix</th>
+        <th>Image</th>
+        <th colspan="2">Action</th>
         <th></th>
       </tr>
     </thead>
@@ -24,24 +24,21 @@
       <% @products.each do |product| %>
       <tr>
         <td><%= product.title %></td>
-        <td><%= product.quotation %></td>
+        <td><%= product.description %></td>
+        <td><%= simple_format(product.quotation) %></td>
         <td><%= product.size %></td>
-        <td colspan="2"><%= simple_format(product.quotation) %></td>
-        <td><%= product.published %></td>
+        <td><% if product.published == true %>Oui<% else %>Non<%end %></td>
         <td>
           <% if product.published == true %>
-            <%= link_to "Unpublish", unpublish_path(product), method: 'patch' %>
+            <%= link_to "Retirer", unpublish_path(product), method: 'patch' %>
           <% elsif product.published == false || product.published == nil %>
-          <%= link_to "Publish", publish_path(product), method: 'patch' %>
+          <%= link_to "Publier", publish_path(product), method: 'patch' %>
           <% end %>
         </td>
         <td><%= product.price %></td>
         <td><%= cl_image_tag("#{product.image_url}", :width=>350, :fetch_format=>:auto, :crop=>"scale") %></td>
         <td>
-          <%= link_to "Edit", edit_product_path(product) %>
-        </td>
-        <td>
-          <%= link_to "Delete", product_path(product), method: :delete %>
+          <%= link_to "Editer", edit_product_path(product) %>
         </td>
       </tr>
     <% end %>

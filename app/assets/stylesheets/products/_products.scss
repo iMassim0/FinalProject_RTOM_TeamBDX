@@ -5,7 +5,7 @@ $my_pimpernel_font: 'pimpernel';
 .index-title {
   width: 90vw;
   height: max-content;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.5);
   text-align: center;
   margin: 2% auto 0;
 }
@@ -14,17 +14,26 @@ $my_pimpernel_font: 'pimpernel';
   width: 90vw;
   height: 90vh;
   overflow: auto;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.5);
   margin: 0 auto;
   font-family: $my_pimpernel_font;
+  color: black !important;
+  font-size: 1.6vw;
 }
 
 .index-title a {
   font-family: $my_pimpernel_font;
-  font-size: 1.5vw;
-  color: grey;
+  font-size: 2.5vw;
+  color: black !important;
 }
 .index-title h1 {
   font-family: $my_beautydemo_font;
   font-size: 5vw;
+  color: black !important;
+}
+
+.index-products a {
+  color: red;
+  font-weight: bold;
+  font-size: 1.6vw;
 }

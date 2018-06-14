@@ -32,4 +32,25 @@ class User < ApplicationRecord
   validates :del_zipcode, :fac_zipcode, format: { with: ZIPCODE_REGEX }, allow_nil: true, allow_blank: true
   validates :phonenumber, format: { with: PHONE_REGEX }, allow_nil: true, allow_blank: true
 
+  validates_presence_of :del_firstname,
+                        :del_lastname,
+                        :del_zipcode,
+                        :del_town,
+                        :fac_firstname,
+                        :fac_lastname,
+                        :fac_zipcode,
+                        :fac_town,
+                        :phonenumber, if: :ordering?
+
+
+
+    def self.ordering
+      @order_validation = true
+    end
+
+    def self.ordering?
+      @order_validation
+    end
+
+
 end

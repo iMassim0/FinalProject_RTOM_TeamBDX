@@ -3,9 +3,10 @@ desc "Envoi des infos essentielles : MONEY"
   task remember_chaton: :environment do
     @orders = 0
     @money_win = 0
-    users = User.all
+    @items_purchased = 0
+    @users = User.all
     p "recherche des informations sensibles"
-    users.each do |user|
+    @users.each do |user|
       if user.orders == "payé"
         user.orders.each do |order|
           @orders += 1
@@ -16,6 +17,9 @@ desc "Envoi des infos essentielles : MONEY"
         end
       end
     end
+    p "#{@orders} commandes"
+    p "#{@money_win} €"
+    p "#{@items_purchased} d'oeuvre vendues"
     p "informations récupérées && envoi du mail"
     OrderMailer.with(orders: @orders, items: @items_purchased, money: @money_win).info_to_admin.deliver_now
     p "informations envoyées"

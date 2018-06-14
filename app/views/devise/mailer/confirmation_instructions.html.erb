@@ -193,7 +193,7 @@
 	<header class="mt2 mb2" style="margin-bottom: 20px; margin-top: 20px;">
 		<img src="http://res.cloudinary.com/resiliencetravelofmango/image/upload/v1528981269/logo_rtom.png" style="height: auto; width: 100%;margin: 0 auto;">
 	</header>
-	<h1 style="box-sizing: border-box; font-size: 1.25rem; margin: 0; margin-bottom: 0.5em; padding: 0;">Bienvenue <%= @user.username %> sur le site de Resilience travel of Mango.</h1>
+	<h1 style="box-sizing: border-box; font-size: 1.25rem; margin: 0; margin-bottom: 0.5em; padding: 0;">Bienvenue <%= @user.firstname.capitalize %> sur le site de Resilience travel of Mango.</h1>
 	<p style="box-sizing: border-box; margin: 0; margin-bottom: 0.5em; padding: 0;">Pour confirmer la création de votre profil, veuillez valider votre adresse e-mail grâce au lien ci-dessous :</p>
 
 			<a class="button" href="<%= confirmation_url(@resource, confirmation_token: @token) %>" target="_blank">

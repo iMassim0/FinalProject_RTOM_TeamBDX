@@ -24,6 +24,10 @@
   overflow: auto;
   margin: 0 0 0 2%;
   vertical-align: text-top;
+  a {
+    font: inherit;
+    color: inherit;
+  }
   .far {
     margin-bottom: 1.7vh;
     margin-top: 1.7vh;

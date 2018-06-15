@@ -24,8 +24,7 @@
     </div>
     <% end %>
 <% if !user_signed_in? %>
-
-    <%= link_to new_session_path do %>
+    <%= link_to new_user_session_path do %>
     <div class="conn">
       <div class="btn-ct-conn">
         <div class="btn-conn">
@@ -33,9 +32,7 @@
       </div>
     </div>
     <% end %>
-
 <% else %>
-
     <%= link_to profile_path do %>
     <div class="prof">
       <div class="btn-ct-prof">
@@ -44,7 +41,6 @@
       </div>
     </div>
   <% end %>
-
 <% end %>
 <%= link_to shop_path, remote: true do %>
   <div class="shop">

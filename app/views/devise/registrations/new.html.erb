@@ -1,6 +1,9 @@
 <div class="nav">
   <div class="signup">
     <div class="passport">
+      <%= link_to root_path do %>
+        <div class="home-return"></div>
+      <% end %>
       <%= render 'devise/registrations/new_registration_form' %>
     </div>
   </div>

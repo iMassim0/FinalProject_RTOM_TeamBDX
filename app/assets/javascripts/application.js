@@ -11,17 +11,17 @@
 // about supported directives.
 //
 //= require jquery
-//= require_tree .
+//= require jquery-ujs
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require cloudinary
+//= require_tree .
 
 var startRTOM = function() {
 var visited = false;
 if ( visited == false ) {
-		console.log("Yay, première visite !")
     var element = document.getElementById('landing');
     element.style.display = 'flex';
 		visited = true;

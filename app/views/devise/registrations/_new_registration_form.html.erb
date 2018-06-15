@@ -1,7 +1,6 @@
   <div class="div-signup">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <div class="btn-sign close">
-      <a href="<%=root_path%>"><i class="fas fa-window-close"></i></a>
+    <div class="close">
     </div>
     <div class="dsu-pseudo">
       <p><%= f.text_field :username, autocomplete: "username", placeholder: "Pseudo"%></p>

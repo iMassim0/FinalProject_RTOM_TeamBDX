@@ -1,6 +1,5 @@
 class UserController < ApplicationController
 
-  before_action :require_login, only: [:profile]
   before_action :require_admin, only: [:index]
 
   def profile

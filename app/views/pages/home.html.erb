@@ -23,24 +23,28 @@
       </div>
     </div>
     <% end %>
-<% if user_signed_in? %>
-  <%= link_to profile_path do %>
-  <div class="prof">
-    <div class="btn-ct-prof">
-      <div class="btn-prof">
+<% if !user_signed_in? %>
+
+    <%= link_to new_session_path do %>
+    <div class="conn">
+      <div class="btn-ct-conn">
+        <div class="btn-conn">
+        </div>
       </div>
     </div>
-  </div>
     <% end %>
+
 <% else %>
-  <%= link_to new_session_path do %>
-  <div class="conn">
-    <div class="btn-ct-conn">
-      <div class="btn-conn">
+
+    <%= link_to profile_path do %>
+    <div class="prof">
+      <div class="btn-ct-prof">
+        <div class="btn-prof">
+        </div>
       </div>
     </div>
-  </div>
-    <% end %>
+  <% end %>
+
 <% end %>
 <%= link_to shop_path, remote: true do %>
   <div class="shop">

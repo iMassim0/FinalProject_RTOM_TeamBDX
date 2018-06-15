@@ -3,9 +3,11 @@
 </div>
 <div class="post-show">
   <div class="ps-btn">
+  <% if user_signed_in? %>
     <% if @post.user == current_user || current_user.is_admin %>
       <%= link_to 'Editer', edit_post_path(@post), remote: true %>
     <% end %>
+  <% end %>
     <%= link_to 'Retourner aux témoignages', posts_path, remote: true %>
   </div>
   <div class="ps-content">
@@ -19,6 +21,7 @@
           <p><%= comment.content %></p>
       </div>
     <% end %>
+  <% if user_signed_in? %>
     <div id="comment-container" style="display: none;">
     </div>
     <div class="ps-leave-comments">
@@ -29,5 +32,6 @@
         <%= f.submit "Réagir" %>
       <% end %>
     </div>
+    <% end %>
   </div>
 </div>

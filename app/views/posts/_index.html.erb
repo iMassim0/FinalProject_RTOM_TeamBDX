@@ -14,12 +14,14 @@
         <%= image_tag ("#{post.user.avatar}"), class: "post-img" %>
         <h5> écrit par <%= post.user.username %> le <%= post.created_at.strftime("%e %B %Y à %X") %></h5>
         <h3><%= link_to 'Afficher', post, remote: true %></h3>
+    <% if user_signed_in? %>
       <% if current_user.is_admin == false && post.user == current_user %>
         <h3><%= link_to 'Editer', edit_post_path(post), remote: true %></h3>
       <% elsif current_user.is_admin == true %>
         <h3><%= link_to 'Editer', edit_post_path(post), remote: true %></h3>
         <h3><%= link_to 'Supprimer', post, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></h3>
       <% end %>
+    <% end %>
       </div>
     </div>
     <hr>

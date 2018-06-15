@@ -23,7 +23,7 @@
       </div>
     </div>
     <% end %>
-<% if !user_signed_in? %>
+<% if user_signed_in? %>
   <%= link_to profile_path do %>
     <div class="conn">
       <div class="btn-ct-conn">
@@ -33,7 +33,7 @@
     </div>
     <% end %>
 <% else %>
-  <%= link_to profile_path do %>
+  <%= link_to new_session_path do %>
     <div class="prof">
       <div class="btn-ct-prof">
         <div class="btn-prof">

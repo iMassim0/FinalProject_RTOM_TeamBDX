@@ -11,7 +11,7 @@ function startRTOM() {
   var visited = false;
 
   if ( visited == false ) {
-      startLanding();
+      $(document).ready(startLanding);
   		visited = true;
   };
 

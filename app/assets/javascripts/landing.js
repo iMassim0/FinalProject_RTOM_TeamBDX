@@ -2,14 +2,12 @@
 function startRTOM() {
   var visited = false;
   if ( visited == false ) {
-      startLanding();
+      $("#landing").css("display", "flex");
   		visited = true;
   };
-
   var movementStrength = 25;
   var height = movementStrength / $(window).height();
-  var width = movementStrength / $(window).width();
-
+  var width = movementStrength / $(window).width()
   $("#landing").mousemove(function(e){
             var pageX = e.pageX - ($(window).width() / 2);
             var pageY = e.pageY - ($(window).height() / 2);
@@ -18,10 +16,6 @@ function startRTOM() {
             $("#landing").css("background-position", newvalueX+"px     "+newvalueY+"px");
   });
 
-};
-
-function startLanding() {
-    document.getElementById("landing").style.display = "flex";
 };
 
 function stopLanding() {

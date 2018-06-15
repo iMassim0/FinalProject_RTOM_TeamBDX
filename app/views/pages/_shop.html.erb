@@ -31,11 +31,7 @@
     <div class="item-infos">
       <div class="item-title"><%= product.title.capitalize %></div>
       <hr>
-      <% if product.availability == 1 %>
         <div class="item-description"><p><%= simple_format(product.description) %></p></div>
-      <% else %>
-        <div class="item-description">Oeuvre déjà vendue ...</div>
-      <% end %>
     </div>
   </div>
   <% end %>

@@ -11,3 +11,10 @@
   color: white;
   font-size: 1.8em;
 }
+
+#trip-list {
+  list-style: none;
+  li {
+    cursor: pointer;
+  }
+}

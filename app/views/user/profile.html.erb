@@ -116,7 +116,7 @@
           <tr class="ordertotal">
             <td><%= i + 1 %></td>
             <td><%= post.title %></td>
-            <td><%= link_to 'Lien', post_path(post) %></td>
+            <td><%= link_to 'Lien', post, remote: true %></td>
           </tr>
           <% end %>
         </tbody>
@@ -141,7 +141,7 @@
       <% @user.comments.each_with_index do |comment, i| %>
           <tr class="ordertotal">
             <td><%= i + 1 %></td>
-            <td><%= link_to post_path(comment.post) do %><%= comment.post.title %><% end %></td>
+            <td><%= link_to post_path(comment.post), remote: true do %><%= comment.post.title %><% end %></td>
             <td><%= comment.content %></td>
           </tr>
           <% end %>

@@ -1,2 +1,6 @@
 $('#main-container').html("");
 $('#main-container').html("<%= j (render 'show') %>");
+$('#main-container').parents().show();
+$('body').append('<div class="clickoutside"><%= link_to root_path do %><div class="click_outside"> </div><% end %></div>');
+$('.nav').addClass("blurred");
+$('.blurred').append('<div class="clickoutside"><%= link_to root_path do %><div class="click_outside"> </div><% end %></div>');

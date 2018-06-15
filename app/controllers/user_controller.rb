@@ -1,6 +1,6 @@
 class UserController < ApplicationController
 
-  before_action :require_admin, only: [:index]
+  before_action :require_admin, only: [:index, :orders]
 
   def profile
     if current_user
@@ -15,11 +15,16 @@ class UserController < ApplicationController
     @users = User.all
   end
 
+  def orders
+    @users = User.all
+    @orders = Order.all
+  end
+
   def set_admin
     @user = User.find(params[:id])
     @user.is_admin = true
     if @user.save
-      redirect_to admin_path
+      redirect_to admin_users_path
     end
   end
 
@@ -27,8 +32,10 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
     @user.is_admin = false
     if @user.save
-      redirect_to admin_path
+      redirect_to admin_users_path
     end
   end
+
+
 
 end

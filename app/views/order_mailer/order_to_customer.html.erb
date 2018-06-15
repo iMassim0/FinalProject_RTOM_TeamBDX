@@ -217,6 +217,12 @@
         <% end %>
       </tbody>
       <tfoot>
+				<tr>
+				<td colspan="3" style="border: 0.3px solid white"><h3>Subtotal</h3></td>
+				<td style="border: 0.3px solid white">
+					<h3><%= @order.shipping %> €</h3>
+				</td>
+				</tr>
         <tr>
         <td colspan="3" style="border: 0.3px solid white"><h3>Subtotal</h3></td>
         <td style="border: 0.3px solid white">

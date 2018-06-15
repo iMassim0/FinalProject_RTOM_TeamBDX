@@ -20,9 +20,10 @@ Rails.application.routes.draw do
   post "/posts/:post_id/comments",  to: 'comments#create',          as: :post_comments
   get "/bienvenue",                 to: 'pages#landing',            as: :landing
   post '/panier/:id',               to: "carts#update",             as: :adding
-  get '/admin',                     to: "user#index",               as: :admin
+  get '/admin/users',               to: "user#index",               as: :admin_users
   patch '/admin/set_admin/:id',     to: "user#set_admin",           as: :set_admin
   patch '/admin/unset_admin/:id',   to: "user#unset_admin",         as: :unset_admin
   delete '/del/:user_id',           to: "registrations#cancel",     as: :del_user
+  get '/admin/orders',              to: "user#orders",              as: :admin_orders
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

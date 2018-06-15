@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   patch '/admin/unset_admin/:id',   to: "user#unset_admin",         as: :unset_admin
   delete '/del/:user_id',           to: "registrations#cancel",     as: :del_user
   get '/admin/orders',              to: "user#orders",              as: :admin_orders
+  get '/locations',                 to: 'pages#locations'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -6,19 +6,19 @@
       <%= image_tag ("logo_admin.png"), class: "admin-logo" %>
     <% end %>
   <div class="pi_content">
-    <i class="far fa-check-circle"></i>  Se creer un compte</br>
+    <i class="far fa-check-circle"></i> Se creer un compte</br>
     <% if !current_user.bookorder %>
-      <i class="far fa-circle"></i> Acheter le livre</br>
+      <i class="far fa-circle"></i> <%= link_to "Acheter le livre", book_path, remote: true %></br>
     <% else %>
       <i class="far fa-check-circle"></i> Acheter le livre</br>
     <% end %>
     <% if current_user.orders.empty? %>
-      <i class="far fa-circle"></i> Visiter l'atelier</br>
+      <i class="far fa-circle"></i> <%= link_to "Visiter l'atelier", shop_path, remote: true %></br>
     <% else %>
       <i class="far fa-check-circle"></i> Visiter l'atelier</br>
     <% end %>
     <% if current_user.posts.empty? %>
-      <i class="far fa-circle"></i> Laisser son temoignage</br>
+      <i class="far fa-circle"></i> <%= link_to "Laisser son temoignage", blog_path, remote: true %></br>
     <% else %>
       <i class="far fa-check-circle"></i> Laisser son temoignage</br>
     <% end %>
@@ -150,5 +150,13 @@
       </table>
     </div>
 
+  </div>
+</div>
+
+<div class="dashboard">
+  <div class="z-content bg-content" style="display: none;">
+      <div id="main-container" class="main-container">
+
+      </div>
   </div>
 </div>

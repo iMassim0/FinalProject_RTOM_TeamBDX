@@ -9,8 +9,8 @@
 
 <div class="nav">
   <nav class="btn-ctn">
-    <a class="buttons" target="_blank" href="https://github.com/iMassim0/FinalProject_RTOM_TeamBDX" tooltip="Github"></a>
-    <a class="buttons" target="_blank" href="mailto:resiliencetravelofmango@gmail.com" tooltip="Mail"></a>
+    <a class="buttons" target="_blank" href="https://github.com/iMassim0/" tooltip="Developper"></a>
+    <a class="buttons" href="mailto:resiliencetravelofmango@gmail.com" tooltip="Mail"></a>
     <a class="buttons" target="_blank" href="https://www.instagram.com/resiliencetravelofmango/" tooltip="Instagram"></a>
     <a class="buttons" target="_blank" href="https://www.facebook.com/ResilienceTravelofMango/" tooltip="Facebook"></a>
     <a class="buttons" target="_blank" href="#" tooltip="Contacts"><span><span class="pal"></span></span></a>
@@ -25,21 +25,21 @@
     <% end %>
 <% if user_signed_in? %>
   <%= link_to profile_path do %>
-    <div class="conn">
-      <div class="btn-ct-conn">
-        <div class="btn-conn">
-        </div>
+  <div class="prof">
+    <div class="btn-ct-prof">
+      <div class="btn-prof">
       </div>
     </div>
+  </div>
     <% end %>
 <% else %>
   <%= link_to new_session_path do %>
-    <div class="prof">
-      <div class="btn-ct-prof">
-        <div class="btn-prof">
-        </div>
+  <div class="conn">
+    <div class="btn-ct-conn">
+      <div class="btn-conn">
       </div>
     </div>
+  </div>
     <% end %>
 <% end %>
 <%= link_to shop_path, remote: true do %>

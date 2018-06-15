@@ -34,3 +34,13 @@ filter: blur(5px) grayscale(100%) brightness(50%);
   top: 0;
   right: 0;
 }
+
+.characters {
+  background-image: asset-url("background_portraits.png");
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 90vh;
+  width: auto;
+  overflow: hidden;
+}

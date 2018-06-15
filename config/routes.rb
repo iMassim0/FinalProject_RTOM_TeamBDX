@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   get "/bienvenue",                 to: 'pages#landing',            as: :landing
   post '/panier/:id',               to: "carts#update",             as: :adding
   get '/locations',                 to: 'pages#locations'
+  get '/admin',                     to: "user#index",               as: :admin
+  patch '/admin/set_admin/:id',     to: "user#set_admin",           as: :set_admin
+  patch '/admin/unset_admin/:id',   to: "user#unset_admin",         as: :unset_admin
+  delete '/del/:user_id',           to: "registrations#cancel",     as: :del_user
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

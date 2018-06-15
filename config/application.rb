@@ -14,7 +14,6 @@ module FinalProjectThpTeambdxRtom
     config.assets.paths << Rails.root.join("lib", "assets", "images")
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.assets.precompile += %w(*.svg *.eot *.woff *.ttf)
-
     config.action_mailer.delivery_method = :mailjet
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

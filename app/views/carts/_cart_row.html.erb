@@ -1,7 +1,7 @@
 <div class="w-50 jumbotron-fluid shopping-cart">
   <div class="container">
     <h6 class="card-header"><%= order_item.product.title %></h6>
-    <%= image_tag ("ZOOM_#{order_item.product.image_url}"), class: "d-block w-100" %>
+    <%= image_tag ("#{order_item.product.image_url}"), class: "d-block w-100" %>
     <h5 class="card-title">Prix: <%= order_item.unit_price %> €</h5>
     <%= form_for order_item, remote: true do |f| %>
           <%= f.hidden_field :quantity, value: order_item.quantity.to_i, min: 1 %>

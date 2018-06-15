@@ -1,3 +1,53 @@
-<div class="shop-class">
-  <h1>Contenu bientot en ligne!</h1>
+<div class="d-flex" id="trip-container">
+  <div style="width: 65%;">
+    <div id="googleMap"></div>
+  </div>
+  <div style="width: 35%; height: 100%;">
+    <h2 class="text-center p-4">Itinéraire</h2>
+    <ul id="trip-list">
+      <li class="pt-4"><h3 class="text-right"><strong>I/ In love with India...<br/>
+        Amoureuse de l'Inde...</strong></h3></li>
+      <li onclick="recenterMap(1);">Kochi - KERALA (India)</li>
+      <li onclick="recenterMap(2);">Varkala - KERALA (India)</li>
+      <li onclick="recenterMap(3)">Jodhpur - RAJASTHAN (India)</li>
+      <li onclick="recenterMap(4);">Mathura - UTTAR PRADESH (India)</li>
+      <li onclick="recenterMap(5);">Dehli - India</li>
+      <li><h3 class="text-right"><strong>II/ Troubled by Nepal...<br/>
+      Troublée par le Népal...</strong></h3></li>
+      <li onclick="recenterMap(6);">Bhaktapur - NEPAL</li>
+      <li onclick="recenterMap(7);">Chame - NEPAL</li>
+      <li onclick="recenterMap(8);">Yak Kharka - NEPAL</li>
+      <li onclick="recenterMap(9);">Thorong Pedi - NEPAL</li>
+      <li onclick="recenterMap(10);">Thorong La Pass - NEPAL </li>
+      <li class="pt-4"><h3 class="text-right"><strong>III/ Metamorphosed by Indonesia...<br/>
+      Métamorphosée par l'Indonésie...</strong></h3></li>
+      <li onclick="recenterMap(11);">Kawah Ijen - JAVA (Indonesia)</li>
+      <li onclick="recenterMap(12);">Gili T - LOMBOK (Indonesia)</li>
+      <li onclick="recenterMap(13);">Gunung Rinjani - LOMBOK (Indonesia)</li>
+      <li onclick="recenterMap(14);">Amed - BALI (Indonesia)</li>
+      <li onclick="recenterMap(15);">Jemeluk - BALI (Indonesia)</li>
+      <li class="pt-4"><h3 class="text-right"><strong>IV/ Fascinated by Japan...<br/>
+      Fascinée par le Japon...</strong></h3></li>
+      <li onclick="recenterMap(16);">KoyaSan - JAPAN</li>
+      <li onclick="recenterMap(17);">Miyajima - JAPAN</li>
+      <li onclick="recenterMap(18);">Hiroshima - JAPAN</li>
+      <li onclick="recenterMap(19);">Kyoto - JAPAN</li>
+      <li onclick="recenterMap(20);">Tokyo - JAPAN</li>
+      <li class="pt-4"><h3 class="text-right"><strong>V/ Struck by Hawaii...<br/>
+      Foudroyée par Hawaï</strong></h3></li>
+      <li onclick="recenterMap(21);">Waikiki (Oahu) - HAWAII</li>
+      <li onclick="recenterMap(22);">Kehena Beach (Big Island) - HAWAII</li>
+      <li onclick="recenterMap(23);">Kilauea Volcano (Big Island) - HAWAII</li>
+      <li onclick="recenterMap(24);">Kona (Big Island) - HAWAII</li>
+      <li onclick="recenterMap(25);">Waipio Valley (Big Island) - HAWAII</li>
+      <li class="pt-4"><h3 class="text-right"><strong>VI/ Amazed by California...<br/>
+      Amusée par la Californie...</strong></h3></li>
+      <li onclick="recenterMap(26);">San Francisco - CALIFORNIA (USA)</li>
+    </ul>
+
+  </div>
 </div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=myMap"></script>
+

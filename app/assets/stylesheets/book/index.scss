@@ -1,0 +1,34 @@
+$my_beautydemo_font: 'beautydemo';
+$my_lemourserif_font: 'lemourserif';
+$my_pimpernel_font: 'pimpernel';
+
+.book {
+  background: linear-gradient(
+ rgba(255, 255, 255, 0.45),
+ rgba(255, 255, 255, 0.45)
+ ),asset-url('bg_livre.png') 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.book-title h1 {
+  font-family: $my_beautydemo_font;
+  font-size: 4vw;
+  color: black;
+}
+
+.book-achat {
+  width: 30%;
+  align-self: center;
+}
+
+.book-text, .book-footer {
+  font-family: $my_pimpernel_font;
+  font-size: 2vw;
+  margin: 0 5%;
+}
